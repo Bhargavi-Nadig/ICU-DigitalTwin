@@ -1,0 +1,358 @@
+{
+  "Sepsis_6h": {
+    "xgboost": {
+      "test_AUROC": 0.7827,
+      "test_AUPRC": 0.0821
+    },
+    "random_forest": {
+      "test_AUROC": 0.7557,
+      "test_AUPRC": 0.0777
+    },
+    "ensemble": {
+      "test_AUROC": 0.7822,
+      "test_AUPRC": 0.0825,
+      "alpha": 0.7,
+      "gain_over_xgb_pp": -0.05
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 75033,
+      "n_val": 16243,
+      "n_test": 16804,
+      "prevalence": 0.0239
+    }
+  },
+  "Sepsis_12h": {
+    "xgboost": {
+      "test_AUROC": 0.7416,
+      "test_AUPRC": 0.1107
+    },
+    "random_forest": {
+      "test_AUROC": 0.7716,
+      "test_AUPRC": 0.1195
+    },
+    "ensemble": {
+      "test_AUROC": 0.7685,
+      "test_AUPRC": 0.1227,
+      "alpha": 0.35,
+      "gain_over_xgb_pp": 2.69
+    },
+    "production_model": "ensemble",
+    "support": {
+      "n_train": 61264,
+      "n_val": 13328,
+      "n_test": 13786,
+      "prevalence": 0.0249
+    }
+  },
+  "Sepsis_24h": {
+    "xgboost": {
+      "test_AUROC": 0.7504,
+      "test_AUPRC": 0.0935
+    },
+    "random_forest": {
+      "test_AUROC": 0.7682,
+      "test_AUPRC": 0.1334
+    },
+    "ensemble": {
+      "test_AUROC": 0.7709,
+      "test_AUPRC": 0.1292,
+      "alpha": 0.3,
+      "gain_over_xgb_pp": 2.05
+    },
+    "production_model": "ensemble",
+    "support": {
+      "n_train": 36730,
+      "n_val": 8085,
+      "n_test": 8314,
+      "prevalence": 0.0321
+    }
+  },
+  "ARF_6h": {
+    "xgboost": {
+      "test_AUROC": 0.8757,
+      "test_AUPRC": 0.4489
+    },
+    "random_forest": {
+      "test_AUROC": 0.8707,
+      "test_AUPRC": 0.4215
+    },
+    "ensemble": {
+      "test_AUROC": 0.8762,
+      "test_AUPRC": 0.4368,
+      "alpha": 0.55,
+      "gain_over_xgb_pp": 0.06
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 75033,
+      "n_val": 16243,
+      "n_test": 16804,
+      "prevalence": 0.0933
+    }
+  },
+  "ARF_12h": {
+    "xgboost": {
+      "test_AUROC": 0.8476,
+      "test_AUPRC": 0.4969
+    },
+    "random_forest": {
+      "test_AUROC": 0.8472,
+      "test_AUPRC": 0.494
+    },
+    "ensemble": {
+      "test_AUROC": 0.85,
+      "test_AUPRC": 0.5024,
+      "alpha": 0.65,
+      "gain_over_xgb_pp": 0.23
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 61264,
+      "n_val": 13328,
+      "n_test": 13786,
+      "prevalence": 0.1454
+    }
+  },
+  "ARF_24h": {
+    "xgboost": {
+      "test_AUROC": 0.8232,
+      "test_AUPRC": 0.5908
+    },
+    "random_forest": {
+      "test_AUROC": 0.8188,
+      "test_AUPRC": 0.5859
+    },
+    "ensemble": {
+      "test_AUROC": 0.8237,
+      "test_AUPRC": 0.5953,
+      "alpha": 0.4,
+      "gain_over_xgb_pp": 0.06
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 36730,
+      "n_val": 8085,
+      "n_test": 8314,
+      "prevalence": 0.2265
+    }
+  },
+  "Cardiac_6h": {
+    "xgboost": {
+      "test_AUROC": 0.8858,
+      "test_AUPRC": 0.4737
+    },
+    "random_forest": {
+      "test_AUROC": 0.8843,
+      "test_AUPRC": 0.4469
+    },
+    "ensemble": {
+      "test_AUROC": 0.8868,
+      "test_AUPRC": 0.4691,
+      "alpha": 0.7,
+      "gain_over_xgb_pp": 0.1
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 75033,
+      "n_val": 16243,
+      "n_test": 16804,
+      "prevalence": 0.0888
+    }
+  },
+  "Cardiac_12h": {
+    "xgboost": {
+      "test_AUROC": 0.8592,
+      "test_AUPRC": 0.5134
+    },
+    "random_forest": {
+      "test_AUROC": 0.8611,
+      "test_AUPRC": 0.5185
+    },
+    "ensemble": {
+      "test_AUROC": 0.8623,
+      "test_AUPRC": 0.5246,
+      "alpha": 0.5,
+      "gain_over_xgb_pp": 0.31
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 61264,
+      "n_val": 13328,
+      "n_test": 13786,
+      "prevalence": 0.134
+    }
+  },
+  "Cardiac_24h": {
+    "xgboost": {
+      "test_AUROC": 0.8304,
+      "test_AUPRC": 0.5764
+    },
+    "random_forest": {
+      "test_AUROC": 0.8368,
+      "test_AUPRC": 0.5842
+    },
+    "ensemble": {
+      "test_AUROC": 0.8333,
+      "test_AUPRC": 0.5856,
+      "alpha": 0.8,
+      "gain_over_xgb_pp": 0.3
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 36730,
+      "n_val": 8085,
+      "n_test": 8314,
+      "prevalence": 0.1991
+    }
+  },
+  "AKI_6h": {
+    "xgboost": {
+      "test_AUROC": 0.892,
+      "test_AUPRC": 0.2863
+    },
+    "random_forest": {
+      "test_AUROC": 0.8988,
+      "test_AUPRC": 0.3131
+    },
+    "ensemble": {
+      "test_AUROC": 0.8956,
+      "test_AUPRC": 0.3036,
+      "alpha": 0.75,
+      "gain_over_xgb_pp": 0.36
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 75033,
+      "n_val": 16243,
+      "n_test": 16804,
+      "prevalence": 0.0413
+    }
+  },
+  "AKI_12h": {
+    "xgboost": {
+      "test_AUROC": 0.8784,
+      "test_AUPRC": 0.4399
+    },
+    "random_forest": {
+      "test_AUROC": 0.8842,
+      "test_AUPRC": 0.4536
+    },
+    "ensemble": {
+      "test_AUROC": 0.8822,
+      "test_AUPRC": 0.4487,
+      "alpha": 0.75,
+      "gain_over_xgb_pp": 0.38
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 61264,
+      "n_val": 13328,
+      "n_test": 13786,
+      "prevalence": 0.0765
+    }
+  },
+  "AKI_24h": {
+    "xgboost": {
+      "test_AUROC": 0.8545,
+      "test_AUPRC": 0.559
+    },
+    "random_forest": {
+      "test_AUROC": 0.8517,
+      "test_AUPRC": 0.5388
+    },
+    "ensemble": {
+      "test_AUROC": 0.8545,
+      "test_AUPRC": 0.559,
+      "alpha": 1.0,
+      "gain_over_xgb_pp": 0.0
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 36730,
+      "n_val": 8085,
+      "n_test": 8314,
+      "prevalence": 0.1253
+    }
+  },
+  "Coagulopathy_6h": {
+    "xgboost": {
+      "test_AUROC": 0.9266,
+      "test_AUPRC": 0.107
+    },
+    "random_forest": {
+      "test_AUROC": 0.9285,
+      "test_AUPRC": 0.0763
+    },
+    "ensemble": {
+      "test_AUROC": 0.9297,
+      "test_AUPRC": 0.1061,
+      "alpha": 0.85,
+      "gain_over_xgb_pp": 0.31
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 75033,
+      "n_val": 16243,
+      "n_test": 16804,
+      "prevalence": 0.0061
+    }
+  },
+  "Coagulopathy_12h": {
+    "xgboost": {
+      "test_AUROC": 0.9175,
+      "test_AUPRC": 0.1674
+    },
+    "random_forest": {
+      "test_AUROC": 0.9212,
+      "test_AUPRC": 0.1137
+    },
+    "ensemble": {
+      "test_AUROC": 0.9218,
+      "test_AUPRC": 0.1708,
+      "alpha": 0.8,
+      "gain_over_xgb_pp": 0.44
+    },
+    "production_model": "xgboost",
+    "support": {
+      "n_train": 61264,
+      "n_val": 13328,
+      "n_test": 13786,
+      "prevalence": 0.0107
+    }
+  },
+  "Coagulopathy_24h": {
+    "xgboost": {
+      "test_AUROC": 0.8872,
+      "test_AUPRC": 0.2015
+    },
+    "random_forest": {
+      "test_AUROC": 0.9221,
+      "test_AUPRC": 0.2044
+    },
+    "ensemble": {
+      "test_AUROC": 0.9001,
+      "test_AUPRC": 0.2147,
+      "alpha": 0.8,
+      "gain_over_xgb_pp": 1.29
+    },
+    "production_model": "ensemble",
+    "support": {
+      "n_train": 36730,
+      "n_val": 8085,
+      "n_test": 8314,
+      "prevalence": 0.0208
+    }
+  },
+  "_meta": {
+    "ensemble_method": "soft_voting: p = alpha * p_xgb + (1-alpha) * p_rf",
+    "alpha_selection": "grid search on validation AUROC (21 steps from 0 to 1)",
+    "production_threshold": "ensemble adopted only when gain >= 0.5pp AUROC over XGBoost alone",
+    "n_train": 2770,
+    "n_val": 594,
+    "n_test": 594,
+    "n_features": 252,
+    "xgb_search_trials": 5,
+    "rf_search_trials": 5
+  }
+}

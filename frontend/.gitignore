@@ -1,0 +1,48 @@
+# Dependencies
+
+/node_modules
+/frontend/node_modules
+/.pnp
+.pnp.js
+venv/
+.venv/
+
+# Python cache files
+
+**pycache**/
+*.py[cod]
+
+# Testing
+
+/coverage
+.pytest_cache/
+
+# Production build output
+
+/build
+/frontend/build
+
+# Environment variables and secrets
+
+.env
+.env.*
+!.env.example
+!.env.example.*
+
+# Logs
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Local deployment archives and test folders
+
+icu-digital-twin-deploy.zip
+zip-test/
+
+# Miscellaneous
+
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,1332 @@
+{
+  "condition_fidelity": {
+    "Sepsis": {
+      "overall": {
+        "mae": 0.0605,
+        "pearson_r": 0.7096,
+        "agreement_at_0.5": 0.9503,
+        "max_error": 0.4797,
+        "n_samples": 19948
+      },
+      "binned_fidelity": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "n": 1004,
+          "mae": 0.0548,
+          "agreement": 1.0
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "n": 7832,
+          "mae": 0.0456,
+          "agreement": 0.9985
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "n": 6424,
+          "mae": 0.0481,
+          "agreement": 0.9925
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "n": 2683,
+          "mae": 0.0688,
+          "agreement": 0.9866
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "n": 1103,
+          "mae": 0.1143,
+          "agreement": 0.9184
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "n": 666,
+          "mae": 0.1823,
+          "agreement": 0.0841
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "n": 189,
+          "mae": 0.2142,
+          "agreement": 0.1534
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "n": 47,
+          "mae": 0.2778,
+          "agreement": 0.234
+        }
+      ],
+      "unreliable_regions": [
+        {
+          "feature": "Platelets",
+          "divergence_score": 0.449
+        },
+        {
+          "feature": "Resp",
+          "divergence_score": 0.353
+        },
+        {
+          "feature": "AST",
+          "divergence_score": 0.351
+        },
+        {
+          "feature": "Hgb",
+          "divergence_score": 0.311
+        },
+        {
+          "feature": "BUN",
+          "divergence_score": 0.303
+        }
+      ],
+      "error_thresholds": {
+        "low": 0.0454,
+        "medium": 0.0776,
+        "high": 0.1316
+      }
+    },
+    "ARF": {
+      "overall": {
+        "mae": 0.0926,
+        "pearson_r": 0.8588,
+        "agreement_at_0.5": 0.8874,
+        "max_error": 0.6424,
+        "n_samples": 19948
+      },
+      "binned_fidelity": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "n": 2571,
+          "mae": 0.0476,
+          "agreement": 1.0
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "n": 5924,
+          "mae": 0.0593,
+          "agreement": 0.9973
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "n": 3056,
+          "mae": 0.0682,
+          "agreement": 0.9921
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "n": 1909,
+          "mae": 0.1024,
+          "agreement": 0.9057
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "n": 1351,
+          "mae": 0.1341,
+          "agreement": 0.7913
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "n": 1259,
+          "mae": 0.1533,
+          "agreement": 0.3741
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "n": 1279,
+          "mae": 0.166,
+          "agreement": 0.559
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "n": 1332,
+          "mae": 0.1562,
+          "agreement": 0.7718
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "n": 959,
+          "mae": 0.1393,
+          "agreement": 0.9124
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "n": 308,
+          "mae": 0.1326,
+          "agreement": 0.9838
+        }
+      ],
+      "unreliable_regions": [],
+      "error_thresholds": {
+        "low": 0.0669,
+        "medium": 0.124,
+        "high": 0.211
+      }
+    },
+    "Cardiac": {
+      "overall": {
+        "mae": 0.0616,
+        "pearson_r": 0.9459,
+        "agreement_at_0.5": 0.929,
+        "max_error": 0.7027,
+        "n_samples": 19948
+      },
+      "binned_fidelity": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "n": 7525,
+          "mae": 0.0274,
+          "agreement": 1.0
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "n": 3189,
+          "mae": 0.052,
+          "agreement": 0.9997
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "n": 1891,
+          "mae": 0.0687,
+          "agreement": 0.9762
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "n": 1451,
+          "mae": 0.0866,
+          "agreement": 0.9132
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "n": 1129,
+          "mae": 0.0955,
+          "agreement": 0.7989
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "n": 1132,
+          "mae": 0.1082,
+          "agreement": 0.4293
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "n": 1039,
+          "mae": 0.1197,
+          "agreement": 0.7016
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "n": 964,
+          "mae": 0.1173,
+          "agreement": 0.944
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "n": 1110,
+          "mae": 0.0963,
+          "agreement": 0.9928
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "n": 518,
+          "mae": 0.05,
+          "agreement": 1.0
+        }
+      ],
+      "unreliable_regions": [
+        {
+          "feature": "ShockIndex",
+          "divergence_score": 0.872
+        },
+        {
+          "feature": "HR",
+          "divergence_score": 0.812
+        },
+        {
+          "feature": "SBP",
+          "divergence_score": 0.505
+        },
+        {
+          "feature": "PulsePressure",
+          "divergence_score": 0.454
+        }
+      ],
+      "error_thresholds": {
+        "low": 0.0394,
+        "medium": 0.0857,
+        "high": 0.1481
+      }
+    },
+    "AKI": {
+      "overall": {
+        "mae": 0.0801,
+        "pearson_r": 0.764,
+        "agreement_at_0.5": 0.925,
+        "max_error": 0.7908,
+        "n_samples": 19948
+      },
+      "binned_fidelity": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "n": 10082,
+          "mae": 0.0352,
+          "agreement": 0.9999
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "n": 3687,
+          "mae": 0.0597,
+          "agreement": 0.9948
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "n": 1973,
+          "mae": 0.1007,
+          "agreement": 0.9706
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "n": 1334,
+          "mae": 0.1461,
+          "agreement": 0.9468
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "n": 970,
+          "mae": 0.1863,
+          "agreement": 0.8979
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "n": 787,
+          "mae": 0.2183,
+          "agreement": 0.1906
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "n": 659,
+          "mae": 0.2402,
+          "agreement": 0.39
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "n": 386,
+          "mae": 0.2649,
+          "agreement": 0.4948
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "n": 70,
+          "mae": 0.2408,
+          "agreement": 0.8
+        }
+      ],
+      "unreliable_regions": [
+        {
+          "feature": "Creatinine",
+          "divergence_score": 0.751
+        },
+        {
+          "feature": "Phosphate",
+          "divergence_score": 0.683
+        },
+        {
+          "feature": "BUN",
+          "divergence_score": 0.636
+        },
+        {
+          "feature": "BaseExcess",
+          "divergence_score": 0.537
+        },
+        {
+          "feature": "HCO3",
+          "divergence_score": 0.517
+        }
+      ],
+      "error_thresholds": {
+        "low": 0.0431,
+        "medium": 0.1023,
+        "high": 0.2118
+      }
+    },
+    "Coagulopathy": {
+      "overall": {
+        "mae": 0.0231,
+        "pearson_r": 0.8591,
+        "agreement_at_0.5": 0.9938,
+        "max_error": 0.7023,
+        "n_samples": 19948
+      },
+      "binned_fidelity": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "n": 17848,
+          "mae": 0.0143,
+          "agreement": 0.9999
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "n": 1147,
+          "mae": 0.0652,
+          "agreement": 0.993
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "n": 398,
+          "mae": 0.1046,
+          "agreement": 0.9698
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "n": 227,
+          "mae": 0.1338,
+          "agreement": 0.9736
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "n": 109,
+          "mae": 0.1544,
+          "agreement": 0.8624
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "n": 80,
+          "mae": 0.1841,
+          "agreement": 0.3375
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "n": 56,
+          "mae": 0.2841,
+          "agreement": 0.6786
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "n": 34,
+          "mae": 0.2154,
+          "agreement": 0.7059
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "n": 38,
+          "mae": 0.0762,
+          "agreement": 0.9737
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "n": 11,
+          "mae": 0.1377,
+          "agreement": 1.0
+        }
+      ],
+      "unreliable_regions": [
+        {
+          "feature": "Platelets",
+          "divergence_score": 0.946
+        },
+        {
+          "feature": "Lactate",
+          "divergence_score": 0.795
+        },
+        {
+          "feature": "Bilirubin_total",
+          "divergence_score": 0.746
+        },
+        {
+          "feature": "AST",
+          "divergence_score": 0.581
+        },
+        {
+          "feature": "BUN",
+          "divergence_score": 0.542
+        }
+      ],
+      "error_thresholds": {
+        "low": 0.0091,
+        "medium": 0.0235,
+        "high": 0.0535
+      }
+    }
+  },
+  "patient_fidelity": {
+    "p003304": {
+      "Sepsis": {
+        "xgb_risk": 0.1868,
+        "surrogate_risk": 0.1785,
+        "absolute_error": 0.0083,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.2648,
+        "surrogate_risk": 0.2142,
+        "absolute_error": 0.0506,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.082,
+        "surrogate_risk": 0.0614,
+        "absolute_error": 0.0207,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.0918,
+        "surrogate_risk": 0.0753,
+        "absolute_error": 0.0165,
+        "reliability": "high"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0051,
+        "surrogate_risk": 0.0041,
+        "absolute_error": 0.001,
+        "reliability": "high"
+      }
+    },
+    "p000334": {
+      "Sepsis": {
+        "xgb_risk": 0.3592,
+        "surrogate_risk": 0.3038,
+        "absolute_error": 0.0554,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.2539,
+        "surrogate_risk": 0.234,
+        "absolute_error": 0.0199,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.7658,
+        "surrogate_risk": 0.6289,
+        "absolute_error": 0.1369,
+        "reliability": "low"
+      },
+      "AKI": {
+        "xgb_risk": 0.5833,
+        "surrogate_risk": 0.5615,
+        "absolute_error": 0.0218,
+        "reliability": "high"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.1359,
+        "surrogate_risk": 0.2233,
+        "absolute_error": 0.0874,
+        "reliability": "very_low"
+      }
+    },
+    "p003941": {
+      "Sepsis": {
+        "xgb_risk": 0.2133,
+        "surrogate_risk": 0.2271,
+        "absolute_error": 0.0138,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.1467,
+        "surrogate_risk": 0.3226,
+        "absolute_error": 0.1759,
+        "reliability": "low"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.7303,
+        "surrogate_risk": 0.5951,
+        "absolute_error": 0.1352,
+        "reliability": "low"
+      },
+      "AKI": {
+        "xgb_risk": 0.2017,
+        "surrogate_risk": 0.3743,
+        "absolute_error": 0.1726,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0052,
+        "surrogate_risk": 0.0078,
+        "absolute_error": 0.0026,
+        "reliability": "high"
+      }
+    },
+    "p003778": {
+      "Sepsis": {
+        "xgb_risk": 0.1261,
+        "surrogate_risk": 0.3149,
+        "absolute_error": 0.1888,
+        "reliability": "very_low"
+      },
+      "ARF": {
+        "xgb_risk": 0.1673,
+        "surrogate_risk": 0.2058,
+        "absolute_error": 0.0385,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.5489,
+        "surrogate_risk": 0.3671,
+        "absolute_error": 0.1819,
+        "reliability": "very_low"
+      },
+      "AKI": {
+        "xgb_risk": 0.1456,
+        "surrogate_risk": 0.0576,
+        "absolute_error": 0.088,
+        "reliability": "medium"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0074,
+        "surrogate_risk": 0.0005,
+        "absolute_error": 0.0069,
+        "reliability": "high"
+      }
+    },
+    "p002406": {
+      "Sepsis": {
+        "xgb_risk": 0.2162,
+        "surrogate_risk": 0.216,
+        "absolute_error": 0.0002,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.1678,
+        "surrogate_risk": 0.2353,
+        "absolute_error": 0.0675,
+        "reliability": "medium"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.6418,
+        "surrogate_risk": 0.5335,
+        "absolute_error": 0.1083,
+        "reliability": "low"
+      },
+      "AKI": {
+        "xgb_risk": 0.2185,
+        "surrogate_risk": 0.1769,
+        "absolute_error": 0.0416,
+        "reliability": "high"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.2413,
+        "surrogate_risk": 0.2652,
+        "absolute_error": 0.0239,
+        "reliability": "low"
+      }
+    },
+    "p002601": {
+      "Sepsis": {
+        "xgb_risk": 0.172,
+        "surrogate_risk": 0.2045,
+        "absolute_error": 0.0325,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.0953,
+        "surrogate_risk": 0.1118,
+        "absolute_error": 0.0164,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.2567,
+        "surrogate_risk": 0.2906,
+        "absolute_error": 0.0339,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.132,
+        "surrogate_risk": 0.1233,
+        "absolute_error": 0.0087,
+        "reliability": "high"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.2194,
+        "surrogate_risk": 0.1312,
+        "absolute_error": 0.0882,
+        "reliability": "very_low"
+      }
+    },
+    "p002785": {
+      "Sepsis": {
+        "xgb_risk": 0.2223,
+        "surrogate_risk": 0.1866,
+        "absolute_error": 0.0357,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.3106,
+        "surrogate_risk": 0.3511,
+        "absolute_error": 0.0405,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.7041,
+        "surrogate_risk": 0.4527,
+        "absolute_error": 0.2514,
+        "reliability": "very_low"
+      },
+      "AKI": {
+        "xgb_risk": 0.1032,
+        "surrogate_risk": 0.218,
+        "absolute_error": 0.1149,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0068,
+        "surrogate_risk": 0.0057,
+        "absolute_error": 0.001,
+        "reliability": "high"
+      }
+    },
+    "p002046": {
+      "Sepsis": {
+        "xgb_risk": 0.4102,
+        "surrogate_risk": 0.3444,
+        "absolute_error": 0.0658,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.2126,
+        "surrogate_risk": 0.2315,
+        "absolute_error": 0.0189,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.9454,
+        "surrogate_risk": 0.9496,
+        "absolute_error": 0.0041,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.4601,
+        "surrogate_risk": 0.2982,
+        "absolute_error": 0.1619,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0179,
+        "surrogate_risk": 0.0381,
+        "absolute_error": 0.0202,
+        "reliability": "medium"
+      }
+    },
+    "p000155": {
+      "Sepsis": {
+        "xgb_risk": 0.4699,
+        "surrogate_risk": 0.4243,
+        "absolute_error": 0.0456,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.151,
+        "surrogate_risk": 0.2525,
+        "absolute_error": 0.1015,
+        "reliability": "medium"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.6179,
+        "surrogate_risk": 0.4514,
+        "absolute_error": 0.1664,
+        "reliability": "very_low"
+      },
+      "AKI": {
+        "xgb_risk": 0.4176,
+        "surrogate_risk": 0.171,
+        "absolute_error": 0.2466,
+        "reliability": "very_low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0076,
+        "surrogate_risk": 0.0034,
+        "absolute_error": 0.0041,
+        "reliability": "high"
+      }
+    },
+    "p002267": {
+      "Sepsis": {
+        "xgb_risk": 0.2999,
+        "surrogate_risk": 0.3124,
+        "absolute_error": 0.0125,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.15,
+        "surrogate_risk": 0.1405,
+        "absolute_error": 0.0095,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.0639,
+        "surrogate_risk": 0.0778,
+        "absolute_error": 0.0139,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.5546,
+        "surrogate_risk": 0.4578,
+        "absolute_error": 0.0968,
+        "reliability": "medium"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0046,
+        "surrogate_risk": 0.0054,
+        "absolute_error": 0.0009,
+        "reliability": "high"
+      }
+    },
+    "p001310": {
+      "Sepsis": {
+        "xgb_risk": 0.1068,
+        "surrogate_risk": 0.2122,
+        "absolute_error": 0.1054,
+        "reliability": "low"
+      },
+      "ARF": {
+        "xgb_risk": 0.5207,
+        "surrogate_risk": 0.4547,
+        "absolute_error": 0.066,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.0325,
+        "surrogate_risk": 0.0773,
+        "absolute_error": 0.0448,
+        "reliability": "medium"
+      },
+      "AKI": {
+        "xgb_risk": 0.2441,
+        "surrogate_risk": 0.1561,
+        "absolute_error": 0.088,
+        "reliability": "medium"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0196,
+        "surrogate_risk": 0.0186,
+        "absolute_error": 0.001,
+        "reliability": "high"
+      }
+    },
+    "p001441": {
+      "Sepsis": {
+        "xgb_risk": 0.545,
+        "surrogate_risk": 0.2968,
+        "absolute_error": 0.2482,
+        "reliability": "very_low"
+      },
+      "ARF": {
+        "xgb_risk": 0.8065,
+        "surrogate_risk": 0.7621,
+        "absolute_error": 0.0444,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.4473,
+        "surrogate_risk": 0.4384,
+        "absolute_error": 0.0089,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.7878,
+        "surrogate_risk": 0.6838,
+        "absolute_error": 0.104,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.4989,
+        "surrogate_risk": 0.3143,
+        "absolute_error": 0.1846,
+        "reliability": "very_low"
+      }
+    },
+    "p000729": {
+      "Sepsis": {
+        "xgb_risk": 0.1045,
+        "surrogate_risk": 0.1617,
+        "absolute_error": 0.0572,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.5649,
+        "surrogate_risk": 0.5142,
+        "absolute_error": 0.0507,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.0989,
+        "surrogate_risk": 0.1531,
+        "absolute_error": 0.0542,
+        "reliability": "medium"
+      },
+      "AKI": {
+        "xgb_risk": 0.4793,
+        "surrogate_risk": 0.2925,
+        "absolute_error": 0.1867,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0046,
+        "surrogate_risk": 0.0155,
+        "absolute_error": 0.0109,
+        "reliability": "medium"
+      }
+    },
+    "p002568": {
+      "Sepsis": {
+        "xgb_risk": 0.1184,
+        "surrogate_risk": 0.1797,
+        "absolute_error": 0.0613,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.1044,
+        "surrogate_risk": 0.134,
+        "absolute_error": 0.0297,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.1664,
+        "surrogate_risk": 0.1835,
+        "absolute_error": 0.0171,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.0381,
+        "surrogate_risk": 0.0838,
+        "absolute_error": 0.0457,
+        "reliability": "medium"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.2448,
+        "surrogate_risk": 0.3252,
+        "absolute_error": 0.0804,
+        "reliability": "very_low"
+      }
+    },
+    "p000693": {
+      "Sepsis": {
+        "xgb_risk": 0.1801,
+        "surrogate_risk": 0.2084,
+        "absolute_error": 0.0283,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.107,
+        "surrogate_risk": 0.151,
+        "absolute_error": 0.0441,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.0542,
+        "surrogate_risk": 0.1272,
+        "absolute_error": 0.0731,
+        "reliability": "medium"
+      },
+      "AKI": {
+        "xgb_risk": 0.171,
+        "surrogate_risk": 0.1071,
+        "absolute_error": 0.0639,
+        "reliability": "medium"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0303,
+        "surrogate_risk": 0.0646,
+        "absolute_error": 0.0343,
+        "reliability": "low"
+      }
+    },
+    "p003774": {
+      "Sepsis": {
+        "xgb_risk": 0.2138,
+        "surrogate_risk": 0.4227,
+        "absolute_error": 0.209,
+        "reliability": "very_low"
+      },
+      "ARF": {
+        "xgb_risk": 0.0954,
+        "surrogate_risk": 0.1442,
+        "absolute_error": 0.0488,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.3813,
+        "surrogate_risk": 0.7382,
+        "absolute_error": 0.3569,
+        "reliability": "very_low"
+      },
+      "AKI": {
+        "xgb_risk": 0.0506,
+        "surrogate_risk": 0.0665,
+        "absolute_error": 0.0159,
+        "reliability": "high"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0162,
+        "surrogate_risk": 0.044,
+        "absolute_error": 0.0278,
+        "reliability": "low"
+      }
+    },
+    "p000135": {
+      "Sepsis": {
+        "xgb_risk": 0.3006,
+        "surrogate_risk": 0.1994,
+        "absolute_error": 0.1013,
+        "reliability": "low"
+      },
+      "ARF": {
+        "xgb_risk": 0.1946,
+        "surrogate_risk": 0.2185,
+        "absolute_error": 0.0239,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.7008,
+        "surrogate_risk": 0.8103,
+        "absolute_error": 0.1095,
+        "reliability": "low"
+      },
+      "AKI": {
+        "xgb_risk": 0.0361,
+        "surrogate_risk": 0.0971,
+        "absolute_error": 0.061,
+        "reliability": "medium"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.018,
+        "surrogate_risk": 0.0273,
+        "absolute_error": 0.0093,
+        "reliability": "medium"
+      }
+    },
+    "p002648": {
+      "Sepsis": {
+        "xgb_risk": 0.4628,
+        "surrogate_risk": 0.4058,
+        "absolute_error": 0.057,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.6977,
+        "surrogate_risk": 0.4031,
+        "absolute_error": 0.2946,
+        "reliability": "very_low"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.9429,
+        "surrogate_risk": 0.9779,
+        "absolute_error": 0.035,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.7304,
+        "surrogate_risk": 0.5214,
+        "absolute_error": 0.209,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.2186,
+        "surrogate_risk": 0.178,
+        "absolute_error": 0.0406,
+        "reliability": "low"
+      }
+    },
+    "p001626": {
+      "Sepsis": {
+        "xgb_risk": 0.3062,
+        "surrogate_risk": 0.3237,
+        "absolute_error": 0.0174,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.8207,
+        "surrogate_risk": 0.7266,
+        "absolute_error": 0.0941,
+        "reliability": "medium"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.8932,
+        "surrogate_risk": 0.7579,
+        "absolute_error": 0.1353,
+        "reliability": "low"
+      },
+      "AKI": {
+        "xgb_risk": 0.6085,
+        "surrogate_risk": 0.457,
+        "absolute_error": 0.1515,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0063,
+        "surrogate_risk": 0.0112,
+        "absolute_error": 0.005,
+        "reliability": "high"
+      }
+    },
+    "p000450": {
+      "Sepsis": {
+        "xgb_risk": 0.1053,
+        "surrogate_risk": 0.2427,
+        "absolute_error": 0.1374,
+        "reliability": "very_low"
+      },
+      "ARF": {
+        "xgb_risk": 0.2544,
+        "surrogate_risk": 0.265,
+        "absolute_error": 0.0106,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.9,
+        "surrogate_risk": 0.9824,
+        "absolute_error": 0.0825,
+        "reliability": "medium"
+      },
+      "AKI": {
+        "xgb_risk": 0.3624,
+        "surrogate_risk": 0.1496,
+        "absolute_error": 0.2129,
+        "reliability": "very_low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0051,
+        "surrogate_risk": 0.0078,
+        "absolute_error": 0.0028,
+        "reliability": "high"
+      }
+    },
+    "p000173": {
+      "Sepsis": {
+        "xgb_risk": 0.1445,
+        "surrogate_risk": 0.1775,
+        "absolute_error": 0.0331,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.1258,
+        "surrogate_risk": 0.173,
+        "absolute_error": 0.0471,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.0257,
+        "surrogate_risk": 0.0184,
+        "absolute_error": 0.0073,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.4446,
+        "surrogate_risk": 0.1621,
+        "absolute_error": 0.2826,
+        "reliability": "very_low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.2089,
+        "surrogate_risk": 0.0757,
+        "absolute_error": 0.1332,
+        "reliability": "very_low"
+      }
+    },
+    "p001524": {
+      "Sepsis": {
+        "xgb_risk": 0.2952,
+        "surrogate_risk": 0.2765,
+        "absolute_error": 0.0186,
+        "reliability": "high"
+      },
+      "ARF": {
+        "xgb_risk": 0.0957,
+        "surrogate_risk": 0.125,
+        "absolute_error": 0.0293,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.0467,
+        "surrogate_risk": 0.0558,
+        "absolute_error": 0.0091,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.0699,
+        "surrogate_risk": 0.0531,
+        "absolute_error": 0.0168,
+        "reliability": "high"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0208,
+        "surrogate_risk": 0.0145,
+        "absolute_error": 0.0063,
+        "reliability": "high"
+      }
+    },
+    "p001605": {
+      "Sepsis": {
+        "xgb_risk": 0.1627,
+        "surrogate_risk": 0.2177,
+        "absolute_error": 0.055,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.1735,
+        "surrogate_risk": 0.2025,
+        "absolute_error": 0.029,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.4968,
+        "surrogate_risk": 0.278,
+        "absolute_error": 0.2188,
+        "reliability": "very_low"
+      },
+      "AKI": {
+        "xgb_risk": 0.1377,
+        "surrogate_risk": 0.1493,
+        "absolute_error": 0.0116,
+        "reliability": "high"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0048,
+        "surrogate_risk": 0.0412,
+        "absolute_error": 0.0364,
+        "reliability": "low"
+      }
+    },
+    "p002301": {
+      "Sepsis": {
+        "xgb_risk": 0.2529,
+        "surrogate_risk": 0.1854,
+        "absolute_error": 0.0676,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.2158,
+        "surrogate_risk": 0.2639,
+        "absolute_error": 0.0481,
+        "reliability": "high"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.2541,
+        "surrogate_risk": 0.2163,
+        "absolute_error": 0.0378,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.0907,
+        "surrogate_risk": 0.2183,
+        "absolute_error": 0.1277,
+        "reliability": "low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0054,
+        "surrogate_risk": 0.0007,
+        "absolute_error": 0.0047,
+        "reliability": "high"
+      }
+    },
+    "p002114": {
+      "Sepsis": {
+        "xgb_risk": 0.3096,
+        "surrogate_risk": 0.257,
+        "absolute_error": 0.0526,
+        "reliability": "medium"
+      },
+      "ARF": {
+        "xgb_risk": 0.4702,
+        "surrogate_risk": 0.3771,
+        "absolute_error": 0.0931,
+        "reliability": "medium"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.9137,
+        "surrogate_risk": 0.9128,
+        "absolute_error": 0.0009,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.5837,
+        "surrogate_risk": 0.2227,
+        "absolute_error": 0.361,
+        "reliability": "very_low"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0126,
+        "surrogate_risk": 0.0028,
+        "absolute_error": 0.0098,
+        "reliability": "medium"
+      }
+    },
+    "p003942": {
+      "Sepsis": {
+        "xgb_risk": 0.3112,
+        "surrogate_risk": 0.214,
+        "absolute_error": 0.0971,
+        "reliability": "low"
+      },
+      "ARF": {
+        "xgb_risk": 0.1157,
+        "surrogate_risk": 0.2229,
+        "absolute_error": 0.1072,
+        "reliability": "medium"
+      },
+      "Cardiac": {
+        "xgb_risk": 0.1767,
+        "surrogate_risk": 0.1679,
+        "absolute_error": 0.0089,
+        "reliability": "high"
+      },
+      "AKI": {
+        "xgb_risk": 0.1827,
+        "surrogate_risk": 0.1149,
+        "absolute_error": 0.0678,
+        "reliability": "medium"
+      },
+      "Coagulopathy": {
+        "xgb_risk": 0.0099,
+        "surrogate_risk": 0.0033,
+        "absolute_error": 0.0066,
+        "reliability": "high"
+      }
+    }
+  }
+}

@@ -1,0 +1,1479 @@
+{
+  "modifiable_features": [
+    "HR",
+    "O2Sat",
+    "Temp",
+    "SBP",
+    "MAP",
+    "DBP",
+    "Resp",
+    "FiO2",
+    "BaseExcess",
+    "HCO3",
+    "pH",
+    "PaCO2",
+    "SaO2",
+    "Calcium",
+    "Chloride",
+    "Glucose",
+    "Lactate",
+    "Magnesium",
+    "Phosphate",
+    "Potassium"
+  ],
+  "feature_ranges": {
+    "HR": {
+      "p5": 60.0,
+      "p25": 73.5,
+      "p50": 84.0,
+      "p75": 96.0,
+      "p95": 114.0
+    },
+    "O2Sat": {
+      "p5": 93.0,
+      "p25": 96.0,
+      "p50": 98.0,
+      "p75": 99.5,
+      "p95": 100.0
+    },
+    "Temp": {
+      "p5": 35.83,
+      "p25": 36.56,
+      "p50": 37.0,
+      "p75": 37.4,
+      "p95": 38.11
+    },
+    "SBP": {
+      "p5": 91.0,
+      "p25": 105.0,
+      "p50": 118.0,
+      "p75": 133.0,
+      "p95": 158.0
+    },
+    "MAP": {
+      "p5": 58.0,
+      "p25": 68.0,
+      "p50": 76.5,
+      "p75": 87.0,
+      "p95": 104.0
+    },
+    "DBP": {
+      "p5": 44.0,
+      "p25": 55.0,
+      "p50": 58.5,
+      "p75": 62.0,
+      "p95": 79.0
+    },
+    "Resp": {
+      "p5": 11.0,
+      "p25": 15.0,
+      "p50": 18.0,
+      "p75": 22.0,
+      "p95": 28.0
+    },
+    "FiO2": {
+      "p5": 0.4,
+      "p25": 0.4,
+      "p50": 0.5,
+      "p75": 0.5,
+      "p95": 0.75
+    },
+    "BaseExcess": {
+      "p5": -5.0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p95": 5.0
+    },
+    "HCO3": {
+      "p5": 18.0,
+      "p25": 23.0,
+      "p50": 24.0,
+      "p75": 26.0,
+      "p95": 31.0
+    },
+    "pH": {
+      "p5": 7.31,
+      "p25": 7.38,
+      "p50": 7.39,
+      "p75": 7.41,
+      "p95": 7.47
+    },
+    "PaCO2": {
+      "p5": 32.0,
+      "p25": 38.5,
+      "p50": 40.0,
+      "p75": 42.0,
+      "p95": 52.0
+    },
+    "SaO2": {
+      "p5": 76.0,
+      "p25": 97.0,
+      "p50": 97.0,
+      "p75": 97.0,
+      "p95": 98.0
+    },
+    "Calcium": {
+      "p5": 7.4,
+      "p25": 8.1,
+      "p50": 8.3,
+      "p75": 8.4,
+      "p95": 9.2
+    },
+    "Chloride": {
+      "p5": 97.0,
+      "p25": 103.0,
+      "p50": 106.0,
+      "p75": 109.0,
+      "p95": 114.0
+    },
+    "Glucose": {
+      "p5": 82.0,
+      "p25": 108.0,
+      "p50": 123.0,
+      "p75": 143.0,
+      "p95": 207.0
+    },
+    "Lactate": {
+      "p5": 0.9,
+      "p25": 1.5,
+      "p50": 1.5,
+      "p75": 1.5,
+      "p95": 2.8
+    },
+    "Magnesium": {
+      "p5": 1.6,
+      "p25": 1.9,
+      "p50": 2.0,
+      "p75": 2.1,
+      "p95": 2.6
+    },
+    "Phosphate": {
+      "p5": 2.1,
+      "p25": 3.1,
+      "p50": 3.4,
+      "p75": 3.6,
+      "p95": 5.2
+    },
+    "Potassium": {
+      "p5": 3.4,
+      "p25": 3.8,
+      "p50": 4.1,
+      "p75": 4.4,
+      "p95": 5.0
+    }
+  },
+  "patient_counterfactuals": {
+    "p002648": {
+      "Sepsis": {
+        "original_risk": 0.4628,
+        "counterfactual_risk": 0.4532,
+        "risk_reduction": 0.0096,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Magnesium",
+            "current_value": 2.1,
+            "suggested_value": 2.55,
+            "change": 0.45,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "ARF": {
+        "original_risk": 0.6977,
+        "counterfactual_risk": 0.6767,
+        "risk_reduction": 0.021,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "Temp",
+            "current_value": 37.61,
+            "suggested_value": 35.83,
+            "change": -1.78,
+            "direction_hint": "normalize"
+          },
+          {
+            "feature": "Lactate",
+            "current_value": 6.1,
+            "suggested_value": 0.9,
+            "change": -5.2,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.9429,
+        "counterfactual_risk": 0.7481,
+        "risk_reduction": 0.1948,
+        "target_achieved": false,
+        "n_features_changed": 4,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 117.0,
+            "suggested_value": 74.21,
+            "change": -42.79,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 63.0,
+            "suggested_value": 87.05,
+            "change": 24.05,
+            "direction_hint": "higher_is_better"
+          },
+          {
+            "feature": "Lactate",
+            "current_value": 6.1,
+            "suggested_value": 0.9,
+            "change": -5.2,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.1,
+            "suggested_value": 2.44,
+            "change": 0.34,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.7304,
+        "counterfactual_risk": 0.6768,
+        "risk_reduction": 0.0536,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 6.1,
+            "suggested_value": 1.3,
+            "change": -4.8,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "Coagulopathy": {
+        "original_risk": 0.2186,
+        "counterfactual_risk": 0.1877,
+        "risk_reduction": 0.0309,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 6.1,
+            "suggested_value": 0.9,
+            "change": -5.2,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p002046": {
+      "Cardiac": {
+        "original_risk": 0.9454,
+        "counterfactual_risk": 0.8357,
+        "risk_reduction": 0.1097,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 98.0,
+            "suggested_value": 60.0,
+            "change": -38.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 1.6,
+            "suggested_value": 1.76,
+            "change": 0.16,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    },
+    "p002114": {
+      "ARF": {
+        "original_risk": 0.4702,
+        "counterfactual_risk": 0.4516,
+        "risk_reduction": 0.0186,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 110.0,
+            "suggested_value": 60.0,
+            "change": -50.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.2,
+            "suggested_value": 1.6,
+            "change": -0.6,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.9137,
+        "counterfactual_risk": 0.6374,
+        "risk_reduction": 0.2764,
+        "target_achieved": false,
+        "n_features_changed": 3,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 110.0,
+            "suggested_value": 68.53,
+            "change": -41.47,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Temp",
+            "current_value": 38.33,
+            "suggested_value": 36.79,
+            "change": -1.54,
+            "direction_hint": "normalize"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 69.0,
+            "suggested_value": 87.05,
+            "change": 18.05,
+            "direction_hint": "higher_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.5837,
+        "counterfactual_risk": 0.5223,
+        "risk_reduction": 0.0614,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 2.2,
+            "suggested_value": 0.9,
+            "change": -1.3,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Phosphate",
+            "current_value": 5.4,
+            "suggested_value": 2.1,
+            "change": -3.3,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    },
+    "p001626": {
+      "Sepsis": {
+        "original_risk": 0.3062,
+        "counterfactual_risk": 0.2686,
+        "risk_reduction": 0.0377,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Temp",
+            "current_value": 37.8,
+            "suggested_value": 35.83,
+            "change": -1.97,
+            "direction_hint": "normalize"
+          }
+        ]
+      },
+      "ARF": {
+        "original_risk": 0.8207,
+        "counterfactual_risk": 0.7365,
+        "risk_reduction": 0.0842,
+        "target_achieved": false,
+        "n_features_changed": 3,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 98.0,
+            "suggested_value": 60.0,
+            "change": -38.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "O2Sat",
+            "current_value": 91.0,
+            "suggested_value": 94.11,
+            "change": 3.11,
+            "direction_hint": "higher_is_better"
+          },
+          {
+            "feature": "Temp",
+            "current_value": 37.8,
+            "suggested_value": 36.79,
+            "change": -1.01,
+            "direction_hint": "normalize"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.8932,
+        "counterfactual_risk": 0.5646,
+        "risk_reduction": 0.3285,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 98.0,
+            "suggested_value": 60.0,
+            "change": -38.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 68.0,
+            "suggested_value": 87.05,
+            "change": 19.05,
+            "direction_hint": "higher_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.6085,
+        "counterfactual_risk": 0.5608,
+        "risk_reduction": 0.0477,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 2.0,
+            "suggested_value": 0.9,
+            "change": -1.1,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.3,
+            "suggested_value": 1.6,
+            "change": -0.7,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    },
+    "p000450": {
+      "ARF": {
+        "original_risk": 0.2544,
+        "counterfactual_risk": 0.2504,
+        "risk_reduction": 0.004,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 132.5,
+            "suggested_value": 60.0,
+            "change": -72.5,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.9,
+        "counterfactual_risk": 0.7063,
+        "risk_reduction": 0.1937,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 132.5,
+            "suggested_value": 60.0,
+            "change": -72.5,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Lactate",
+            "current_value": 1.5,
+            "suggested_value": 1.8,
+            "change": 0.3,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.3624,
+        "counterfactual_risk": 0.3503,
+        "risk_reduction": 0.0122,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "Glucose",
+            "current_value": 129.0,
+            "suggested_value": 82.0,
+            "change": -47.0,
+            "direction_hint": "normalize"
+          },
+          {
+            "feature": "Potassium",
+            "current_value": 4.6,
+            "suggested_value": 3.4,
+            "change": -1.2,
+            "direction_hint": "normalize"
+          }
+        ]
+      }
+    },
+    "p001441": {
+      "Sepsis": {
+        "original_risk": 0.545,
+        "counterfactual_risk": 0.5281,
+        "risk_reduction": 0.0169,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 4.0,
+            "suggested_value": 1.2,
+            "change": -2.8,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "ARF": {
+        "original_risk": 0.8065,
+        "counterfactual_risk": 0.7994,
+        "risk_reduction": 0.0072,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 4.0,
+            "suggested_value": 0.9,
+            "change": -3.1,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.4473,
+        "counterfactual_risk": 0.3945,
+        "risk_reduction": 0.0528,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 81.0,
+            "suggested_value": 60.0,
+            "change": -21.0,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.7878,
+        "counterfactual_risk": 0.751,
+        "risk_reduction": 0.0368,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 4.0,
+            "suggested_value": 0.9,
+            "change": -3.1,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Phosphate",
+            "current_value": 5.1,
+            "suggested_value": 2.1,
+            "change": -3.0,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Coagulopathy": {
+        "original_risk": 0.4989,
+        "counterfactual_risk": 0.3883,
+        "risk_reduction": 0.1107,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 4.0,
+            "suggested_value": 0.9,
+            "change": -3.1,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p003941": {
+      "Cardiac": {
+        "original_risk": 0.7303,
+        "counterfactual_risk": 0.386,
+        "risk_reduction": 0.3444,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 93.0,
+            "suggested_value": 60.0,
+            "change": -33.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 65.0,
+            "suggested_value": 87.05,
+            "change": 22.05,
+            "direction_hint": "higher_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.2017,
+        "counterfactual_risk": 0.1874,
+        "risk_reduction": 0.0144,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "Calcium",
+            "current_value": 8.1,
+            "suggested_value": 7.4,
+            "change": -0.7,
+            "direction_hint": "unspecified"
+          },
+          {
+            "feature": "Potassium",
+            "current_value": 4.6,
+            "suggested_value": 3.4,
+            "change": -1.2,
+            "direction_hint": "normalize"
+          }
+        ]
+      }
+    },
+    "p000334": {
+      "Sepsis": {
+        "original_risk": 0.3592,
+        "counterfactual_risk": 0.3496,
+        "risk_reduction": 0.0096,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Chloride",
+            "current_value": 110.0,
+            "suggested_value": 97.0,
+            "change": -13.0,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "ARF": {
+        "original_risk": 0.2539,
+        "counterfactual_risk": 0.2481,
+        "risk_reduction": 0.0058,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Resp",
+            "current_value": 26.0,
+            "suggested_value": 11.0,
+            "change": -15.0,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.7658,
+        "counterfactual_risk": 0.3944,
+        "risk_reduction": 0.3714,
+        "target_achieved": false,
+        "n_features_changed": 3,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 97.0,
+            "suggested_value": 60.0,
+            "change": -37.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 67.33,
+            "suggested_value": 87.05,
+            "change": 19.72,
+            "direction_hint": "higher_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 1.7,
+            "suggested_value": 2.07,
+            "change": 0.37,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.5833,
+        "counterfactual_risk": 0.5416,
+        "risk_reduction": 0.0417,
+        "target_achieved": false,
+        "n_features_changed": 3,
+        "changes": [
+          {
+            "feature": "Calcium",
+            "current_value": 8.0,
+            "suggested_value": 7.4,
+            "change": -0.6,
+            "direction_hint": "unspecified"
+          },
+          {
+            "feature": "Lactate",
+            "current_value": 1.5,
+            "suggested_value": 1.6,
+            "change": 0.1,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 1.7,
+            "suggested_value": 1.6,
+            "change": -0.1,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    },
+    "p000135": {
+      "Sepsis": {
+        "original_risk": 0.3006,
+        "counterfactual_risk": 0.2859,
+        "risk_reduction": 0.0147,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 1.6,
+            "suggested_value": 0.9,
+            "change": -0.7,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Potassium",
+            "current_value": 3.9,
+            "suggested_value": 4.07,
+            "change": 0.17,
+            "direction_hint": "normalize"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.7008,
+        "counterfactual_risk": 0.2369,
+        "risk_reduction": 0.4639,
+        "target_achieved": true,
+        "n_features_changed": 4,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 117.0,
+            "suggested_value": 68.53,
+            "change": -48.47,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Temp",
+            "current_value": 38.2,
+            "suggested_value": 35.83,
+            "change": -2.37,
+            "direction_hint": "normalize"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 73.0,
+            "suggested_value": 87.05,
+            "change": 14.05,
+            "direction_hint": "higher_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 1.9,
+            "suggested_value": 2.07,
+            "change": 0.17,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    },
+    "p002785": {
+      "Sepsis": {
+        "original_risk": 0.2223,
+        "counterfactual_risk": 0.216,
+        "risk_reduction": 0.0063,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 1.5,
+            "suggested_value": 1.2,
+            "change": -0.3,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "ARF": {
+        "original_risk": 0.3106,
+        "counterfactual_risk": 0.2911,
+        "risk_reduction": 0.0196,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Magnesium",
+            "current_value": 3.5,
+            "suggested_value": 1.6,
+            "change": -1.9,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.7041,
+        "counterfactual_risk": 0.5412,
+        "risk_reduction": 0.1628,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 92.0,
+            "suggested_value": 60.0,
+            "change": -32.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 78.0,
+            "suggested_value": 65.26,
+            "change": -12.74,
+            "direction_hint": "higher_is_better"
+          }
+        ]
+      }
+    },
+    "p000155": {
+      "Sepsis": {
+        "original_risk": 0.4699,
+        "counterfactual_risk": 0.436,
+        "risk_reduction": 0.0338,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Temp",
+            "current_value": 37.67,
+            "suggested_value": 37.75,
+            "change": 0.08,
+            "direction_hint": "normalize"
+          }
+        ]
+      },
+      "ARF": {
+        "original_risk": 0.151,
+        "counterfactual_risk": 0.1321,
+        "risk_reduction": 0.0189,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "pH",
+            "current_value": 7.33,
+            "suggested_value": 7.31,
+            "change": -0.02,
+            "direction_hint": "normalize"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.0,
+            "suggested_value": 2.55,
+            "change": 0.55,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.6179,
+        "counterfactual_risk": 0.3855,
+        "risk_reduction": 0.2323,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 94.0,
+            "suggested_value": 60.0,
+            "change": -34.0,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.4176,
+        "counterfactual_risk": 0.4007,
+        "risk_reduction": 0.0169,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Temp",
+            "current_value": 37.67,
+            "suggested_value": 37.75,
+            "change": 0.08,
+            "direction_hint": "normalize"
+          }
+        ]
+      }
+    },
+    "p000729": {
+      "ARF": {
+        "original_risk": 0.5649,
+        "counterfactual_risk": 0.5538,
+        "risk_reduction": 0.0112,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 1.5,
+            "suggested_value": 0.9,
+            "change": -0.6,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.4793,
+        "counterfactual_risk": 0.4333,
+        "risk_reduction": 0.046,
+        "target_achieved": false,
+        "n_features_changed": 4,
+        "changes": [
+          {
+            "feature": "BaseExcess",
+            "current_value": 0.0,
+            "suggested_value": -0.26,
+            "change": -0.26,
+            "direction_hint": "unspecified"
+          },
+          {
+            "feature": "Glucose",
+            "current_value": 132.0,
+            "suggested_value": 82.0,
+            "change": -50.0,
+            "direction_hint": "normalize"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 1.7,
+            "suggested_value": 1.6,
+            "change": -0.1,
+            "direction_hint": "unspecified"
+          },
+          {
+            "feature": "Phosphate",
+            "current_value": 3.4,
+            "suggested_value": 2.1,
+            "change": -1.3,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    },
+    "p002406": {
+      "ARF": {
+        "original_risk": 0.1678,
+        "counterfactual_risk": 0.1635,
+        "risk_reduction": 0.0042,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Resp",
+            "current_value": 26.0,
+            "suggested_value": 11.0,
+            "change": -15.0,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.6418,
+        "counterfactual_risk": 0.3567,
+        "risk_reduction": 0.2851,
+        "target_achieved": false,
+        "n_features_changed": 3,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 102.0,
+            "suggested_value": 60.0,
+            "change": -42.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 77.0,
+            "suggested_value": 87.05,
+            "change": 10.05,
+            "direction_hint": "higher_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.0,
+            "suggested_value": 2.44,
+            "change": 0.44,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.2185,
+        "counterfactual_risk": 0.2068,
+        "risk_reduction": 0.0116,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "BaseExcess",
+            "current_value": 0.0,
+            "suggested_value": -0.26,
+            "change": -0.26,
+            "direction_hint": "unspecified"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.0,
+            "suggested_value": 1.6,
+            "change": -0.4,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Coagulopathy": {
+        "original_risk": 0.2413,
+        "counterfactual_risk": 0.2353,
+        "risk_reduction": 0.006,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "FiO2",
+            "current_value": 0.5,
+            "suggested_value": 0.4,
+            "change": -0.1,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p003778": {
+      "ARF": {
+        "original_risk": 0.1673,
+        "counterfactual_risk": 0.1665,
+        "risk_reduction": 0.0008,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Magnesium",
+            "current_value": 2.1,
+            "suggested_value": 2.55,
+            "change": 0.45,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.5489,
+        "counterfactual_risk": 0.3242,
+        "risk_reduction": 0.2247,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 119.0,
+            "suggested_value": 60.0,
+            "change": -59.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Lactate",
+            "current_value": 1.5,
+            "suggested_value": 2.8,
+            "change": 1.3,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p001605": {
+      "Cardiac": {
+        "original_risk": 0.4968,
+        "counterfactual_risk": 0.4105,
+        "risk_reduction": 0.0864,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 89.0,
+            "suggested_value": 60.0,
+            "change": -29.0,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p001310": {
+      "AKI": {
+        "original_risk": 0.2441,
+        "counterfactual_risk": 0.2417,
+        "risk_reduction": 0.0024,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Phosphate",
+            "current_value": 3.4,
+            "suggested_value": 2.1,
+            "change": -1.3,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    },
+    "p000173": {
+      "AKI": {
+        "original_risk": 0.4446,
+        "counterfactual_risk": 0.4141,
+        "risk_reduction": 0.0305,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Phosphate",
+            "current_value": 3.4,
+            "suggested_value": 2.1,
+            "change": -1.3,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Coagulopathy": {
+        "original_risk": 0.2089,
+        "counterfactual_risk": 0.1966,
+        "risk_reduction": 0.0123,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "FiO2",
+            "current_value": 0.5,
+            "suggested_value": 0.4,
+            "change": -0.1,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p003774": {
+      "Sepsis": {
+        "original_risk": 0.2138,
+        "counterfactual_risk": 0.1952,
+        "risk_reduction": 0.0185,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Temp",
+            "current_value": 37.67,
+            "suggested_value": 35.83,
+            "change": -1.84,
+            "direction_hint": "normalize"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.3813,
+        "counterfactual_risk": 0.2376,
+        "risk_reduction": 0.1438,
+        "target_achieved": false,
+        "n_features_changed": 3,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 125.0,
+            "suggested_value": 68.53,
+            "change": -56.47,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 76.0,
+            "suggested_value": 87.05,
+            "change": 11.05,
+            "direction_hint": "higher_is_better"
+          },
+          {
+            "feature": "DBP",
+            "current_value": 66.0,
+            "suggested_value": 71.63,
+            "change": 5.63,
+            "direction_hint": "higher_is_better"
+          }
+        ]
+      }
+    },
+    "p002301": {
+      "Cardiac": {
+        "original_risk": 0.2541,
+        "counterfactual_risk": 0.1971,
+        "risk_reduction": 0.057,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 76.0,
+            "suggested_value": 60.0,
+            "change": -16.0,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p003942": {
+      "Sepsis": {
+        "original_risk": 0.3112,
+        "counterfactual_risk": 0.2852,
+        "risk_reduction": 0.026,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 1.5,
+            "suggested_value": 2.8,
+            "change": 1.3,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "Cardiac": {
+        "original_risk": 0.1767,
+        "counterfactual_risk": 0.1455,
+        "risk_reduction": 0.0312,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 84.0,
+            "suggested_value": 60.0,
+            "change": -24.0,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "AKI": {
+        "original_risk": 0.1827,
+        "counterfactual_risk": 0.1707,
+        "risk_reduction": 0.012,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "BaseExcess",
+            "current_value": 0.0,
+            "suggested_value": -5.0,
+            "change": -5.0,
+            "direction_hint": "unspecified"
+          },
+          {
+            "feature": "Glucose",
+            "current_value": 138.0,
+            "suggested_value": 82.0,
+            "change": -56.0,
+            "direction_hint": "normalize"
+          }
+        ]
+      }
+    },
+    "p003304": {
+      "Sepsis": {
+        "original_risk": 0.1868,
+        "counterfactual_risk": 0.158,
+        "risk_reduction": 0.0288,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 1.4,
+            "suggested_value": 1.9,
+            "change": 0.5,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      },
+      "ARF": {
+        "original_risk": 0.2648,
+        "counterfactual_risk": 0.245,
+        "risk_reduction": 0.0198,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Lactate",
+            "current_value": 1.4,
+            "suggested_value": 0.9,
+            "change": -0.5,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p002568": {
+      "Cardiac": {
+        "original_risk": 0.1664,
+        "counterfactual_risk": 0.1043,
+        "risk_reduction": 0.0621,
+        "target_achieved": false,
+        "n_features_changed": 2,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 103.0,
+            "suggested_value": 60.0,
+            "change": -43.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.0,
+            "suggested_value": 2.44,
+            "change": 0.44,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Coagulopathy": {
+        "original_risk": 0.2448,
+        "counterfactual_risk": 0.2118,
+        "risk_reduction": 0.033,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "Glucose",
+            "current_value": 130.0,
+            "suggested_value": 180.68,
+            "change": 50.68,
+            "direction_hint": "normalize"
+          }
+        ]
+      }
+    },
+    "p002601": {
+      "Cardiac": {
+        "original_risk": 0.2567,
+        "counterfactual_risk": 0.2085,
+        "risk_reduction": 0.0482,
+        "target_achieved": false,
+        "n_features_changed": 3,
+        "changes": [
+          {
+            "feature": "HR",
+            "current_value": 83.0,
+            "suggested_value": 60.0,
+            "change": -23.0,
+            "direction_hint": "lower_is_better"
+          },
+          {
+            "feature": "MAP",
+            "current_value": 69.67,
+            "suggested_value": 87.05,
+            "change": 17.38,
+            "direction_hint": "higher_is_better"
+          },
+          {
+            "feature": "Magnesium",
+            "current_value": 2.1,
+            "suggested_value": 2.44,
+            "change": 0.34,
+            "direction_hint": "unspecified"
+          }
+        ]
+      },
+      "Coagulopathy": {
+        "original_risk": 0.2194,
+        "counterfactual_risk": 0.2066,
+        "risk_reduction": 0.0128,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "FiO2",
+            "current_value": 0.5,
+            "suggested_value": 0.4,
+            "change": -0.1,
+            "direction_hint": "lower_is_better"
+          }
+        ]
+      }
+    },
+    "p000693": {
+      "AKI": {
+        "original_risk": 0.171,
+        "counterfactual_risk": 0.166,
+        "risk_reduction": 0.005,
+        "target_achieved": false,
+        "n_features_changed": 1,
+        "changes": [
+          {
+            "feature": "HCO3",
+            "current_value": 22.0,
+            "suggested_value": 26.21,
+            "change": 4.21,
+            "direction_hint": "unspecified"
+          }
+        ]
+      }
+    }
+  }
+}

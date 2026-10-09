@@ -1,0 +1,207 @@
+{
+  "Sepsis": {
+    "spearman_rank_correlation": 0.8111,
+    "spearman_p_value": 0.0,
+    "agreement": "strong",
+    "top_10_xgb": [
+      "W_mean_Resp",
+      "W_min_Lactate",
+      "W_min_Resp",
+      "Unit1",
+      "Temp",
+      "W_mean_Lactate",
+      "HospAdmTime",
+      "W_min_WBC",
+      "W_max_Resp",
+      "W_max_FiO2"
+    ],
+    "top_10_rf": [
+      "W_mean_Resp",
+      "W_min_Lactate",
+      "W_min_Resp",
+      "Lactate",
+      "W_mean_Lactate",
+      "W_max_Resp",
+      "miss_Lactate",
+      "W_max_FiO2",
+      "W_mean_BaseExcess",
+      "W_mean_pH"
+    ],
+    "top_10_ensemble": [
+      "W_mean_Resp",
+      "W_min_Lactate",
+      "W_min_Resp",
+      "Unit1",
+      "Temp",
+      "W_mean_Lactate",
+      "HospAdmTime",
+      "W_min_WBC",
+      "W_max_Resp",
+      "W_max_FiO2"
+    ]
+  },
+  "ARF": {
+    "spearman_rank_correlation": 0.8395,
+    "spearman_p_value": 0.0,
+    "agreement": "strong",
+    "top_10_xgb": [
+      "W_max_FiO2",
+      "W_std_SaO2",
+      "Unit1",
+      "W_max_Resp",
+      "W_mean_FiO2",
+      "W_min_O2Sat",
+      "Unit2",
+      "W_std_Resp",
+      "W_mean_Resp",
+      "W_std_PaCO2"
+    ],
+    "top_10_rf": [
+      "W_max_FiO2",
+      "Unit1",
+      "W_std_SaO2",
+      "W_mean_FiO2",
+      "Unit2",
+      "W_mean_SaO2",
+      "W_std_FiO2",
+      "W_min_SaO2",
+      "PF_ratio",
+      "FiO2"
+    ],
+    "top_10_ensemble": [
+      "W_max_FiO2",
+      "W_std_SaO2",
+      "Unit1",
+      "W_mean_FiO2",
+      "W_max_Resp",
+      "W_min_O2Sat",
+      "Unit2",
+      "W_std_Resp",
+      "PF_ratio",
+      "W_std_PaCO2"
+    ]
+  },
+  "Cardiac": {
+    "spearman_rank_correlation": 0.812,
+    "spearman_p_value": 0.0,
+    "agreement": "strong",
+    "top_10_xgb": [
+      "ShockIndex",
+      "HR",
+      "W_mean_SBP",
+      "W_mean_MAP",
+      "W_mean_HR",
+      "MAP",
+      "W_min_MAP",
+      "W_min_SBP",
+      "Age",
+      "HospAdmTime"
+    ],
+    "top_10_rf": [
+      "ShockIndex",
+      "W_mean_SBP",
+      "HR",
+      "W_mean_HR",
+      "W_mean_MAP",
+      "W_min_HR",
+      "W_min_SBP",
+      "SBP",
+      "MAP",
+      "W_max_HR"
+    ],
+    "top_10_ensemble": [
+      "ShockIndex",
+      "HR",
+      "W_mean_SBP",
+      "W_mean_MAP",
+      "W_mean_HR",
+      "MAP",
+      "W_min_SBP",
+      "W_min_MAP",
+      "Age",
+      "HospAdmTime"
+    ]
+  },
+  "AKI": {
+    "spearman_rank_correlation": 0.8078,
+    "spearman_p_value": 0.0,
+    "agreement": "strong",
+    "top_10_xgb": [
+      "Creatinine",
+      "W_max_Potassium",
+      "W_diff24h_Creatinine",
+      "W_mean_Creatinine",
+      "W_diff6h_WBC",
+      "W_max_Glucose",
+      "PTT",
+      "miss_Creatinine",
+      "W_min_BaseExcess",
+      "W_max_Resp"
+    ],
+    "top_10_rf": [
+      "W_max_Creatinine",
+      "Creatinine",
+      "W_diff24h_Creatinine",
+      "W_mean_Creatinine",
+      "W_min_Creatinine",
+      "W_max_Potassium",
+      "W_std_Creatinine",
+      "W_min_BaseExcess",
+      "W_mean_Platelets",
+      "BUN"
+    ],
+    "top_10_ensemble": [
+      "Creatinine",
+      "W_max_Potassium",
+      "W_diff24h_Creatinine",
+      "W_mean_Creatinine",
+      "W_diff6h_WBC",
+      "W_max_Glucose",
+      "PTT",
+      "miss_Creatinine",
+      "W_min_BaseExcess",
+      "W_max_Resp"
+    ]
+  },
+  "Coagulopathy": {
+    "spearman_rank_correlation": 0.5858,
+    "spearman_p_value": 0.0,
+    "agreement": "weak",
+    "top_10_xgb": [
+      "Platelets",
+      "PTT",
+      "W_max_Platelets",
+      "W_mean_Platelets",
+      "Age",
+      "W_max_Temp",
+      "W_diff24h_Platelets",
+      "miss_Platelets",
+      "W_mean_FiO2",
+      "W_min_HR"
+    ],
+    "top_10_rf": [
+      "PTT",
+      "Platelets",
+      "W_mean_Platelets",
+      "W_min_Platelets",
+      "W_diff24h_Platelets",
+      "W_mean_HCO3",
+      "Bilirubin_total",
+      "W_mean_Lactate",
+      "W_max_Bilirubin_total",
+      "W_min_HCO3"
+    ],
+    "top_10_ensemble": [
+      "Platelets",
+      "PTT",
+      "W_max_Platelets",
+      "W_mean_Platelets",
+      "Age",
+      "W_max_Temp",
+      "W_diff24h_Platelets",
+      "miss_Platelets",
+      "W_mean_FiO2",
+      "W_min_HR"
+    ]
+  }
+}

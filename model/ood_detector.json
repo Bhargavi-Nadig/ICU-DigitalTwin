@@ -1,0 +1,4016 @@
+{
+  "training_stats": {
+    "n_train_samples": 89549,
+    "n_features": 215,
+    "percentiles": {
+      "p50": 12.193689852982693,
+      "p90": 19.476369637789606,
+      "p95": 23.40204510754529,
+      "p99": 38.81466801642759
+    }
+  },
+  "test_distribution": {
+    "n_patients": 594,
+    "mean_distance": 14.09,
+    "std_distance": 6.48,
+    "pct_borderline": 11.1,
+    "pct_ood": 5.9
+  },
+  "patient_ood": {
+    "p002648": {
+      "mahalanobis_distance": 22.58,
+      "status": "borderline",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_201",
+          "z_score": 6.79,
+          "value": 6.79,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_56",
+          "z_score": 6.29,
+          "value": 6.29,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_114",
+          "z_score": 5.48,
+          "value": 5.48,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_90",
+          "z_score": 5.36,
+          "value": 5.36,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "Lactate",
+          "z_score": 5.07,
+          "value": 5.07,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 5.4,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 7.27,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 13.16,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 9.67,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 7.63,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 7.38,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 7.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 18.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 18.35,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 17.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 17.99,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 26.96,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 26.91,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 25.21,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 22.6,
+          "status": "borderline"
+        },
+        {
+          "hour": 20,
+          "distance": 22.58,
+          "status": "borderline"
+        }
+      ]
+    },
+    "p002046": {
+      "mahalanobis_distance": 10.32,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "qSOFA_proxy",
+          "z_score": 3.18,
+          "value": 3.18,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "MAP",
+          "z_score": 2.56,
+          "value": -2.55,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "ShockIndex",
+          "z_score": 2.43,
+          "value": 2.43,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_173",
+          "z_score": 2.17,
+          "value": -2.17,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_167",
+          "z_score": 2.09,
+          "value": 2.09,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 9.02,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 9.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 9.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 9.65,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 10.3,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 11.69,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 10.84,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 10.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 10.94,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 10.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 10.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 11.84,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 10.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 11.42,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 9.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 11.3,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 10.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 10.27,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 9.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 9.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 9.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 10.06,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 10.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 10.55,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 10.32,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p002114": {
+      "mahalanobis_distance": 18.03,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_213",
+          "z_score": 7.97,
+          "value": 7.97,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_68",
+          "z_score": 6.86,
+          "value": 6.86,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "WBC",
+          "z_score": 5.49,
+          "value": 5.49,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_126",
+          "z_score": 4.98,
+          "value": 4.98,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_155",
+          "z_score": 4.18,
+          "value": 4.18,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 4.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 4.97,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 5.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 5.36,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 17.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 16.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 17.12,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 18.29,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 18.81,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 19.52,
+          "status": "borderline"
+        },
+        {
+          "hour": 13,
+          "distance": 17.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 17.26,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 18.62,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 18.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 18.03,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p001626": {
+      "mahalanobis_distance": 16.73,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_95",
+          "z_score": 8.35,
+          "value": -8.35,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "SaO2",
+          "z_score": 6.85,
+          "value": -6.85,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_182",
+          "z_score": 4.65,
+          "value": -4.65,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "Delta_Resp",
+          "z_score": 3.51,
+          "value": -3.51,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_211",
+          "z_score": 3.39,
+          "value": 3.39,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 6,
+          "distance": 4.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 7.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 10.95,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 10.67,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 11.1,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 11.25,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 11.43,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 11.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 9.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 9.67,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 10.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 10.57,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 11.12,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 10.54,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 10.57,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 9.99,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 10.67,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 10.55,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 10.41,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 10.86,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 10.72,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 29,
+          "distance": 12.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 10.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 10.93,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 11.29,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 12.38,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 11.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 18.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 16.73,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p000450": {
+      "mahalanobis_distance": 9.97,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "ShockIndex",
+          "z_score": 3.94,
+          "value": 3.94,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "Delta_HR",
+          "z_score": 3.24,
+          "value": 3.24,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "HR",
+          "z_score": 2.82,
+          "value": 2.82,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_82",
+          "z_score": 2.55,
+          "value": 2.55,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_53",
+          "z_score": 2.22,
+          "value": 2.22,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 3,
+          "distance": 6.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 9.26,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 7.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 7.33,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 8.28,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 8.72,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 9.01,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 7.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 8.09,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 7.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 7.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 7.63,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 7.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 9.26,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 8.34,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 8.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 8.52,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 8.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 8.81,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 9.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 9.39,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 9.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 9.12,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 9.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 9.49,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 29,
+          "distance": 9.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 9.39,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 8.76,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 47,
+          "distance": 9.97,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p001441": {
+      "mahalanobis_distance": 20.78,
+      "status": "borderline",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_88",
+          "z_score": 6.81,
+          "value": -6.81,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "O2Sat",
+          "z_score": 6.05,
+          "value": -6.05,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_59",
+          "z_score": 5.13,
+          "value": -5.13,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_58",
+          "z_score": 3.6,
+          "value": 3.6,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_81",
+          "z_score": 3.17,
+          "value": -3.17,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 7.51,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 17.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 14.95,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 14.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 15.55,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 16.08,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 16.49,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 12.31,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 12.73,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 13.07,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 13.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 15.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 15.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 14.74,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 14.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 14.93,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 15.11,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 17.57,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 16.94,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 16.7,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 16.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 15.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 15.9,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 17.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 15.74,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 15.99,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 14.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 14.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 15.82,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 23.14,
+          "status": "borderline"
+        },
+        {
+          "hour": 36,
+          "distance": 20.45,
+          "status": "borderline"
+        },
+        {
+          "hour": 38,
+          "distance": 20.78,
+          "status": "borderline"
+        }
+      ]
+    },
+    "p003941": {
+      "mahalanobis_distance": 15.83,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_80",
+          "z_score": 2.89,
+          "value": 2.89,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 5.33,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 7.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 8.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 8.28,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 9.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 9.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 9.48,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 10.06,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 9.84,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 9.85,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 8.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 8.5,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 8.22,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 8.11,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 7.9,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 14.84,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 14.66,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 14.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 14.5,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 14.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 14.3,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 15.02,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 15.99,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 16.42,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 15.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 15.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 15.83,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p000334": {
+      "mahalanobis_distance": 27.48,
+      "status": "out_of_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_190",
+          "z_score": 10.19,
+          "value": 10.19,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_45",
+          "z_score": 9.1,
+          "value": 9.1,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "Bilirubin_total",
+          "z_score": 7.55,
+          "value": 7.55,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_103",
+          "z_score": 6.99,
+          "value": 6.99,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_188",
+          "z_score": 4.55,
+          "value": 4.55,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 3,
+          "distance": 7.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 9.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 8.66,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 8.42,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 8.25,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 8.22,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 8.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 8.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 7.59,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 8.05,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 7.7,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 7.42,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 39.33,
+          "status": "extreme_ood"
+        },
+        {
+          "hour": 17,
+          "distance": 30.21,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 25.63,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 23.08,
+          "status": "borderline"
+        },
+        {
+          "hour": 20,
+          "distance": 21.47,
+          "status": "borderline"
+        },
+        {
+          "hour": 21,
+          "distance": 20.85,
+          "status": "borderline"
+        },
+        {
+          "hour": 22,
+          "distance": 28.72,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 27.48,
+          "status": "out_of_distribution"
+        }
+      ]
+    },
+    "p000135": {
+      "mahalanobis_distance": 12.83,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_76",
+          "z_score": 3.0,
+          "value": -3.0,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_50",
+          "z_score": 2.83,
+          "value": -2.83,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_53",
+          "z_score": 2.65,
+          "value": 2.65,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_67",
+          "z_score": 2.61,
+          "value": 2.61,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "ShockIndex",
+          "z_score": 2.11,
+          "value": 2.11,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 5,
+          "distance": 7.36,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 10.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 12.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 11.6,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 12.33,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 11.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 11.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 10.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 10.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 11.24,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 11.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 12.92,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 12.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 12.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 12.12,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 12.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 12.83,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p002785": {
+      "mahalanobis_distance": 14.21,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_87",
+          "z_score": 6.41,
+          "value": 6.41,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "Magnesium",
+          "z_score": 4.54,
+          "value": 4.54,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_58",
+          "z_score": 4.53,
+          "value": 4.53,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_116",
+          "z_score": 4.25,
+          "value": 4.25,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_203",
+          "z_score": 4.24,
+          "value": 4.24,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 3,
+          "distance": 8.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 10.92,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 9.52,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 10.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 10.81,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 11.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 11.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 10.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 10.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 9.66,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 9.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 9.54,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 9.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 17.84,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 15.58,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 14.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 14.21,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p000155": {
+      "mahalanobis_distance": 13.81,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_162",
+          "z_score": 3.6,
+          "value": -3.6,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "Calcium",
+          "z_score": 3.48,
+          "value": -3.48,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_104",
+          "z_score": 3.21,
+          "value": -3.21,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_133",
+          "z_score": 3.2,
+          "value": -3.2,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_148",
+          "z_score": 3.15,
+          "value": 3.15,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 3,
+          "distance": 12.23,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 16.02,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 14.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 14.39,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 14.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 14.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 14.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 13.2,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 13.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 13.08,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 12.76,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 13.34,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 13.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 13.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 12.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 13.1,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 13.11,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 12.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 13.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 12.65,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 12.74,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 12.81,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 12.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 12.56,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 12.06,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 11.57,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 29,
+          "distance": 12.09,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 11.74,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 11.67,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 12.27,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 11.86,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 10.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 11.19,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 13.81,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p000729": {
+      "mahalanobis_distance": 16.5,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_66",
+          "z_score": 3.52,
+          "value": 3.52,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_200",
+          "z_score": 2.69,
+          "value": 2.69,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_55",
+          "z_score": 2.66,
+          "value": 2.66,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_182",
+          "z_score": 2.5,
+          "value": -2.5,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_150",
+          "z_score": 2.41,
+          "value": 2.41,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 7,
+          "distance": 10.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 15.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 13.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 14.08,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 15.69,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 16.17,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 16.65,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 14.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 15.39,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 15.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 19.69,
+          "status": "borderline"
+        },
+        {
+          "hour": 18,
+          "distance": 17.5,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 16.92,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 17.23,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 16.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 16.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 17.2,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 17.42,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 17.23,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 16.63,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 16.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 16.05,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 29,
+          "distance": 15.9,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 15.82,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 15.48,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 14.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 15.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 15.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 16.5,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p002406": {
+      "mahalanobis_distance": 10.4,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_207",
+          "z_score": 2.48,
+          "value": 2.48,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_62",
+          "z_score": 2.42,
+          "value": -2.42,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_178",
+          "z_score": 2.28,
+          "value": -2.28,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_64",
+          "z_score": 2.26,
+          "value": 2.26,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 5.18,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 7.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 6.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 6.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 6.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 6.31,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 5.85,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 5.65,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 5.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 10.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 9.62,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 9.72,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 9.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 9.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 10.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 10.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 10.4,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p003778": {
+      "mahalanobis_distance": 15.4,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_66",
+          "z_score": 4.15,
+          "value": -4.15,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "SaO2",
+          "z_score": 3.95,
+          "value": -3.95,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_211",
+          "z_score": 3.59,
+          "value": 3.59,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "Delta_HR",
+          "z_score": 3.24,
+          "value": 3.24,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_120",
+          "z_score": 3.2,
+          "value": 3.2,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 10.2,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 15.24,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 13.1,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 12.25,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 13.5,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 13.82,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 14.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 13.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 13.27,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 13.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 11.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 14.6,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 14.22,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 13.91,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 13.49,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 13.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 13.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 15.4,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p001605": {
+      "mahalanobis_distance": 12.7,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_167",
+          "z_score": 3.11,
+          "value": 3.11,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_115",
+          "z_score": 2.44,
+          "value": 2.44,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_138",
+          "z_score": 2.4,
+          "value": 2.4,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_58",
+          "z_score": 2.37,
+          "value": 2.37,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_44",
+          "z_score": 2.2,
+          "value": 2.2,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 6.25,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 17.18,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 17.47,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 18.02,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 18.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 19.48,
+          "status": "borderline"
+        },
+        {
+          "hour": 9,
+          "distance": 19.74,
+          "status": "borderline"
+        },
+        {
+          "hour": 10,
+          "distance": 15.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 14.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 15.18,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 15.42,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 17.65,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 17.41,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 17.49,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 19.92,
+          "status": "borderline"
+        },
+        {
+          "hour": 18,
+          "distance": 19.91,
+          "status": "borderline"
+        },
+        {
+          "hour": 19,
+          "distance": 18.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 19.59,
+          "status": "borderline"
+        },
+        {
+          "hour": 21,
+          "distance": 19.35,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 20.33,
+          "status": "borderline"
+        },
+        {
+          "hour": 23,
+          "distance": 22.09,
+          "status": "borderline"
+        },
+        {
+          "hour": 24,
+          "distance": 19.75,
+          "status": "borderline"
+        },
+        {
+          "hour": 25,
+          "distance": 20.25,
+          "status": "borderline"
+        },
+        {
+          "hour": 28,
+          "distance": 19.83,
+          "status": "borderline"
+        },
+        {
+          "hour": 29,
+          "distance": 15.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 14.97,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 15.07,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 14.91,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 14.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 14.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 12.7,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p002267": {
+      "mahalanobis_distance": 14.43,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_164",
+          "z_score": 3.85,
+          "value": 3.85,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "Creatinine",
+          "z_score": 3.34,
+          "value": 3.34,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_135",
+          "z_score": 3.24,
+          "value": 3.24,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_106",
+          "z_score": 3.07,
+          "value": 3.07,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_162",
+          "z_score": 2.61,
+          "value": -2.61,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.73,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 24.24,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 19.93,
+          "status": "borderline"
+        },
+        {
+          "hour": 5,
+          "distance": 18.93,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 19.41,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 20.12,
+          "status": "borderline"
+        },
+        {
+          "hour": 8,
+          "distance": 21.33,
+          "status": "borderline"
+        },
+        {
+          "hour": 9,
+          "distance": 15.76,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 15.17,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 17.07,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 16.73,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 17.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 17.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 17.6,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 18.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 18.38,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 18.35,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 19.27,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 18.76,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 18.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 19.55,
+          "status": "borderline"
+        },
+        {
+          "hour": 23,
+          "distance": 19.28,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 19.17,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 19.38,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 16.07,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 14.43,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p001310": {
+      "mahalanobis_distance": 10.82,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_174",
+          "z_score": 4.32,
+          "value": 4.32,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_145",
+          "z_score": 3.76,
+          "value": 3.76,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "Magnesium",
+          "z_score": 3.0,
+          "value": 3.0,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_116",
+          "z_score": 2.7,
+          "value": 2.7,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 3,
+          "distance": 8.92,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 11.61,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 9.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 9.36,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 10.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 9.81,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 10.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 9.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 9.36,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 9.33,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 8.85,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 9.19,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 10.73,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 10.57,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 10.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 11.09,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 10.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 10.86,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 11.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 10.82,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p000173": {
+      "mahalanobis_distance": 14.0,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_92",
+          "z_score": 3.26,
+          "value": 3.26,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_81",
+          "z_score": 2.66,
+          "value": -2.66,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_76",
+          "z_score": 2.61,
+          "value": -2.61,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_87",
+          "z_score": 2.54,
+          "value": 2.54,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_140",
+          "z_score": 2.46,
+          "value": -2.46,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 6.19,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 6.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 5.86,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 6.41,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 6.05,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 5.95,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 6.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 6.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 6.56,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 8.82,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 8.19,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 7.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 8.48,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 8.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 8.28,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 8.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 9.2,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 8.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 8.22,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 8.18,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 15.55,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 14.08,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 14.0,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p001524": {
+      "mahalanobis_distance": 10.34,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_52",
+          "z_score": 2.11,
+          "value": 2.11,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.49,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 6.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 7.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 7.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 10.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 10.61,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 11.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 11.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 12.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 12.57,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 9.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 9.7,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 10.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 9.81,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 9.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 10.25,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 10.31,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 10.16,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 10.61,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 10.23,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 10.1,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 10.34,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p003774": {
+      "mahalanobis_distance": 15.71,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "Delta_Creatinine",
+          "z_score": 4.65,
+          "value": -4.65,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_65",
+          "z_score": 3.85,
+          "value": -3.85,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_85",
+          "z_score": 3.52,
+          "value": -3.52,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_44",
+          "z_score": 3.34,
+          "value": 3.34,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_69",
+          "z_score": 3.1,
+          "value": 3.1,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 6,
+          "distance": 10.24,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 11.4,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 10.94,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 10.51,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 10.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 12.08,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 12.28,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 11.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 12.18,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 11.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 11.86,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 12.76,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 14.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 15.17,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 13.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 29,
+          "distance": 13.59,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 13.4,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 13.85,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 14.46,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 14.97,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 13.67,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 16.63,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 15.71,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p002301": {
+      "mahalanobis_distance": 12.2,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_76",
+          "z_score": 3.38,
+          "value": -3.38,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_84",
+          "z_score": 2.97,
+          "value": 2.97,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_83",
+          "z_score": 2.83,
+          "value": 2.83,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_150",
+          "z_score": 2.82,
+          "value": 2.82,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_178",
+          "z_score": 2.53,
+          "value": 2.53,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 5,
+          "distance": 7.14,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 8.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 7.69,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 7.9,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 7.91,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 7.76,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 9.61,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 9.52,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 9.34,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 9.86,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 25,
+          "distance": 9.98,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 9.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 9.54,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 9.5,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 29,
+          "distance": 9.05,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 10.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 10.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 9.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 9.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 9.53,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 9.26,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 9.8,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 37,
+          "distance": 14.26,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 38,
+          "distance": 12.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 39,
+          "distance": 12.2,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p003942": {
+      "mahalanobis_distance": 9.0,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_171",
+          "z_score": 3.56,
+          "value": 3.56,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_174",
+          "z_score": 3.54,
+          "value": 3.54,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_170",
+          "z_score": 3.37,
+          "value": 3.37,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_142",
+          "z_score": 3.14,
+          "value": 3.14,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_141",
+          "z_score": 3.02,
+          "value": 3.02,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 5.44,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 5.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 4.73,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 10.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 10.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 11.3,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 11.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 12.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 12.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 9.93,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 9.14,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 8.85,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 9.09,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 9.91,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 9.47,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 9.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 9.52,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 10.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 9.73,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 10.1,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 10.29,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 10.3,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 10.41,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 11.54,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 12.48,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 37,
+          "distance": 14.15,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 39,
+          "distance": 9.0,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p003304": {
+      "mahalanobis_distance": 11.1,
+      "status": "in_distribution",
+      "anomalous_features": [],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.34,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 5.5,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 6.19,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 5.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 6.72,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 6.72,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 8.28,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 7.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 8.51,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 10.91,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 10.37,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 10.35,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 11.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 10.57,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 10.78,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 10.59,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 10.69,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 10.81,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 11.06,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 11.17,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 11.1,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p002568": {
+      "mahalanobis_distance": 18.82,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_74",
+          "z_score": 8.2,
+          "value": 8.2,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "W_feat_45",
+          "z_score": 4.99,
+          "value": 4.99,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_190",
+          "z_score": 4.17,
+          "value": 4.17,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "Bilirubin_total",
+          "z_score": 4.11,
+          "value": 4.11,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_103",
+          "z_score": 3.79,
+          "value": 3.79,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.01,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 4.0,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 3.85,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 5.54,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 5.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 4.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 9.93,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 9.75,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 9.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 10.25,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 10.16,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 10.26,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 9.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 13.01,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 11.65,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 10.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 27,
+          "distance": 10.5,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 10.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 10.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 33,
+          "distance": 10.89,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 11.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 10.83,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 37,
+          "distance": 27.54,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 38,
+          "distance": 23.63,
+          "status": "out_of_distribution"
+        },
+        {
+          "hour": 40,
+          "distance": 20.84,
+          "status": "borderline"
+        },
+        {
+          "hour": 42,
+          "distance": 18.82,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p002601": {
+      "mahalanobis_distance": 11.44,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_127",
+          "z_score": 2.4,
+          "value": -2.4,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "Delta_Resp",
+          "z_score": 2.35,
+          "value": -2.35,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_156",
+          "z_score": 2.03,
+          "value": -2.03,
+          "train_mean": 0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.6,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 12.62,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 4,
+          "distance": 13.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 5,
+          "distance": 13.2,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 13.72,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 8,
+          "distance": 14.56,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 9,
+          "distance": 15.17,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 13.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 11,
+          "distance": 11.74,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 12,
+          "distance": 13.47,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 13.33,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 14,
+          "distance": 13.45,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 15,
+          "distance": 13.76,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 13.93,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 17,
+          "distance": 13.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 15.02,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 14.7,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 26,
+          "distance": 14.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 28,
+          "distance": 14.92,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 29,
+          "distance": 14.73,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 14.68,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 31,
+          "distance": 14.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 15.04,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 35,
+          "distance": 15.27,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 12.86,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 37,
+          "distance": 11.16,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 38,
+          "distance": 10.93,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 40,
+          "distance": 10.9,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 42,
+          "distance": 11.32,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 44,
+          "distance": 11.44,
+          "status": "in_distribution"
+        }
+      ]
+    },
+    "p000693": {
+      "mahalanobis_distance": 13.09,
+      "status": "in_distribution",
+      "anomalous_features": [
+        {
+          "feature": "W_feat_72",
+          "z_score": 2.81,
+          "value": 2.81,
+          "train_mean": 0.0
+        },
+        {
+          "feature": "Delta_Resp",
+          "z_score": 2.32,
+          "value": 2.32,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_43",
+          "z_score": 2.28,
+          "value": 2.28,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_97",
+          "z_score": 2.15,
+          "value": -2.15,
+          "train_mean": -0.0
+        },
+        {
+          "feature": "W_feat_80",
+          "z_score": 2.05,
+          "value": -2.05,
+          "train_mean": -0.0
+        }
+      ],
+      "hourly_ood": [
+        {
+          "hour": 2,
+          "distance": 4.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 3,
+          "distance": 4.64,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 6,
+          "distance": 4.29,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 7,
+          "distance": 4.43,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 10,
+          "distance": 4.51,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 13,
+          "distance": 4.44,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 16,
+          "distance": 4.03,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 18,
+          "distance": 5.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 19,
+          "distance": 5.88,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 20,
+          "distance": 6.22,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 21,
+          "distance": 5.96,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 22,
+          "distance": 5.71,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 23,
+          "distance": 5.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 24,
+          "distance": 5.87,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 30,
+          "distance": 9.02,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 32,
+          "distance": 7.77,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 34,
+          "distance": 7.31,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 36,
+          "distance": 7.13,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 38,
+          "distance": 7.21,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 39,
+          "distance": 13.79,
+          "status": "in_distribution"
+        },
+        {
+          "hour": 42,
+          "distance": 13.09,
+          "status": "in_distribution"
+        }
+      ]
+    }
+  }
+}

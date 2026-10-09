@@ -1,0 +1,40 @@
+# Python environment and cache
+
+venv/
+.venv/
+**pycache**/
+*.py[cod]
+.pytest_cache/
+
+# Secrets
+
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies and build
+
+frontend/node_modules/
+frontend/build/
+
+# Local archives and test output
+
+icu-digital-twin-deploy.zip
+zip-test/
+
+# Editor and OS files
+
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local patient-hour datasets
+data/processed_patient_hours.parquet
+data/publication_patient_hours.parquet
+data/ingestion_audit_log.csv
+
+.claude/
+
+artifacts/dashboard_data.json
+
+model/splits.json

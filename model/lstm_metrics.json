@@ -1,0 +1,6627 @@
+{
+  "Sepsis_6h": {
+    "test_AUROC": 0.694,
+    "test_AUPRC": 0.0849,
+    "operating_threshold": 0.41,
+    "precision": 0.0774,
+    "recall": 0.4888,
+    "f1": 0.1337,
+    "confusion_matrix": {
+      "tp": 326,
+      "fp": 3884,
+      "fn": 341,
+      "tn": 14803
+    },
+    "support": {
+      "n_positive": 667,
+      "n_negative": 18687,
+      "prevalence": 0.0345
+    },
+    "calibration": {
+      "ece_before": 0.208,
+      "ece_after_platt_scaling": 0.0007,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0433,
+          "observed": 0.0174,
+          "n": 6938
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1466,
+          "observed": 0.0149,
+          "n": 3825
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2463,
+          "observed": 0.0289,
+          "n": 2420
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3497,
+          "observed": 0.0467,
+          "n": 1798
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4465,
+          "observed": 0.0451,
+          "n": 1462
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5485,
+          "observed": 0.0663,
+          "n": 1041
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.649,
+          "observed": 0.0652,
+          "n": 767
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7491,
+          "observed": 0.1343,
+          "n": 581
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8448,
+          "observed": 0.1659,
+          "n": 434
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.932,
+          "observed": 0.0,
+          "n": 88
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0351,
+          "observed": 0.0345,
+          "n": 19354
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.0679,
+        "recall": 0.6282
+      },
+      "0.50": {
+        "precision": 0.0924,
+        "recall": 0.4033
+      },
+      "0.41": {
+        "precision": 0.0774,
+        "recall": 0.4888
+      },
+      "0.70": {
+        "precision": 0.136,
+        "recall": 0.2249
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.011,
+        0.0585
+      ],
+      [
+        0.0214,
+        0.1049
+      ],
+      [
+        0.0338,
+        0.1514
+      ],
+      [
+        0.0414,
+        0.1964
+      ],
+      [
+        0.0655,
+        0.2414
+      ],
+      [
+        0.0813,
+        0.2819
+      ],
+      [
+        0.1004,
+        0.3208
+      ],
+      [
+        0.117,
+        0.3628
+      ],
+      [
+        0.1405,
+        0.4018
+      ],
+      [
+        0.1713,
+        0.4468
+      ],
+      [
+        0.2039,
+        0.4858
+      ],
+      [
+        0.2267,
+        0.5292
+      ],
+      [
+        0.2471,
+        0.5682
+      ],
+      [
+        0.2863,
+        0.6072
+      ],
+      [
+        0.3338,
+        0.6462
+      ],
+      [
+        0.3792,
+        0.6837
+      ],
+      [
+        0.4222,
+        0.7226
+      ],
+      [
+        0.4673,
+        0.7646
+      ],
+      [
+        0.5523,
+        0.8036
+      ],
+      [
+        0.6732,
+        0.8396
+      ],
+      [
+        0.7631,
+        0.8801
+      ],
+      [
+        0.8973,
+        0.916
+      ],
+      [
+        0.9239,
+        0.958
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0345
+      ],
+      [
+        0.9655,
+        0.0347
+      ],
+      [
+        0.9445,
+        0.0355
+      ],
+      [
+        0.901,
+        0.0355
+      ],
+      [
+        0.8921,
+        0.0369
+      ],
+      [
+        0.8831,
+        0.0384
+      ],
+      [
+        0.8756,
+        0.0402
+      ],
+      [
+        0.8561,
+        0.0416
+      ],
+      [
+        0.8351,
+        0.0432
+      ],
+      [
+        0.8171,
+        0.0451
+      ],
+      [
+        0.8111,
+        0.0479
+      ],
+      [
+        0.7991,
+        0.0508
+      ],
+      [
+        0.7811,
+        0.0538
+      ],
+      [
+        0.7406,
+        0.0557
+      ],
+      [
+        0.7136,
+        0.059
+      ],
+      [
+        0.6702,
+        0.0616
+      ],
+      [
+        0.6402,
+        0.0662
+      ],
+      [
+        0.6027,
+        0.0712
+      ],
+      [
+        0.5517,
+        0.0761
+      ],
+      [
+        0.4738,
+        0.0784
+      ],
+      [
+        0.4258,
+        0.0881
+      ],
+      [
+        0.3613,
+        0.0996
+      ],
+      [
+        0.2714,
+        0.1122
+      ],
+      [
+        0.1784,
+        0.1475
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.6778,
+        "prevalence": 0.0435
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.5731,
+        "prevalence": 0.0357
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7794,
+        "prevalence": 0.0303
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7004,
+        "prevalence": 0.0415
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 120,
+          "predicted_risk": 0.508
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 121,
+          "predicted_risk": 0.486
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 122,
+          "predicted_risk": 0.444
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.489
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.498
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 5,
+          "predicted_risk": 0.557
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 123,
+          "predicted_risk": 0.395
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 124,
+          "predicted_risk": 0.381
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 125,
+          "predicted_risk": 0.371
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.408
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 11,
+          "predicted_risk": 0.407
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 12,
+          "predicted_risk": 0.316
+        }
+      ]
+    }
+  },
+  "Sepsis_12h": {
+    "test_AUROC": 0.6916,
+    "test_AUPRC": 0.1144,
+    "operating_threshold": 0.4806,
+    "precision": 0.1083,
+    "recall": 0.4742,
+    "f1": 0.1763,
+    "confusion_matrix": {
+      "tp": 422,
+      "fp": 3476,
+      "fn": 468,
+      "tn": 14988
+    },
+    "support": {
+      "n_positive": 890,
+      "n_negative": 18464,
+      "prevalence": 0.046
+    },
+    "calibration": {
+      "ece_before": 0.2349,
+      "ece_after_platt_scaling": 0.0079,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0457,
+          "observed": 0.0238,
+          "n": 6059
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1468,
+          "observed": 0.0151,
+          "n": 3243
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2481,
+          "observed": 0.0367,
+          "n": 2615
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3478,
+          "observed": 0.0456,
+          "n": 2169
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4465,
+          "observed": 0.059,
+          "n": 1610
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5458,
+          "observed": 0.0641,
+          "n": 1092
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6444,
+          "observed": 0.1125,
+          "n": 809
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7491,
+          "observed": 0.1022,
+          "n": 744
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8501,
+          "observed": 0.1259,
+          "n": 691
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9297,
+          "observed": 0.2578,
+          "n": 322
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0456,
+          "observed": 0.0405,
+          "n": 18653
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1079,
+          "observed": 0.1912,
+          "n": 701
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.0808,
+        "recall": 0.6753
+      },
+      "0.50": {
+        "precision": 0.1113,
+        "recall": 0.4573
+      },
+      "0.48": {
+        "precision": 0.1083,
+        "recall": 0.4742
+      },
+      "0.70": {
+        "precision": 0.14,
+        "recall": 0.2764
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.01,
+        0.0618
+      ],
+      [
+        0.0226,
+        0.1202
+      ],
+      [
+        0.0351,
+        0.1663
+      ],
+      [
+        0.0547,
+        0.2067
+      ],
+      [
+        0.0693,
+        0.2483
+      ],
+      [
+        0.087,
+        0.2921
+      ],
+      [
+        0.1048,
+        0.3348
+      ],
+      [
+        0.1205,
+        0.3764
+      ],
+      [
+        0.1433,
+        0.4169
+      ],
+      [
+        0.1779,
+        0.4596
+      ],
+      [
+        0.2105,
+        0.4955
+      ],
+      [
+        0.2401,
+        0.5382
+      ],
+      [
+        0.2675,
+        0.5787
+      ],
+      [
+        0.2894,
+        0.618
+      ],
+      [
+        0.3367,
+        0.6584
+      ],
+      [
+        0.4032,
+        0.6944
+      ],
+      [
+        0.4583,
+        0.7315
+      ],
+      [
+        0.4939,
+        0.7719
+      ],
+      [
+        0.5901,
+        0.8101
+      ],
+      [
+        0.6999,
+        0.8472
+      ],
+      [
+        0.7923,
+        0.8854
+      ],
+      [
+        0.8957,
+        0.9225
+      ],
+      [
+        0.9473,
+        0.9607
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.046
+      ],
+      [
+        0.9629,
+        0.0462
+      ],
+      [
+        0.9416,
+        0.0472
+      ],
+      [
+        0.909,
+        0.0478
+      ],
+      [
+        0.8966,
+        0.0495
+      ],
+      [
+        0.8843,
+        0.0514
+      ],
+      [
+        0.8685,
+        0.0532
+      ],
+      [
+        0.8483,
+        0.0551
+      ],
+      [
+        0.8326,
+        0.0574
+      ],
+      [
+        0.8169,
+        0.0601
+      ],
+      [
+        0.8022,
+        0.0632
+      ],
+      [
+        0.7921,
+        0.0672
+      ],
+      [
+        0.7652,
+        0.0704
+      ],
+      [
+        0.727,
+        0.0729
+      ],
+      [
+        0.6944,
+        0.0766
+      ],
+      [
+        0.6697,
+        0.0821
+      ],
+      [
+        0.6449,
+        0.089
+      ],
+      [
+        0.5978,
+        0.0942
+      ],
+      [
+        0.5315,
+        0.0977
+      ],
+      [
+        0.482,
+        0.1064
+      ],
+      [
+        0.4258,
+        0.1175
+      ],
+      [
+        0.364,
+        0.1339
+      ],
+      [
+        0.2607,
+        0.1438
+      ],
+      [
+        0.1685,
+        0.1861
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.6791,
+        "prevalence": 0.0588
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.5845,
+        "prevalence": 0.0489
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7693,
+        "prevalence": 0.0407
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7002,
+        "prevalence": 0.0513
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 113,
+          "predicted_risk": 0.832
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 115,
+          "predicted_risk": 0.82
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 116,
+          "predicted_risk": 0.738
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.512
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.548
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 5,
+          "predicted_risk": 0.61
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 123,
+          "predicted_risk": 0.461
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 124,
+          "predicted_risk": 0.451
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 125,
+          "predicted_risk": 0.445
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.435
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 12,
+          "predicted_risk": 0.42
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 13,
+          "predicted_risk": 0.32
+        }
+      ]
+    }
+  },
+  "Sepsis_24h": {
+    "test_AUROC": 0.7003,
+    "test_AUPRC": 0.1689,
+    "operating_threshold": 0.5319,
+    "precision": 0.1499,
+    "recall": 0.5336,
+    "f1": 0.2341,
+    "confusion_matrix": {
+      "tp": 675,
+      "fp": 3827,
+      "fn": 590,
+      "tn": 14262
+    },
+    "support": {
+      "n_positive": 1265,
+      "n_negative": 18089,
+      "prevalence": 0.0654
+    },
+    "calibration": {
+      "ece_before": 0.2787,
+      "ece_after_platt_scaling": 0.0188,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0578,
+          "observed": 0.037,
+          "n": 4003
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1477,
+          "observed": 0.0263,
+          "n": 3381
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2489,
+          "observed": 0.0252,
+          "n": 2578
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3483,
+          "observed": 0.0481,
+          "n": 2411
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4478,
+          "observed": 0.0582,
+          "n": 1908
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5462,
+          "observed": 0.1142,
+          "n": 1498
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6483,
+          "observed": 0.0705,
+          "n": 1135
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7515,
+          "observed": 0.1491,
+          "n": 899
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8464,
+          "observed": 0.1857,
+          "n": 910
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9396,
+          "observed": 0.2884,
+          "n": 631
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0574,
+          "observed": 0.0453,
+          "n": 16540
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1244,
+          "observed": 0.183,
+          "n": 2814
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.1025,
+        "recall": 0.7613
+      },
+      "0.50": {
+        "precision": 0.1451,
+        "recall": 0.5818
+      },
+      "0.53": {
+        "precision": 0.1499,
+        "recall": 0.5336
+      },
+      "0.70": {
+        "precision": 0.1988,
+        "recall": 0.3834
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0103,
+        0.0775
+      ],
+      [
+        0.0209,
+        0.1225
+      ],
+      [
+        0.0321,
+        0.1723
+      ],
+      [
+        0.0475,
+        0.2111
+      ],
+      [
+        0.0615,
+        0.2585
+      ],
+      [
+        0.074,
+        0.3036
+      ],
+      [
+        0.0868,
+        0.3455
+      ],
+      [
+        0.1079,
+        0.3826
+      ],
+      [
+        0.1416,
+        0.4237
+      ],
+      [
+        0.1789,
+        0.4617
+      ],
+      [
+        0.1956,
+        0.502
+      ],
+      [
+        0.2157,
+        0.5407
+      ],
+      [
+        0.2396,
+        0.5818
+      ],
+      [
+        0.2807,
+        0.6213
+      ],
+      [
+        0.3252,
+        0.6577
+      ],
+      [
+        0.3826,
+        0.6941
+      ],
+      [
+        0.4263,
+        0.736
+      ],
+      [
+        0.4976,
+        0.7723
+      ],
+      [
+        0.594,
+        0.8087
+      ],
+      [
+        0.7144,
+        0.8458
+      ],
+      [
+        0.798,
+        0.8846
+      ],
+      [
+        0.8904,
+        0.9202
+      ],
+      [
+        0.9532,
+        0.9605
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0654
+      ],
+      [
+        0.9613,
+        0.0656
+      ],
+      [
+        0.9391,
+        0.067
+      ],
+      [
+        0.9107,
+        0.068
+      ],
+      [
+        0.8941,
+        0.0701
+      ],
+      [
+        0.8814,
+        0.0728
+      ],
+      [
+        0.8585,
+        0.0748
+      ],
+      [
+        0.8411,
+        0.0776
+      ],
+      [
+        0.8261,
+        0.081
+      ],
+      [
+        0.8174,
+        0.0855
+      ],
+      [
+        0.8,
+        0.0896
+      ],
+      [
+        0.785,
+        0.0947
+      ],
+      [
+        0.7684,
+        0.1004
+      ],
+      [
+        0.7431,
+        0.106
+      ],
+      [
+        0.7138,
+        0.112
+      ],
+      [
+        0.6751,
+        0.1176
+      ],
+      [
+        0.6435,
+        0.1261
+      ],
+      [
+        0.6095,
+        0.1365
+      ],
+      [
+        0.5628,
+        0.1471
+      ],
+      [
+        0.4838,
+        0.1517
+      ],
+      [
+        0.4316,
+        0.1692
+      ],
+      [
+        0.381,
+        0.1992
+      ],
+      [
+        0.2877,
+        0.2258
+      ],
+      [
+        0.1731,
+        0.2717
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.6749,
+        "prevalence": 0.0895
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.5956,
+        "prevalence": 0.0697
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7738,
+        "prevalence": 0.0572
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7263,
+        "prevalence": 0.0703
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 100,
+          "predicted_risk": 0.872
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 101,
+          "predicted_risk": 0.887
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 102,
+          "predicted_risk": 0.904
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.595
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.642
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 5,
+          "predicted_risk": 0.699
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 126,
+          "predicted_risk": 0.518
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 127,
+          "predicted_risk": 0.477
+        },
+        {
+          "patient_id": "p000171",
+          "hour": 33,
+          "predicted_risk": 0.025
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.53
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 13,
+          "predicted_risk": 0.448
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 14,
+          "predicted_risk": 0.319
+        }
+      ]
+    }
+  },
+  "ARF_6h": {
+    "test_AUROC": 0.7996,
+    "test_AUPRC": 0.2857,
+    "operating_threshold": 0.5527,
+    "precision": 0.2437,
+    "recall": 0.6773,
+    "f1": 0.3584,
+    "confusion_matrix": {
+      "tp": 1173,
+      "fp": 3641,
+      "fn": 559,
+      "tn": 13981
+    },
+    "support": {
+      "n_positive": 1732,
+      "n_negative": 17622,
+      "prevalence": 0.0895
+    },
+    "calibration": {
+      "ece_before": 0.2676,
+      "ece_after_platt_scaling": 0.0167,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0531,
+          "observed": 0.015,
+          "n": 4270
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1452,
+          "observed": 0.03,
+          "n": 3036
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2502,
+          "observed": 0.0369,
+          "n": 2193
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3493,
+          "observed": 0.048,
+          "n": 2084
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4477,
+          "observed": 0.0805,
+          "n": 2088
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5474,
+          "observed": 0.0801,
+          "n": 1560
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6497,
+          "observed": 0.1551,
+          "n": 1148
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7503,
+          "observed": 0.2351,
+          "n": 1221
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8492,
+          "observed": 0.3618,
+          "n": 1371
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9208,
+          "observed": 0.3708,
+          "n": 383
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0436,
+          "observed": 0.0368,
+          "n": 13602
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1412,
+          "observed": 0.1174,
+          "n": 3093
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2508,
+          "observed": 0.3071,
+          "n": 2042
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.323,
+          "observed": 0.3906,
+          "n": 617
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.1518,
+        "recall": 0.8637
+      },
+      "0.50": {
+        "precision": 0.2161,
+        "recall": 0.709
+      },
+      "0.55": {
+        "precision": 0.2437,
+        "recall": 0.6773
+      },
+      "0.70": {
+        "precision": 0.3109,
+        "recall": 0.5341
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0091,
+        0.0514
+      ],
+      [
+        0.017,
+        0.1126
+      ],
+      [
+        0.026,
+        0.1634
+      ],
+      [
+        0.0355,
+        0.22
+      ],
+      [
+        0.0435,
+        0.2714
+      ],
+      [
+        0.0538,
+        0.3204
+      ],
+      [
+        0.0637,
+        0.3684
+      ],
+      [
+        0.0755,
+        0.4122
+      ],
+      [
+        0.0853,
+        0.4561
+      ],
+      [
+        0.0995,
+        0.4942
+      ],
+      [
+        0.1171,
+        0.5364
+      ],
+      [
+        0.1395,
+        0.5745
+      ],
+      [
+        0.1595,
+        0.6155
+      ],
+      [
+        0.1847,
+        0.6559
+      ],
+      [
+        0.2219,
+        0.6894
+      ],
+      [
+        0.2722,
+        0.7263
+      ],
+      [
+        0.3089,
+        0.7604
+      ],
+      [
+        0.3525,
+        0.7962
+      ],
+      [
+        0.4074,
+        0.8308
+      ],
+      [
+        0.4783,
+        0.8666
+      ],
+      [
+        0.5477,
+        0.9001
+      ],
+      [
+        0.669,
+        0.9336
+      ],
+      [
+        0.7772,
+        0.9665
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0895
+      ],
+      [
+        1.0,
+        0.0934
+      ],
+      [
+        0.9873,
+        0.0964
+      ],
+      [
+        0.9809,
+        0.1003
+      ],
+      [
+        0.9746,
+        0.1046
+      ],
+      [
+        0.9659,
+        0.1092
+      ],
+      [
+        0.9544,
+        0.1139
+      ],
+      [
+        0.94,
+        0.1187
+      ],
+      [
+        0.9238,
+        0.124
+      ],
+      [
+        0.9122,
+        0.1306
+      ],
+      [
+        0.9024,
+        0.1384
+      ],
+      [
+        0.8868,
+        0.1465
+      ],
+      [
+        0.8591,
+        0.1537
+      ],
+      [
+        0.8378,
+        0.1635
+      ],
+      [
+        0.817,
+        0.1754
+      ],
+      [
+        0.7841,
+        0.187
+      ],
+      [
+        0.7483,
+        0.2008
+      ],
+      [
+        0.7079,
+        0.2171
+      ],
+      [
+        0.679,
+        0.2429
+      ],
+      [
+        0.6288,
+        0.27
+      ],
+      [
+        0.5548,
+        0.2978
+      ],
+      [
+        0.4729,
+        0.3383
+      ],
+      [
+        0.3406,
+        0.3656
+      ],
+      [
+        0.1767,
+        0.3787
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8095,
+        "prevalence": 0.0225
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.7747,
+        "prevalence": 0.0609
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7814,
+        "prevalence": 0.125
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.8157,
+        "prevalence": 0.0569
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000044",
+          "hour": 5,
+          "predicted_risk": 0.713
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 6,
+          "predicted_risk": 0.583
+        },
+        {
+          "patient_id": "p000083",
+          "hour": 4,
+          "predicted_risk": 0.853
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000044",
+          "hour": 10,
+          "predicted_risk": 0.648
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 11,
+          "predicted_risk": 0.624
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 12,
+          "predicted_risk": 0.701
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000044",
+          "hour": 7,
+          "predicted_risk": 0.409
+        },
+        {
+          "patient_id": "p000133",
+          "hour": 8,
+          "predicted_risk": 0.276
+        },
+        {
+          "patient_id": "p000133",
+          "hour": 9,
+          "predicted_risk": 0.298
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.472
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.446
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.352
+        }
+      ]
+    }
+  },
+  "ARF_12h": {
+    "test_AUROC": 0.7916,
+    "test_AUPRC": 0.37,
+    "operating_threshold": 0.4465,
+    "precision": 0.2518,
+    "recall": 0.7355,
+    "f1": 0.3751,
+    "confusion_matrix": {
+      "tp": 1735,
+      "fp": 5156,
+      "fn": 624,
+      "tn": 11839
+    },
+    "support": {
+      "n_positive": 2359,
+      "n_negative": 16995,
+      "prevalence": 0.1219
+    },
+    "calibration": {
+      "ece_before": 0.2384,
+      "ece_after_platt_scaling": 0.0234,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0503,
+          "observed": 0.0224,
+          "n": 4368
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1457,
+          "observed": 0.0497,
+          "n": 2855
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2498,
+          "observed": 0.0522,
+          "n": 2146
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3484,
+          "observed": 0.0815,
+          "n": 2124
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4501,
+          "observed": 0.094,
+          "n": 2095
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5476,
+          "observed": 0.1248,
+          "n": 1651
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6495,
+          "observed": 0.2297,
+          "n": 1110
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7523,
+          "observed": 0.2739,
+          "n": 1088
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.852,
+          "observed": 0.4473,
+          "n": 1375
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.928,
+          "observed": 0.4852,
+          "n": 542
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0545,
+          "observed": 0.0431,
+          "n": 10967
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1412,
+          "observed": 0.1121,
+          "n": 4512
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.248,
+          "observed": 0.244,
+          "n": 1762
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3486,
+          "observed": 0.4392,
+          "n": 1744
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4142,
+          "observed": 0.4986,
+          "n": 369
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.201,
+        "recall": 0.8508
+      },
+      "0.50": {
+        "precision": 0.2839,
+        "recall": 0.6939
+      },
+      "0.45": {
+        "precision": 0.2518,
+        "recall": 0.7355
+      },
+      "0.70": {
+        "precision": 0.3913,
+        "recall": 0.4985
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0079,
+        0.064
+      ],
+      [
+        0.0174,
+        0.1212
+      ],
+      [
+        0.027,
+        0.1797
+      ],
+      [
+        0.0361,
+        0.2319
+      ],
+      [
+        0.0455,
+        0.2942
+      ],
+      [
+        0.0555,
+        0.3438
+      ],
+      [
+        0.0661,
+        0.3891
+      ],
+      [
+        0.0802,
+        0.4375
+      ],
+      [
+        0.0976,
+        0.4794
+      ],
+      [
+        0.1152,
+        0.5193
+      ],
+      [
+        0.1347,
+        0.5587
+      ],
+      [
+        0.1533,
+        0.5986
+      ],
+      [
+        0.1789,
+        0.6346
+      ],
+      [
+        0.2132,
+        0.6698
+      ],
+      [
+        0.2561,
+        0.7024
+      ],
+      [
+        0.307,
+        0.7376
+      ],
+      [
+        0.3503,
+        0.7719
+      ],
+      [
+        0.3904,
+        0.8063
+      ],
+      [
+        0.4453,
+        0.8385
+      ],
+      [
+        0.5172,
+        0.8703
+      ],
+      [
+        0.6095,
+        0.9046
+      ],
+      [
+        0.6967,
+        0.9364
+      ],
+      [
+        0.7825,
+        0.9682
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.1219
+      ],
+      [
+        0.9936,
+        0.1264
+      ],
+      [
+        0.986,
+        0.1311
+      ],
+      [
+        0.9809,
+        0.1366
+      ],
+      [
+        0.9767,
+        0.1428
+      ],
+      [
+        0.9623,
+        0.1481
+      ],
+      [
+        0.9487,
+        0.1542
+      ],
+      [
+        0.9284,
+        0.1597
+      ],
+      [
+        0.9131,
+        0.1669
+      ],
+      [
+        0.8966,
+        0.1748
+      ],
+      [
+        0.8796,
+        0.1838
+      ],
+      [
+        0.8639,
+        0.1944
+      ],
+      [
+        0.8423,
+        0.2053
+      ],
+      [
+        0.8181,
+        0.2175
+      ],
+      [
+        0.7893,
+        0.2308
+      ],
+      [
+        0.7486,
+        0.2433
+      ],
+      [
+        0.7134,
+        0.2608
+      ],
+      [
+        0.6893,
+        0.2879
+      ],
+      [
+        0.6528,
+        0.3181
+      ],
+      [
+        0.6003,
+        0.3509
+      ],
+      [
+        0.5252,
+        0.3838
+      ],
+      [
+        0.4409,
+        0.4298
+      ],
+      [
+        0.3209,
+        0.469
+      ],
+      [
+        0.167,
+        0.4882
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8459,
+        "prevalence": 0.0353
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.7535,
+        "prevalence": 0.0848
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.776,
+        "prevalence": 0.169
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.8129,
+        "prevalence": 0.0754
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000044",
+          "hour": 5,
+          "predicted_risk": 0.705
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 6,
+          "predicted_risk": 0.546
+        },
+        {
+          "patient_id": "p000083",
+          "hour": 3,
+          "predicted_risk": 0.888
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000025",
+          "hour": 3,
+          "predicted_risk": 0.475
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 10,
+          "predicted_risk": 0.647
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 11,
+          "predicted_risk": 0.599
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000044",
+          "hour": 7,
+          "predicted_risk": 0.411
+        },
+        {
+          "patient_id": "p000133",
+          "hour": 7,
+          "predicted_risk": 0.337
+        },
+        {
+          "patient_id": "p000133",
+          "hour": 8,
+          "predicted_risk": 0.251
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.446
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.443
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.373
+        }
+      ]
+    }
+  },
+  "ARF_24h": {
+    "test_AUROC": 0.7768,
+    "test_AUPRC": 0.4079,
+    "operating_threshold": 0.4659,
+    "precision": 0.2904,
+    "recall": 0.7043,
+    "f1": 0.4113,
+    "confusion_matrix": {
+      "tp": 2015,
+      "fp": 4923,
+      "fn": 846,
+      "tn": 11570
+    },
+    "support": {
+      "n_positive": 2861,
+      "n_negative": 16493,
+      "prevalence": 0.1478
+    },
+    "calibration": {
+      "ece_before": 0.2319,
+      "ece_after_platt_scaling": 0.0242,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0583,
+          "observed": 0.0271,
+          "n": 3360
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1455,
+          "observed": 0.0604,
+          "n": 3162
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2477,
+          "observed": 0.0694,
+          "n": 2334
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3476,
+          "observed": 0.1079,
+          "n": 2169
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4506,
+          "observed": 0.1122,
+          "n": 2131
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5494,
+          "observed": 0.1597,
+          "n": 1785
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6474,
+          "observed": 0.2403,
+          "n": 1236
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7511,
+          "observed": 0.3027,
+          "n": 1186
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8515,
+          "observed": 0.4899,
+          "n": 1533
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9235,
+          "observed": 0.5502,
+          "n": 458
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0634,
+          "observed": 0.0504,
+          "n": 8894
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1435,
+          "observed": 0.1182,
+          "n": 5184
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2427,
+          "observed": 0.2149,
+          "n": 2285
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3516,
+          "observed": 0.3662,
+          "n": 1753
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4318,
+          "observed": 0.5388,
+          "n": 1238
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.2302,
+        "recall": 0.8448
+      },
+      "0.50": {
+        "precision": 0.3136,
+        "recall": 0.6795
+      },
+      "0.47": {
+        "precision": 0.2904,
+        "recall": 0.7043
+      },
+      "0.70": {
+        "precision": 0.4287,
+        "recall": 0.4761
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0095,
+        0.0731
+      ],
+      [
+        0.0193,
+        0.136
+      ],
+      [
+        0.0285,
+        0.2031
+      ],
+      [
+        0.0397,
+        0.2597
+      ],
+      [
+        0.0489,
+        0.3121
+      ],
+      [
+        0.0625,
+        0.3597
+      ],
+      [
+        0.0786,
+        0.4079
+      ],
+      [
+        0.0969,
+        0.4474
+      ],
+      [
+        0.1157,
+        0.4904
+      ],
+      [
+        0.1362,
+        0.5292
+      ],
+      [
+        0.1581,
+        0.5669
+      ],
+      [
+        0.1901,
+        0.6061
+      ],
+      [
+        0.2229,
+        0.6431
+      ],
+      [
+        0.2545,
+        0.6788
+      ],
+      [
+        0.3098,
+        0.7113
+      ],
+      [
+        0.3509,
+        0.7445
+      ],
+      [
+        0.3886,
+        0.7763
+      ],
+      [
+        0.4301,
+        0.8102
+      ],
+      [
+        0.4894,
+        0.8438
+      ],
+      [
+        0.5518,
+        0.8752
+      ],
+      [
+        0.6405,
+        0.907
+      ],
+      [
+        0.7105,
+        0.9374
+      ],
+      [
+        0.8024,
+        0.9685
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.1478
+      ],
+      [
+        0.9951,
+        0.1535
+      ],
+      [
+        0.9811,
+        0.1582
+      ],
+      [
+        0.9759,
+        0.1649
+      ],
+      [
+        0.9706,
+        0.1722
+      ],
+      [
+        0.9584,
+        0.1789
+      ],
+      [
+        0.9413,
+        0.1855
+      ],
+      [
+        0.9203,
+        0.192
+      ],
+      [
+        0.9035,
+        0.2003
+      ],
+      [
+        0.885,
+        0.2093
+      ],
+      [
+        0.8654,
+        0.2193
+      ],
+      [
+        0.8438,
+        0.2302
+      ],
+      [
+        0.8193,
+        0.2422
+      ],
+      [
+        0.7885,
+        0.2543
+      ],
+      [
+        0.7494,
+        0.2658
+      ],
+      [
+        0.7158,
+        0.2821
+      ],
+      [
+        0.6875,
+        0.3048
+      ],
+      [
+        0.6522,
+        0.3304
+      ],
+      [
+        0.604,
+        0.3571
+      ],
+      [
+        0.5498,
+        0.39
+      ],
+      [
+        0.4806,
+        0.4261
+      ],
+      [
+        0.4037,
+        0.4773
+      ],
+      [
+        0.2964,
+        0.5254
+      ],
+      [
+        0.1576,
+        0.5589
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8405,
+        "prevalence": 0.0475
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.7231,
+        "prevalence": 0.1052
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7686,
+        "prevalence": 0.2048
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7805,
+        "prevalence": 0.0837
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000044",
+          "hour": 5,
+          "predicted_risk": 0.718
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 6,
+          "predicted_risk": 0.587
+        },
+        {
+          "patient_id": "p000083",
+          "hour": 3,
+          "predicted_risk": 0.873
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.492
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.485
+        },
+        {
+          "patient_id": "p000025",
+          "hour": 3,
+          "predicted_risk": 0.517
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000044",
+          "hour": 7,
+          "predicted_risk": 0.432
+        },
+        {
+          "patient_id": "p000133",
+          "hour": 7,
+          "predicted_risk": 0.405
+        },
+        {
+          "patient_id": "p000133",
+          "hour": 8,
+          "predicted_risk": 0.316
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.411
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 5,
+          "predicted_risk": 0.419
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 6,
+          "predicted_risk": 0.421
+        }
+      ]
+    }
+  },
+  "Cardiac_6h": {
+    "test_AUROC": 0.8318,
+    "test_AUPRC": 0.3891,
+    "operating_threshold": 0.4545,
+    "precision": 0.2448,
+    "recall": 0.7385,
+    "f1": 0.3677,
+    "confusion_matrix": {
+      "tp": 1285,
+      "fp": 3965,
+      "fn": 455,
+      "tn": 13649
+    },
+    "support": {
+      "n_positive": 1740,
+      "n_negative": 17614,
+      "prevalence": 0.0899
+    },
+    "calibration": {
+      "ece_before": 0.1931,
+      "ece_after_platt_scaling": 0.0133,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0332,
+          "observed": 0.0174,
+          "n": 8451
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1442,
+          "observed": 0.0327,
+          "n": 2173
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2491,
+          "observed": 0.0554,
+          "n": 1515
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3474,
+          "observed": 0.0713,
+          "n": 1347
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.448,
+          "observed": 0.0956,
+          "n": 1067
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5506,
+          "observed": 0.1028,
+          "n": 992
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6509,
+          "observed": 0.1804,
+          "n": 948
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7506,
+          "observed": 0.224,
+          "n": 951
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.853,
+          "observed": 0.3136,
+          "n": 1202
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9281,
+          "observed": 0.5325,
+          "n": 708
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0311,
+          "observed": 0.0324,
+          "n": 14113
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1451,
+          "observed": 0.1188,
+          "n": 1911
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2485,
+          "observed": 0.2036,
+          "n": 1228
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3514,
+          "observed": 0.2903,
+          "n": 1178
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4346,
+          "observed": 0.5022,
+          "n": 924
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.1993,
+        "recall": 0.8264
+      },
+      "0.50": {
+        "precision": 0.2583,
+        "recall": 0.7126
+      },
+      "0.45": {
+        "precision": 0.2448,
+        "recall": 0.7385
+      },
+      "0.70": {
+        "precision": 0.338,
+        "recall": 0.5557
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0057,
+        0.0943
+      ],
+      [
+        0.0118,
+        0.1569
+      ],
+      [
+        0.0192,
+        0.2213
+      ],
+      [
+        0.0258,
+        0.2655
+      ],
+      [
+        0.033,
+        0.3075
+      ],
+      [
+        0.0428,
+        0.3552
+      ],
+      [
+        0.0565,
+        0.4029
+      ],
+      [
+        0.0688,
+        0.4437
+      ],
+      [
+        0.078,
+        0.4805
+      ],
+      [
+        0.0927,
+        0.5207
+      ],
+      [
+        0.1075,
+        0.5552
+      ],
+      [
+        0.1223,
+        0.5931
+      ],
+      [
+        0.1405,
+        0.6299
+      ],
+      [
+        0.162,
+        0.6684
+      ],
+      [
+        0.1942,
+        0.7023
+      ],
+      [
+        0.2235,
+        0.7356
+      ],
+      [
+        0.2586,
+        0.7724
+      ],
+      [
+        0.2997,
+        0.8057
+      ],
+      [
+        0.3443,
+        0.8408
+      ],
+      [
+        0.4048,
+        0.8724
+      ],
+      [
+        0.4776,
+        0.9057
+      ],
+      [
+        0.6175,
+        0.9368
+      ],
+      [
+        0.7485,
+        0.969
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0899
+      ],
+      [
+        1.0,
+        0.0938
+      ],
+      [
+        1.0,
+        0.0981
+      ],
+      [
+        0.9948,
+        0.1022
+      ],
+      [
+        0.9839,
+        0.1061
+      ],
+      [
+        0.9736,
+        0.1106
+      ],
+      [
+        0.9661,
+        0.1158
+      ],
+      [
+        0.9586,
+        0.1217
+      ],
+      [
+        0.946,
+        0.1276
+      ],
+      [
+        0.9316,
+        0.134
+      ],
+      [
+        0.919,
+        0.1416
+      ],
+      [
+        0.9121,
+        0.1514
+      ],
+      [
+        0.8966,
+        0.1612
+      ],
+      [
+        0.8782,
+        0.1722
+      ],
+      [
+        0.8586,
+        0.1852
+      ],
+      [
+        0.831,
+        0.1992
+      ],
+      [
+        0.7954,
+        0.2145
+      ],
+      [
+        0.7575,
+        0.2334
+      ],
+      [
+        0.7149,
+        0.257
+      ],
+      [
+        0.6684,
+        0.2883
+      ],
+      [
+        0.5989,
+        0.3229
+      ],
+      [
+        0.5034,
+        0.3621
+      ],
+      [
+        0.3885,
+        0.4191
+      ],
+      [
+        0.242,
+        0.5217
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8622,
+        "prevalence": 0.0639
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.8118,
+        "prevalence": 0.0819
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.837,
+        "prevalence": 0.1013
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.8267,
+        "prevalence": 0.0806
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000105",
+          "hour": 2,
+          "predicted_risk": 0.71
+        },
+        {
+          "patient_id": "p000105",
+          "hour": 3,
+          "predicted_risk": 0.738
+        },
+        {
+          "patient_id": "p000105",
+          "hour": 4,
+          "predicted_risk": 0.927
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 111,
+          "predicted_risk": 0.461
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 112,
+          "predicted_risk": 0.458
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 117,
+          "predicted_risk": 0.485
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 97,
+          "predicted_risk": 0.102
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 98,
+          "predicted_risk": 0.116
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 99,
+          "predicted_risk": 0.14
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.262
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.277
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.095
+        }
+      ]
+    }
+  },
+  "Cardiac_12h": {
+    "test_AUROC": 0.8152,
+    "test_AUPRC": 0.4257,
+    "operating_threshold": 0.5571,
+    "precision": 0.3297,
+    "recall": 0.6708,
+    "f1": 0.4421,
+    "confusion_matrix": {
+      "tp": 1632,
+      "fp": 3318,
+      "fn": 801,
+      "tn": 13603
+    },
+    "support": {
+      "n_positive": 2433,
+      "n_negative": 16921,
+      "prevalence": 0.1257
+    },
+    "calibration": {
+      "ece_before": 0.1904,
+      "ece_after_platt_scaling": 0.0121,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0373,
+          "observed": 0.0272,
+          "n": 7578
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.145,
+          "observed": 0.0511,
+          "n": 2369
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2474,
+          "observed": 0.073,
+          "n": 1410
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.351,
+          "observed": 0.0994,
+          "n": 1268
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4492,
+          "observed": 0.12,
+          "n": 1142
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.55,
+          "observed": 0.1732,
+          "n": 1120
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6511,
+          "observed": 0.1987,
+          "n": 1047
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7501,
+          "observed": 0.2826,
+          "n": 1129
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8523,
+          "observed": 0.3476,
+          "n": 1234
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9344,
+          "observed": 0.5582,
+          "n": 1057
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0399,
+          "observed": 0.0429,
+          "n": 12392
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1444,
+          "observed": 0.141,
+          "n": 2369
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2488,
+          "observed": 0.2126,
+          "n": 1496
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.349,
+          "observed": 0.2966,
+          "n": 1261
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4521,
+          "observed": 0.4374,
+          "n": 1502
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5131,
+          "observed": 0.6557,
+          "n": 334
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.2505,
+        "recall": 0.8233
+      },
+      "0.50": {
+        "precision": 0.3114,
+        "recall": 0.7152
+      },
+      "0.56": {
+        "precision": 0.3297,
+        "recall": 0.6708
+      },
+      "0.70": {
+        "precision": 0.3912,
+        "recall": 0.5499
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0067,
+        0.0888
+      ],
+      [
+        0.0147,
+        0.1504
+      ],
+      [
+        0.0235,
+        0.2088
+      ],
+      [
+        0.0323,
+        0.2721
+      ],
+      [
+        0.0446,
+        0.3181
+      ],
+      [
+        0.056,
+        0.3584
+      ],
+      [
+        0.0712,
+        0.4036
+      ],
+      [
+        0.0843,
+        0.448
+      ],
+      [
+        0.099,
+        0.4891
+      ],
+      [
+        0.1131,
+        0.5282
+      ],
+      [
+        0.1337,
+        0.5656
+      ],
+      [
+        0.1535,
+        0.6042
+      ],
+      [
+        0.1782,
+        0.6432
+      ],
+      [
+        0.2009,
+        0.6782
+      ],
+      [
+        0.2267,
+        0.7143
+      ],
+      [
+        0.2628,
+        0.7476
+      ],
+      [
+        0.2946,
+        0.7809
+      ],
+      [
+        0.3393,
+        0.8142
+      ],
+      [
+        0.395,
+        0.8463
+      ],
+      [
+        0.4543,
+        0.8771
+      ],
+      [
+        0.5405,
+        0.9079
+      ],
+      [
+        0.6324,
+        0.9392
+      ],
+      [
+        0.7412,
+        0.9704
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.1257
+      ],
+      [
+        1.0,
+        0.1312
+      ],
+      [
+        1.0,
+        0.1371
+      ],
+      [
+        0.9942,
+        0.1428
+      ],
+      [
+        0.9831,
+        0.1483
+      ],
+      [
+        0.9762,
+        0.155
+      ],
+      [
+        0.9638,
+        0.1616
+      ],
+      [
+        0.9519,
+        0.169
+      ],
+      [
+        0.9375,
+        0.1768
+      ],
+      [
+        0.9211,
+        0.1853
+      ],
+      [
+        0.9059,
+        0.1952
+      ],
+      [
+        0.8919,
+        0.207
+      ],
+      [
+        0.8726,
+        0.2194
+      ],
+      [
+        0.8492,
+        0.2329
+      ],
+      [
+        0.8245,
+        0.2488
+      ],
+      [
+        0.7953,
+        0.2666
+      ],
+      [
+        0.7579,
+        0.2858
+      ],
+      [
+        0.7172,
+        0.3091
+      ],
+      [
+        0.6638,
+        0.3337
+      ],
+      [
+        0.6001,
+        0.362
+      ],
+      [
+        0.5298,
+        0.3994
+      ],
+      [
+        0.4365,
+        0.4387
+      ],
+      [
+        0.33,
+        0.4975
+      ],
+      [
+        0.1887,
+        0.5681
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8516,
+        "prevalence": 0.089
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.8108,
+        "prevalence": 0.1139
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.8134,
+        "prevalence": 0.1429
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7992,
+        "prevalence": 0.1094
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000105",
+          "hour": 2,
+          "predicted_risk": 0.769
+        },
+        {
+          "patient_id": "p000105",
+          "hour": 3,
+          "predicted_risk": 0.784
+        },
+        {
+          "patient_id": "p000105",
+          "hour": 4,
+          "predicted_risk": 0.952
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 117,
+          "predicted_risk": 0.579
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 118,
+          "predicted_risk": 0.558
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 120,
+          "predicted_risk": 0.568
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 91,
+          "predicted_risk": 0.046
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 92,
+          "predicted_risk": 0.065
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 93,
+          "predicted_risk": 0.098
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.321
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.329
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.13
+        }
+      ]
+    }
+  },
+  "Cardiac_24h": {
+    "test_AUROC": 0.795,
+    "test_AUPRC": 0.4491,
+    "operating_threshold": 0.5516,
+    "precision": 0.3736,
+    "recall": 0.6244,
+    "f1": 0.4675,
+    "confusion_matrix": {
+      "tp": 1902,
+      "fp": 3189,
+      "fn": 1144,
+      "tn": 13119
+    },
+    "support": {
+      "n_positive": 3046,
+      "n_negative": 16308,
+      "prevalence": 0.1574
+    },
+    "calibration": {
+      "ece_before": 0.1696,
+      "ece_after_platt_scaling": 0.0174,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0384,
+          "observed": 0.0419,
+          "n": 7038
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1444,
+          "observed": 0.0636,
+          "n": 2499
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2464,
+          "observed": 0.095,
+          "n": 1569
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3499,
+          "observed": 0.1268,
+          "n": 1404
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4492,
+          "observed": 0.2003,
+          "n": 1193
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5504,
+          "observed": 0.2113,
+          "n": 1136
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.65,
+          "observed": 0.2624,
+          "n": 1086
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7494,
+          "observed": 0.333,
+          "n": 1105
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8522,
+          "observed": 0.3712,
+          "n": 1196
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9356,
+          "observed": 0.6108,
+          "n": 1128
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0523,
+          "observed": 0.0536,
+          "n": 10989
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1424,
+          "observed": 0.1595,
+          "n": 2853
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2463,
+          "observed": 0.2333,
+          "n": 1663
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3492,
+          "observed": 0.3149,
+          "n": 1359
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4522,
+          "observed": 0.3574,
+          "n": 1290
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5352,
+          "observed": 0.6042,
+          "n": 1200
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.2962,
+        "recall": 0.802
+      },
+      "0.50": {
+        "precision": 0.3585,
+        "recall": 0.6651
+      },
+      "0.55": {
+        "precision": 0.3736,
+        "recall": 0.6244
+      },
+      "0.70": {
+        "precision": 0.4377,
+        "recall": 0.4928
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0081,
+        0.0903
+      ],
+      [
+        0.0169,
+        0.1615
+      ],
+      [
+        0.0273,
+        0.2278
+      ],
+      [
+        0.0401,
+        0.2725
+      ],
+      [
+        0.0568,
+        0.3178
+      ],
+      [
+        0.0708,
+        0.3661
+      ],
+      [
+        0.0851,
+        0.4061
+      ],
+      [
+        0.1041,
+        0.4485
+      ],
+      [
+        0.1196,
+        0.4954
+      ],
+      [
+        0.1398,
+        0.5361
+      ],
+      [
+        0.1608,
+        0.5742
+      ],
+      [
+        0.1863,
+        0.6106
+      ],
+      [
+        0.2082,
+        0.6448
+      ],
+      [
+        0.2327,
+        0.6776
+      ],
+      [
+        0.2584,
+        0.7124
+      ],
+      [
+        0.2831,
+        0.7482
+      ],
+      [
+        0.3281,
+        0.781
+      ],
+      [
+        0.3717,
+        0.8122
+      ],
+      [
+        0.4302,
+        0.8457
+      ],
+      [
+        0.5167,
+        0.8789
+      ],
+      [
+        0.6057,
+        0.9091
+      ],
+      [
+        0.6773,
+        0.9399
+      ],
+      [
+        0.7778,
+        0.9705
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.1574
+      ],
+      [
+        1.0,
+        0.1642
+      ],
+      [
+        0.997,
+        0.1712
+      ],
+      [
+        0.9882,
+        0.1777
+      ],
+      [
+        0.977,
+        0.1845
+      ],
+      [
+        0.9645,
+        0.1917
+      ],
+      [
+        0.9544,
+        0.2002
+      ],
+      [
+        0.9347,
+        0.2076
+      ],
+      [
+        0.9163,
+        0.2163
+      ],
+      [
+        0.8969,
+        0.2258
+      ],
+      [
+        0.8828,
+        0.2381
+      ],
+      [
+        0.867,
+        0.2519
+      ],
+      [
+        0.8477,
+        0.2667
+      ],
+      [
+        0.823,
+        0.2825
+      ],
+      [
+        0.7932,
+        0.2995
+      ],
+      [
+        0.7613,
+        0.3194
+      ],
+      [
+        0.7163,
+        0.3381
+      ],
+      [
+        0.6651,
+        0.3587
+      ],
+      [
+        0.609,
+        0.3832
+      ],
+      [
+        0.546,
+        0.4121
+      ],
+      [
+        0.4675,
+        0.4411
+      ],
+      [
+        0.3815,
+        0.48
+      ],
+      [
+        0.2866,
+        0.5406
+      ],
+      [
+        0.1664,
+        0.6283
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8375,
+        "prevalence": 0.1145
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.798,
+        "prevalence": 0.1341
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.79,
+        "prevalence": 0.1831
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7561,
+        "prevalence": 0.1343
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000105",
+          "hour": 2,
+          "predicted_risk": 0.778
+        },
+        {
+          "patient_id": "p000105",
+          "hour": 3,
+          "predicted_risk": 0.791
+        },
+        {
+          "patient_id": "p000105",
+          "hour": 4,
+          "predicted_risk": 0.953
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 109,
+          "predicted_risk": 0.572
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 111,
+          "predicted_risk": 0.587
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 112,
+          "predicted_risk": 0.583
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 79,
+          "predicted_risk": 0.014
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 80,
+          "predicted_risk": 0.011
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 81,
+          "predicted_risk": 0.013
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.337
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.344
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.167
+        }
+      ]
+    }
+  },
+  "AKI_6h": {
+    "test_AUROC": 0.8219,
+    "test_AUPRC": 0.1779,
+    "operating_threshold": 0.3395,
+    "precision": 0.1251,
+    "recall": 0.7304,
+    "f1": 0.2135,
+    "confusion_matrix": {
+      "tp": 596,
+      "fp": 4170,
+      "fn": 220,
+      "tn": 14368
+    },
+    "support": {
+      "n_positive": 816,
+      "n_negative": 18538,
+      "prevalence": 0.0422
+    },
+    "calibration": {
+      "ece_before": 0.1764,
+      "ece_after_platt_scaling": 0.0052,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0318,
+          "observed": 0.0094,
+          "n": 9518
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1444,
+          "observed": 0.0153,
+          "n": 3070
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2458,
+          "observed": 0.043,
+          "n": 1512
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.348,
+          "observed": 0.0472,
+          "n": 1145
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4456,
+          "observed": 0.0511,
+          "n": 881
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5497,
+          "observed": 0.0726,
+          "n": 716
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.651,
+          "observed": 0.1413,
+          "n": 743
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7512,
+          "observed": 0.1821,
+          "n": 758
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8521,
+          "observed": 0.1949,
+          "n": 826
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9244,
+          "observed": 0.3243,
+          "n": 185
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0244,
+          "observed": 0.0224,
+          "n": 17063
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1473,
+          "observed": 0.1738,
+          "n": 1882
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2184,
+          "observed": 0.2616,
+          "n": 409
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.1171,
+        "recall": 0.7537
+      },
+      "0.50": {
+        "precision": 0.1599,
+        "recall": 0.6324
+      },
+      "0.34": {
+        "precision": 0.1251,
+        "recall": 0.7304
+      },
+      "0.70": {
+        "precision": 0.2029,
+        "recall": 0.44
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0051,
+        0.0515
+      ],
+      [
+        0.0104,
+        0.1017
+      ],
+      [
+        0.0201,
+        0.1434
+      ],
+      [
+        0.0295,
+        0.19
+      ],
+      [
+        0.0389,
+        0.2328
+      ],
+      [
+        0.0441,
+        0.2819
+      ],
+      [
+        0.0516,
+        0.3333
+      ],
+      [
+        0.0605,
+        0.3811
+      ],
+      [
+        0.0726,
+        0.4191
+      ],
+      [
+        0.0827,
+        0.4632
+      ],
+      [
+        0.0925,
+        0.5049
+      ],
+      [
+        0.1046,
+        0.5453
+      ],
+      [
+        0.1172,
+        0.5858
+      ],
+      [
+        0.1388,
+        0.6213
+      ],
+      [
+        0.1568,
+        0.6605
+      ],
+      [
+        0.203,
+        0.6961
+      ],
+      [
+        0.2357,
+        0.7414
+      ],
+      [
+        0.2716,
+        0.7794
+      ],
+      [
+        0.3073,
+        0.8186
+      ],
+      [
+        0.3679,
+        0.8554
+      ],
+      [
+        0.4918,
+        0.8922
+      ],
+      [
+        0.5771,
+        0.9277
+      ],
+      [
+        0.7188,
+        0.9657
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0422
+      ],
+      [
+        0.9926,
+        0.0437
+      ],
+      [
+        0.9926,
+        0.0457
+      ],
+      [
+        0.9877,
+        0.0476
+      ],
+      [
+        0.9779,
+        0.0495
+      ],
+      [
+        0.9694,
+        0.0516
+      ],
+      [
+        0.9669,
+        0.0544
+      ],
+      [
+        0.9596,
+        0.0571
+      ],
+      [
+        0.9485,
+        0.06
+      ],
+      [
+        0.94,
+        0.0634
+      ],
+      [
+        0.9277,
+        0.0671
+      ],
+      [
+        0.902,
+        0.0702
+      ],
+      [
+        0.8873,
+        0.0748
+      ],
+      [
+        0.8762,
+        0.0806
+      ],
+      [
+        0.8664,
+        0.0877
+      ],
+      [
+        0.8542,
+        0.096
+      ],
+      [
+        0.8223,
+        0.104
+      ],
+      [
+        0.7794,
+        0.1127
+      ],
+      [
+        0.7341,
+        0.1238
+      ],
+      [
+        0.685,
+        0.1386
+      ],
+      [
+        0.6311,
+        0.1596
+      ],
+      [
+        0.5515,
+        0.186
+      ],
+      [
+        0.4105,
+        0.2076
+      ],
+      [
+        0.2108,
+        0.2129
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8691,
+        "prevalence": 0.0302
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.8494,
+        "prevalence": 0.0226
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7891,
+        "prevalence": 0.0556
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.8151,
+        "prevalence": 0.0363
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000125",
+          "hour": 3,
+          "predicted_risk": 0.607
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 4,
+          "predicted_risk": 0.652
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 5,
+          "predicted_risk": 0.612
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000044",
+          "hour": 10,
+          "predicted_risk": 0.48
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 11,
+          "predicted_risk": 0.467
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 12,
+          "predicted_risk": 0.604
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000155",
+          "hour": 30,
+          "predicted_risk": 0.086
+        },
+        {
+          "patient_id": "p000155",
+          "hour": 31,
+          "predicted_risk": 0.078
+        },
+        {
+          "patient_id": "p000155",
+          "hour": 32,
+          "predicted_risk": 0.064
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.151
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.125
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.064
+        }
+      ]
+    }
+  },
+  "AKI_12h": {
+    "test_AUROC": 0.8086,
+    "test_AUPRC": 0.2492,
+    "operating_threshold": 0.5554,
+    "precision": 0.2234,
+    "recall": 0.6455,
+    "f1": 0.332,
+    "confusion_matrix": {
+      "tp": 885,
+      "fp": 3076,
+      "fn": 486,
+      "tn": 14907
+    },
+    "support": {
+      "n_positive": 1371,
+      "n_negative": 17983,
+      "prevalence": 0.0708
+    },
+    "calibration": {
+      "ece_before": 0.2052,
+      "ece_after_platt_scaling": 0.012,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0337,
+          "observed": 0.0144,
+          "n": 7865
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1489,
+          "observed": 0.0305,
+          "n": 2884
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2458,
+          "observed": 0.0493,
+          "n": 2070
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3464,
+          "observed": 0.0663,
+          "n": 1132
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4487,
+          "observed": 0.0684,
+          "n": 979
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5509,
+          "observed": 0.0917,
+          "n": 840
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6512,
+          "observed": 0.1369,
+          "n": 767
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7495,
+          "observed": 0.194,
+          "n": 1005
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8511,
+          "observed": 0.2943,
+          "n": 1135
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9264,
+          "observed": 0.3176,
+          "n": 677
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.037,
+          "observed": 0.0304,
+          "n": 15092
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1474,
+          "observed": 0.1402,
+          "n": 2346
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2445,
+          "observed": 0.3051,
+          "n": 1888
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3015,
+          "observed": 0.25,
+          "n": 28
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.1634,
+        "recall": 0.779
+      },
+      "0.50": {
+        "precision": 0.2093,
+        "recall": 0.6754
+      },
+      "0.56": {
+        "precision": 0.2234,
+        "recall": 0.6455
+      },
+      "0.70": {
+        "precision": 0.2641,
+        "recall": 0.5427
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0068,
+        0.0532
+      ],
+      [
+        0.0128,
+        0.1094
+      ],
+      [
+        0.0234,
+        0.1495
+      ],
+      [
+        0.0339,
+        0.2035
+      ],
+      [
+        0.0447,
+        0.2509
+      ],
+      [
+        0.0541,
+        0.2918
+      ],
+      [
+        0.0601,
+        0.3384
+      ],
+      [
+        0.0686,
+        0.388
+      ],
+      [
+        0.0765,
+        0.442
+      ],
+      [
+        0.0878,
+        0.4872
+      ],
+      [
+        0.1058,
+        0.5237
+      ],
+      [
+        0.1258,
+        0.5646
+      ],
+      [
+        0.143,
+        0.6047
+      ],
+      [
+        0.1667,
+        0.6419
+      ],
+      [
+        0.1971,
+        0.6776
+      ],
+      [
+        0.2371,
+        0.7141
+      ],
+      [
+        0.2731,
+        0.7513
+      ],
+      [
+        0.3137,
+        0.7885
+      ],
+      [
+        0.3601,
+        0.8235
+      ],
+      [
+        0.4203,
+        0.8592
+      ],
+      [
+        0.5008,
+        0.8957
+      ],
+      [
+        0.6394,
+        0.9314
+      ],
+      [
+        0.737,
+        0.9664
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0708
+      ],
+      [
+        0.9912,
+        0.0733
+      ],
+      [
+        0.9883,
+        0.0764
+      ],
+      [
+        0.9752,
+        0.0789
+      ],
+      [
+        0.9737,
+        0.0828
+      ],
+      [
+        0.973,
+        0.0871
+      ],
+      [
+        0.965,
+        0.0911
+      ],
+      [
+        0.946,
+        0.0946
+      ],
+      [
+        0.9336,
+        0.0992
+      ],
+      [
+        0.9227,
+        0.1046
+      ],
+      [
+        0.9139,
+        0.111
+      ],
+      [
+        0.9001,
+        0.1177
+      ],
+      [
+        0.8811,
+        0.1248
+      ],
+      [
+        0.8665,
+        0.1339
+      ],
+      [
+        0.8366,
+        0.1422
+      ],
+      [
+        0.8133,
+        0.1536
+      ],
+      [
+        0.7768,
+        0.1651
+      ],
+      [
+        0.7338,
+        0.1782
+      ],
+      [
+        0.6973,
+        0.1975
+      ],
+      [
+        0.6492,
+        0.2206
+      ],
+      [
+        0.5872,
+        0.2495
+      ],
+      [
+        0.5026,
+        0.2847
+      ],
+      [
+        0.3538,
+        0.3005
+      ],
+      [
+        0.1816,
+        0.3082
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8578,
+        "prevalence": 0.047
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.8261,
+        "prevalence": 0.0357
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7763,
+        "prevalence": 0.0953
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7939,
+        "prevalence": 0.0612
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000125",
+          "hour": 2,
+          "predicted_risk": 0.64
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 3,
+          "predicted_risk": 0.728
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 4,
+          "predicted_risk": 0.745
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000044",
+          "hour": 10,
+          "predicted_risk": 0.576
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 11,
+          "predicted_risk": 0.591
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 12,
+          "predicted_risk": 0.703
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000155",
+          "hour": 24,
+          "predicted_risk": 0.114
+        },
+        {
+          "patient_id": "p000155",
+          "hour": 25,
+          "predicted_risk": 0.117
+        },
+        {
+          "patient_id": "p000155",
+          "hour": 26,
+          "predicted_risk": 0.119
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.223
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.153
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.078
+        }
+      ]
+    }
+  },
+  "AKI_24h": {
+    "test_AUROC": 0.7963,
+    "test_AUPRC": 0.2863,
+    "operating_threshold": 0.5837,
+    "precision": 0.2822,
+    "recall": 0.6236,
+    "f1": 0.3886,
+    "confusion_matrix": {
+      "tp": 1138,
+      "fp": 2894,
+      "fn": 687,
+      "tn": 14635
+    },
+    "support": {
+      "n_positive": 1825,
+      "n_negative": 17529,
+      "prevalence": 0.0943
+    },
+    "calibration": {
+      "ece_before": 0.2034,
+      "ece_after_platt_scaling": 0.0164,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0391,
+          "observed": 0.0222,
+          "n": 6984
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1488,
+          "observed": 0.0368,
+          "n": 3261
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2458,
+          "observed": 0.0634,
+          "n": 2050
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3475,
+          "observed": 0.0796,
+          "n": 1181
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4476,
+          "observed": 0.0921,
+          "n": 1053
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5475,
+          "observed": 0.12,
+          "n": 908
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6526,
+          "observed": 0.1735,
+          "n": 830
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7517,
+          "observed": 0.2441,
+          "n": 1053
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8506,
+          "observed": 0.3464,
+          "n": 1276
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9273,
+          "observed": 0.3654,
+          "n": 758
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0525,
+          "observed": 0.0361,
+          "n": 13140
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1415,
+          "observed": 0.1125,
+          "n": 2649
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.251,
+          "observed": 0.2471,
+          "n": 1902
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3403,
+          "observed": 0.3506,
+          "n": 1663
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.2012,
+        "recall": 0.7781
+      },
+      "0.50": {
+        "precision": 0.2547,
+        "recall": 0.6734
+      },
+      "0.58": {
+        "precision": 0.2822,
+        "recall": 0.6236
+      },
+      "0.70": {
+        "precision": 0.3162,
+        "recall": 0.5348
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0106,
+        0.0553
+      ],
+      [
+        0.0189,
+        0.1052
+      ],
+      [
+        0.0281,
+        0.1567
+      ],
+      [
+        0.0366,
+        0.2153
+      ],
+      [
+        0.0492,
+        0.2614
+      ],
+      [
+        0.0596,
+        0.3096
+      ],
+      [
+        0.0692,
+        0.3633
+      ],
+      [
+        0.0794,
+        0.411
+      ],
+      [
+        0.0925,
+        0.4559
+      ],
+      [
+        0.1041,
+        0.497
+      ],
+      [
+        0.1224,
+        0.537
+      ],
+      [
+        0.1447,
+        0.5786
+      ],
+      [
+        0.1622,
+        0.6181
+      ],
+      [
+        0.1911,
+        0.6559
+      ],
+      [
+        0.2235,
+        0.6921
+      ],
+      [
+        0.2621,
+        0.7288
+      ],
+      [
+        0.301,
+        0.7644
+      ],
+      [
+        0.3492,
+        0.7984
+      ],
+      [
+        0.4007,
+        0.8329
+      ],
+      [
+        0.4604,
+        0.8663
+      ],
+      [
+        0.5577,
+        0.9008
+      ],
+      [
+        0.6664,
+        0.9353
+      ],
+      [
+        0.8537,
+        0.9682
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0943
+      ],
+      [
+        0.9868,
+        0.0971
+      ],
+      [
+        0.9781,
+        0.1006
+      ],
+      [
+        0.9721,
+        0.1048
+      ],
+      [
+        0.9649,
+        0.1092
+      ],
+      [
+        0.9627,
+        0.1147
+      ],
+      [
+        0.9556,
+        0.1202
+      ],
+      [
+        0.943,
+        0.1255
+      ],
+      [
+        0.9282,
+        0.1313
+      ],
+      [
+        0.9101,
+        0.1373
+      ],
+      [
+        0.8997,
+        0.1454
+      ],
+      [
+        0.8833,
+        0.1538
+      ],
+      [
+        0.8674,
+        0.1636
+      ],
+      [
+        0.8433,
+        0.1735
+      ],
+      [
+        0.8148,
+        0.1844
+      ],
+      [
+        0.7858,
+        0.1975
+      ],
+      [
+        0.754,
+        0.2133
+      ],
+      [
+        0.7134,
+        0.2306
+      ],
+      [
+        0.6734,
+        0.2539
+      ],
+      [
+        0.6236,
+        0.2822
+      ],
+      [
+        0.5452,
+        0.3084
+      ],
+      [
+        0.4504,
+        0.3397
+      ],
+      [
+        0.3096,
+        0.3501
+      ],
+      [
+        0.1638,
+        0.37
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8257,
+        "prevalence": 0.0608
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.7906,
+        "prevalence": 0.043
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7709,
+        "prevalence": 0.1318
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.7569,
+        "prevalence": 0.0719
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000125",
+          "hour": 2,
+          "predicted_risk": 0.672
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 3,
+          "predicted_risk": 0.744
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 4,
+          "predicted_risk": 0.752
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000044",
+          "hour": 10,
+          "predicted_risk": 0.586
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 12,
+          "predicted_risk": 0.704
+        },
+        {
+          "patient_id": "p000044",
+          "hour": 13,
+          "predicted_risk": 0.696
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000155",
+          "hour": 12,
+          "predicted_risk": 0.188
+        },
+        {
+          "patient_id": "p000155",
+          "hour": 13,
+          "predicted_risk": 0.201
+        },
+        {
+          "patient_id": "p000155",
+          "hour": 14,
+          "predicted_risk": 0.204
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.209
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.168
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.084
+        }
+      ]
+    }
+  },
+  "Coagulopathy_6h": {
+    "test_AUROC": 0.7503,
+    "test_AUPRC": 0.0593,
+    "operating_threshold": 0.1073,
+    "precision": 0.026,
+    "recall": 0.5238,
+    "f1": 0.0495,
+    "confusion_matrix": {
+      "tp": 66,
+      "fp": 2475,
+      "fn": 60,
+      "tn": 16753
+    },
+    "support": {
+      "n_positive": 126,
+      "n_negative": 19228,
+      "prevalence": 0.0065
+    },
+    "calibration": {
+      "ece_before": 0.0467,
+      "ece_after_platt_scaling": 0.0016,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0173,
+          "observed": 0.0035,
+          "n": 16638
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.142,
+          "observed": 0.0163,
+          "n": 1595
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2384,
+          "observed": 0.011,
+          "n": 455
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3414,
+          "observed": 0.0241,
+          "n": 166
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4453,
+          "observed": 0.0206,
+          "n": 97
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5456,
+          "observed": 0.0253,
+          "n": 79
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6456,
+          "observed": 0.0,
+          "n": 63
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7383,
+          "observed": 0.0133,
+          "n": 75
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8516,
+          "observed": 0.0843,
+          "n": 83
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9409,
+          "observed": 0.1942,
+          "n": 103
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.006,
+          "observed": 0.0051,
+          "n": 19124
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1515,
+          "observed": 0.0645,
+          "n": 124
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2341,
+          "observed": 0.1887,
+          "n": 106
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.0541,
+        "recall": 0.2857
+      },
+      "0.50": {
+        "precision": 0.0744,
+        "recall": 0.2381
+      },
+      "0.11": {
+        "precision": 0.026,
+        "recall": 0.5238
+      },
+      "0.70": {
+        "precision": 0.1073,
+        "recall": 0.2222
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.002,
+        0.0317
+      ],
+      [
+        0.0024,
+        0.119
+      ],
+      [
+        0.0034,
+        0.1587
+      ],
+      [
+        0.0061,
+        0.1984
+      ],
+      [
+        0.0223,
+        0.2381
+      ],
+      [
+        0.0319,
+        0.2857
+      ],
+      [
+        0.0621,
+        0.3333
+      ],
+      [
+        0.0666,
+        0.373
+      ],
+      [
+        0.0762,
+        0.4206
+      ],
+      [
+        0.0933,
+        0.4683
+      ],
+      [
+        0.1026,
+        0.5079
+      ],
+      [
+        0.1556,
+        0.5476
+      ],
+      [
+        0.1752,
+        0.5873
+      ],
+      [
+        0.2161,
+        0.6349
+      ],
+      [
+        0.3475,
+        0.6587
+      ],
+      [
+        0.4149,
+        0.6905
+      ],
+      [
+        0.4984,
+        0.7302
+      ],
+      [
+        0.5591,
+        0.7778
+      ],
+      [
+        0.5715,
+        0.8175
+      ],
+      [
+        0.5949,
+        0.8571
+      ],
+      [
+        0.6647,
+        0.8889
+      ],
+      [
+        0.7195,
+        0.9365
+      ],
+      [
+        0.7929,
+        0.9762
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0065
+      ],
+      [
+        1.0,
+        0.0068
+      ],
+      [
+        1.0,
+        0.0071
+      ],
+      [
+        1.0,
+        0.0074
+      ],
+      [
+        1.0,
+        0.0078
+      ],
+      [
+        0.9683,
+        0.008
+      ],
+      [
+        0.9444,
+        0.0082
+      ],
+      [
+        0.9286,
+        0.0085
+      ],
+      [
+        0.8968,
+        0.0088
+      ],
+      [
+        0.881,
+        0.0092
+      ],
+      [
+        0.8254,
+        0.0092
+      ],
+      [
+        0.7619,
+        0.0092
+      ],
+      [
+        0.7381,
+        0.0096
+      ],
+      [
+        0.7302,
+        0.0104
+      ],
+      [
+        0.6984,
+        0.0109
+      ],
+      [
+        0.6667,
+        0.0116
+      ],
+      [
+        0.6508,
+        0.0127
+      ],
+      [
+        0.6349,
+        0.0142
+      ],
+      [
+        0.6349,
+        0.0165
+      ],
+      [
+        0.627,
+        0.0196
+      ],
+      [
+        0.5873,
+        0.0229
+      ],
+      [
+        0.5159,
+        0.0269
+      ],
+      [
+        0.4444,
+        0.0347
+      ],
+      [
+        0.3095,
+        0.0483
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8505,
+        "prevalence": 0.0066
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.7347,
+        "prevalence": 0.0069
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7898,
+        "prevalence": 0.0066
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.5716,
+        "prevalence": 0.0051
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000125",
+          "hour": 18,
+          "predicted_risk": 0.172
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 19,
+          "predicted_risk": 0.178
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 20,
+          "predicted_risk": 0.182
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.14
+        },
+        {
+          "patient_id": "p000025",
+          "hour": 3,
+          "predicted_risk": 0.198
+        },
+        {
+          "patient_id": "p000025",
+          "hour": 4,
+          "predicted_risk": 0.122
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000218",
+          "hour": 3,
+          "predicted_risk": 0.075
+        },
+        {
+          "patient_id": "p000218",
+          "hour": 4,
+          "predicted_risk": 0.022
+        },
+        {
+          "patient_id": "p000218",
+          "hour": 5,
+          "predicted_risk": 0.005
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.069
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.017
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 5,
+          "predicted_risk": 0.011
+        }
+      ]
+    }
+  },
+  "Coagulopathy_12h": {
+    "test_AUROC": 0.7429,
+    "test_AUPRC": 0.0812,
+    "operating_threshold": 0.1119,
+    "precision": 0.036,
+    "recall": 0.5314,
+    "f1": 0.0675,
+    "confusion_matrix": {
+      "tp": 110,
+      "fp": 2944,
+      "fn": 97,
+      "tn": 16203
+    },
+    "support": {
+      "n_positive": 207,
+      "n_negative": 19147,
+      "prevalence": 0.0107
+    },
+    "calibration": {
+      "ece_before": 0.0544,
+      "ece_after_platt_scaling": 0.0023,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0206,
+          "observed": 0.0057,
+          "n": 15945
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1409,
+          "observed": 0.0165,
+          "n": 1940
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2431,
+          "observed": 0.026,
+          "n": 655
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3442,
+          "observed": 0.0714,
+          "n": 224
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.4445,
+          "observed": 0.0254,
+          "n": 118
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5411,
+          "observed": 0.0267,
+          "n": 75
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.653,
+          "observed": 0.0253,
+          "n": 79
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7565,
+          "observed": 0.0116,
+          "n": 86
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.862,
+          "observed": 0.1379,
+          "n": 87
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.9513,
+          "observed": 0.2138,
+          "n": 145
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0084,
+          "observed": 0.0085,
+          "n": 18982
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1467,
+          "observed": 0.0137,
+          "n": 146
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2565,
+          "observed": 0.1271,
+          "n": 118
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3333,
+          "observed": 0.2593,
+          "n": 108
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.0823,
+        "recall": 0.3237
+      },
+      "0.50": {
+        "precision": 0.1017,
+        "recall": 0.2319
+      },
+      "0.11": {
+        "precision": 0.036,
+        "recall": 0.5314
+      },
+      "0.70": {
+        "precision": 0.1384,
+        "recall": 0.2126
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0025,
+        0.1208
+      ],
+      [
+        0.0064,
+        0.1594
+      ],
+      [
+        0.01,
+        0.2077
+      ],
+      [
+        0.0296,
+        0.2512
+      ],
+      [
+        0.0343,
+        0.2995
+      ],
+      [
+        0.0418,
+        0.343
+      ],
+      [
+        0.0662,
+        0.3768
+      ],
+      [
+        0.077,
+        0.4155
+      ],
+      [
+        0.0946,
+        0.4541
+      ],
+      [
+        0.1053,
+        0.4928
+      ],
+      [
+        0.1516,
+        0.5266
+      ],
+      [
+        0.18,
+        0.5652
+      ],
+      [
+        0.2114,
+        0.6039
+      ],
+      [
+        0.3402,
+        0.6425
+      ],
+      [
+        0.38,
+        0.6763
+      ],
+      [
+        0.4571,
+        0.715
+      ],
+      [
+        0.5592,
+        0.7536
+      ],
+      [
+        0.6252,
+        0.7923
+      ],
+      [
+        0.6411,
+        0.8261
+      ],
+      [
+        0.6472,
+        0.8647
+      ],
+      [
+        0.6566,
+        0.9034
+      ],
+      [
+        0.6822,
+        0.9372
+      ],
+      [
+        0.7352,
+        0.9614
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0107
+      ],
+      [
+        1.0,
+        0.0112
+      ],
+      [
+        1.0,
+        0.0117
+      ],
+      [
+        1.0,
+        0.0122
+      ],
+      [
+        1.0,
+        0.0128
+      ],
+      [
+        1.0,
+        0.0135
+      ],
+      [
+        0.9662,
+        0.0138
+      ],
+      [
+        0.9469,
+        0.0143
+      ],
+      [
+        0.913,
+        0.0147
+      ],
+      [
+        0.7729,
+        0.0132
+      ],
+      [
+        0.7585,
+        0.0139
+      ],
+      [
+        0.7488,
+        0.0148
+      ],
+      [
+        0.7343,
+        0.0157
+      ],
+      [
+        0.715,
+        0.0167
+      ],
+      [
+        0.6957,
+        0.0179
+      ],
+      [
+        0.6667,
+        0.019
+      ],
+      [
+        0.6377,
+        0.0205
+      ],
+      [
+        0.628,
+        0.023
+      ],
+      [
+        0.6232,
+        0.0267
+      ],
+      [
+        0.599,
+        0.0308
+      ],
+      [
+        0.5507,
+        0.0353
+      ],
+      [
+        0.5072,
+        0.0434
+      ],
+      [
+        0.4203,
+        0.0539
+      ],
+      [
+        0.3237,
+        0.083
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.8224,
+        "prevalence": 0.0107
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.7792,
+        "prevalence": 0.0098
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7591,
+        "prevalence": 0.0113
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.5595,
+        "prevalence": 0.0099
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000125",
+          "hour": 12,
+          "predicted_risk": 0.371
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 13,
+          "predicted_risk": 0.356
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 14,
+          "predicted_risk": 0.356
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.14
+        },
+        {
+          "patient_id": "p000025",
+          "hour": 3,
+          "predicted_risk": 0.205
+        },
+        {
+          "patient_id": "p000025",
+          "hour": 4,
+          "predicted_risk": 0.135
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000218",
+          "hour": 3,
+          "predicted_risk": 0.085
+        },
+        {
+          "patient_id": "p000218",
+          "hour": 4,
+          "predicted_risk": 0.031
+        },
+        {
+          "patient_id": "p000218",
+          "hour": 5,
+          "predicted_risk": 0.008
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.068
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.016
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 5,
+          "predicted_risk": 0.01
+        }
+      ]
+    }
+  },
+  "Coagulopathy_24h": {
+    "test_AUROC": 0.7449,
+    "test_AUPRC": 0.1234,
+    "operating_threshold": 0.1395,
+    "precision": 0.0547,
+    "recall": 0.503,
+    "f1": 0.0986,
+    "confusion_matrix": {
+      "tp": 165,
+      "fp": 2853,
+      "fn": 163,
+      "tn": 16173
+    },
+    "support": {
+      "n_positive": 328,
+      "n_negative": 19026,
+      "prevalence": 0.0169
+    },
+    "calibration": {
+      "ece_before": 0.0599,
+      "ece_after_platt_scaling": 0.0055,
+      "reliability_before": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0212,
+          "observed": 0.0095,
+          "n": 15300
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1418,
+          "observed": 0.0175,
+          "n": 1996
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2421,
+          "observed": 0.03,
+          "n": 932
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3429,
+          "observed": 0.061,
+          "n": 410
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "confidence": 0.443,
+          "observed": 0.1084,
+          "n": 166
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "confidence": 0.5528,
+          "observed": 0.0367,
+          "n": 109
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "confidence": 0.6498,
+          "observed": 0.0299,
+          "n": 67
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "confidence": 0.7519,
+          "observed": 0.0462,
+          "n": 65
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "confidence": 0.8433,
+          "observed": 0.0119,
+          "n": 84
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "confidence": 0.964,
+          "observed": 0.2978,
+          "n": 225
+        }
+      ],
+      "reliability_after": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "confidence": 0.0106,
+          "observed": 0.0135,
+          "n": 18914
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "confidence": 0.1447,
+          "observed": 0.0336,
+          "n": 119
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "confidence": 0.2436,
+          "observed": 0.0103,
+          "n": 97
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "confidence": 0.3632,
+          "observed": 0.2991,
+          "n": 224
+        }
+      ]
+    },
+    "auprc_at_thresholds": {
+      "0.30": {
+        "precision": 0.1066,
+        "recall": 0.3659
+      },
+      "0.50": {
+        "precision": 0.14,
+        "recall": 0.2348
+      },
+      "0.14": {
+        "precision": 0.0547,
+        "recall": 0.503
+      },
+      "0.70": {
+        "precision": 0.1898,
+        "recall": 0.2165
+      }
+    },
+    "roc_curve": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0038,
+        0.125
+      ],
+      [
+        0.0067,
+        0.1646
+      ],
+      [
+        0.0193,
+        0.2195
+      ],
+      [
+        0.0276,
+        0.2652
+      ],
+      [
+        0.0347,
+        0.3049
+      ],
+      [
+        0.0445,
+        0.3415
+      ],
+      [
+        0.0644,
+        0.378
+      ],
+      [
+        0.081,
+        0.4146
+      ],
+      [
+        0.1027,
+        0.4543
+      ],
+      [
+        0.1358,
+        0.4909
+      ],
+      [
+        0.1661,
+        0.5274
+      ],
+      [
+        0.2059,
+        0.5671
+      ],
+      [
+        0.2296,
+        0.6067
+      ],
+      [
+        0.2573,
+        0.6433
+      ],
+      [
+        0.3579,
+        0.6768
+      ],
+      [
+        0.4431,
+        0.7134
+      ],
+      [
+        0.5566,
+        0.75
+      ],
+      [
+        0.6144,
+        0.7866
+      ],
+      [
+        0.6394,
+        0.8232
+      ],
+      [
+        0.6552,
+        0.8598
+      ],
+      [
+        0.6664,
+        0.8994
+      ],
+      [
+        0.677,
+        0.936
+      ],
+      [
+        0.7054,
+        0.9726
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "pr_curve": [
+      [
+        1.0,
+        0.0169
+      ],
+      [
+        1.0,
+        0.0177
+      ],
+      [
+        1.0,
+        0.0185
+      ],
+      [
+        1.0,
+        0.0194
+      ],
+      [
+        1.0,
+        0.0203
+      ],
+      [
+        1.0,
+        0.0214
+      ],
+      [
+        0.9909,
+        0.0224
+      ],
+      [
+        0.9695,
+        0.0232
+      ],
+      [
+        0.8841,
+        0.0225
+      ],
+      [
+        0.7896,
+        0.0214
+      ],
+      [
+        0.7622,
+        0.0221
+      ],
+      [
+        0.7439,
+        0.0233
+      ],
+      [
+        0.7348,
+        0.0249
+      ],
+      [
+        0.7195,
+        0.0266
+      ],
+      [
+        0.7012,
+        0.0285
+      ],
+      [
+        0.6829,
+        0.0309
+      ],
+      [
+        0.6707,
+        0.0341
+      ],
+      [
+        0.6555,
+        0.0381
+      ],
+      [
+        0.622,
+        0.0422
+      ],
+      [
+        0.5579,
+        0.0454
+      ],
+      [
+        0.5244,
+        0.0533
+      ],
+      [
+        0.4787,
+        0.0649
+      ],
+      [
+        0.4055,
+        0.0824
+      ],
+      [
+        0.314,
+        0.1275
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "subgroup_by_age": {
+      "<40": {
+        "n": 1956,
+        "AUROC": 0.7276,
+        "prevalence": 0.0169
+      },
+      "40-60": {
+        "n": 4906,
+        "AUROC": 0.8394,
+        "prevalence": 0.0139
+      },
+      "60-80": {
+        "n": 9960,
+        "AUROC": 0.7569,
+        "prevalence": 0.0179
+      },
+      "80+": {
+        "n": 2532,
+        "AUROC": 0.605,
+        "prevalence": 0.0194
+      }
+    },
+    "failure_examples": {
+      "true_positive": [
+        {
+          "patient_id": "p000125",
+          "hour": 2,
+          "predicted_risk": 0.428
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 3,
+          "predicted_risk": 0.722
+        },
+        {
+          "patient_id": "p000125",
+          "hour": 4,
+          "predicted_risk": 0.72
+        }
+      ],
+      "false_positive": [
+        {
+          "patient_id": "p000018",
+          "hour": 2,
+          "predicted_risk": 0.199
+        },
+        {
+          "patient_id": "p000025",
+          "hour": 3,
+          "predicted_risk": 0.287
+        },
+        {
+          "patient_id": "p000025",
+          "hour": 4,
+          "predicted_risk": 0.217
+        }
+      ],
+      "false_negative": [
+        {
+          "patient_id": "p000218",
+          "hour": 3,
+          "predicted_risk": 0.139
+        },
+        {
+          "patient_id": "p000218",
+          "hour": 4,
+          "predicted_risk": 0.058
+        },
+        {
+          "patient_id": "p000218",
+          "hour": 5,
+          "predicted_risk": 0.018
+        }
+      ],
+      "true_negative": [
+        {
+          "patient_id": "p000018",
+          "hour": 3,
+          "predicted_risk": 0.094
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 4,
+          "predicted_risk": 0.027
+        },
+        {
+          "patient_id": "p000018",
+          "hour": 5,
+          "predicted_risk": 0.016
+        }
+      ]
+    }
+  },
+  "_meta": {
+    "n_train_patients": 2770,
+    "n_val_patients": 594,
+    "n_test_patients": 594,
+    "patient_level_split_disjoint": true,
+    "architecture": "2-layer BiLSTM(64) + mean/max pooling + MLP trunk",
+    "note": "Sepsis uses PhysioNet-adjudicated labels. ARF/Cardiac/AKI/Coagulopathy use rule-based clinical proxy labels (see 01_etl_pipeline.py) \u2014 not adjudicated ground truth."
+  },
+  "_learning_curves": {
+    "epoch": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "train_loss": [
+      0.81608,
+      0.57704,
+      0.46168,
+      0.39767,
+      0.35631,
+      0.30785,
+      0.2916,
+      0.28051,
+      0.27345
+    ],
+    "val_macro_auroc": [
+      0.74994,
+      0.73313,
+      0.72209,
+      0.69482,
+      0.70238,
+      0.69931,
+      0.69457,
+      0.70386,
+      0.69291
+    ],
+    "lr": [
+      0.0008,
+      0.0008,
+      0.0008,
+      0.0008,
+      0.0004,
+      0.0004,
+      0.0004,
+      0.0004,
+      0.0002
+    ]
+  }
+}

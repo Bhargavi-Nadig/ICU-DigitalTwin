@@ -1,0 +1,51 @@
+{
+  "_comment": "CURRENT STATE: all scripts read/write model/ directly (flat, single version) — that's what's actually running today, described honestly below. The 'recommended_layout_for_hot_swap' block is the small refactor to do BEFORE adding a second (e.g. MIMIC-IV) model version: move model/ contents into model/<version_name>/, then have the serving app read this file to pick which subfolder is active. That change is what makes 'swap model, restart, no redeploy' actually true — see README 'Cloud Deployment & MIMIC Hot-Swap Design' for the exact steps.",
+
+  "active_version": "physionet_sepsis_challenge_v1",
+  "current_model_dir": "model",
+
+  "versions": {
+    "physionet_sepsis_challenge_v1": {
+      "dataset": "PhysioNet/CinC 2019 Sepsis Challenge, training_setA",
+      "conditions": ["Sepsis", "ARF", "Cardiac", "AKI", "Coagulopathy"],
+      "horizons": [6, 12, 24],
+      "production_model_type": "xgboost",
+      "feature_count": 215,
+      "notes": "Sepsis label adjudicated by challenge organizers. ARF/Cardiac/AKI/Coagulopathy are rule-based clinical proxies (see 01_etl_pipeline.py) — not adjudicated ground truth. Files live directly in model/ (current_model_dir above)."
+    },
+
+    "physionet_sepsis_challenge_v1_publication": {
+      "dataset": "PhysioNet/CinC 2019 Sepsis Challenge, training_setA (re-preprocessed)",
+      "conditions": ["Sepsis", "ARF", "Cardiac", "AKI", "Coagulopathy"],
+      "horizons": [6, 12, 24],
+      "production_model_type": "xgboost+rf_ensemble",
+      "feature_count": "varies (includes missingness indicators)",
+      "preprocessing_fixes": [
+        "train-only median imputation (no data leakage)",
+        "forward-fill limited to 6 hours",
+        "missingness indicators as features",
+        "ICULOS-based label construction with censoring"
+      ],
+      "ensemble": "soft voting: p = alpha * p_xgb + (1-alpha) * p_rf, alpha tuned on validation",
+      "evaluation": "bootstrap 95% CIs, Brier score, calibration slope/intercept, DCA, patient-level metrics",
+      "notes": "Publication-quality version with methodological fixes. Uses ensemble_models.pkl instead of production_models.pkl when available. Proxy label disclaimer applies to ARF/Cardiac/AKI/Coagulopathy."
+    },
+
+    "mimic_iv_v1": {
+      "_comment": "PLACEHOLDER — not yet trained.",
+      "dataset": "MIMIC-IV icu+hosp (planned)",
+      "conditions": ["Sepsis", "ARF", "Cardiac", "AKI", "Coagulopathy"],
+      "horizons": [6, 12, 24],
+      "production_model_type": null,
+      "notes": "Once trained: ARF from icd_code J96.*, cardiac arrest from I46.*, AKI from N17.* (real diagnoses, replacing this version's proxy labels). Sepsis from Sepsis-3 criteria applied to MIMIC vitals+labs, or icd_code A41.*/R65.2* as a secondary check. Would live in model/mimic_iv_v1/ once the versioned layout is adopted."
+    }
+  },
+
+  "recommended_layout_for_hot_swap": {
+    "step_1": "mkdir -p model/physionet_sepsis_challenge_v1 && mv model/*.pkl model/*.json model/*.pt model/*.npz model/physionet_sepsis_challenge_v1/  (keep this file, model_registry.json, at the repo root)",
+    "step_2": "Point every script's MODEL_DIR at model/<active_version>/ by reading active_version from this file instead of a hardcoded 'model' string — a ~10-line change in each script (BASE_DIR / 'model' / registry['active_version']).",
+    "step_3": "Train the MIMIC model with the same scripts (01 -> 02 -> 05 -> 03 -> 04), pointed at MIMIC-mapped data, writing to model/mimic_iv_v1/.",
+    "step_4": "Flip active_version to 'mimic_iv_v1' in this file, restart the app process. If model/ is a mounted volume (not baked into the container image), this requires zero image rebuild and zero redeploy — just a process restart.",
+    "why_not_done_already": "Doing this refactor before there's a second model version to swap to would just be speculative complexity in a repo that's still being iterated on. The one-time cost is small (~10 lines/script) and is the very next thing to do once MIMIC access exists."
+  }
+}

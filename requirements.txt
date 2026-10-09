@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+xgboost
+scikit-learn
+pandas
+numpy
+shap
+
+# Temporarily disabled for Azure deployment
+# torch
+# pyarrow
+# scipy
+# pytest

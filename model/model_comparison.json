@@ -1,0 +1,456 @@
+{
+  "Sepsis_6h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5766,
+        "AUPRC": 0.0431,
+        "ECE": 0.19
+      },
+      "logistic_regression": {
+        "AUROC": 0.7151,
+        "AUPRC": 0.1009,
+        "ECE": 0.3359
+      },
+      "random_forest": {
+        "AUROC": 0.7353,
+        "AUPRC": 0.0906,
+        "ECE": 0.2748
+      },
+      "xgboost": {
+        "AUROC": 0.7584,
+        "AUPRC": 0.1042,
+        "ECE": 0.119
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.694,
+        "AUPRC": 0.0849,
+        "ECE": 0.0007
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "Sepsis_12h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5815,
+        "AUPRC": 0.0582,
+        "ECE": 0.1875
+      },
+      "logistic_regression": {
+        "AUROC": 0.7031,
+        "AUPRC": 0.1223,
+        "ECE": 0.3323
+      },
+      "random_forest": {
+        "AUROC": 0.7467,
+        "AUPRC": 0.1362,
+        "ECE": 0.2673
+      },
+      "xgboost": {
+        "AUROC": 0.7298,
+        "AUPRC": 0.1162,
+        "ECE": 0.1412
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.6916,
+        "AUPRC": 0.1144,
+        "ECE": 0.0079
+      }
+    },
+    "best_by_AUROC": "random_forest"
+  },
+  "Sepsis_24h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5789,
+        "AUPRC": 0.0815,
+        "ECE": 0.1847
+      },
+      "logistic_regression": {
+        "AUROC": 0.6918,
+        "AUPRC": 0.1579,
+        "ECE": 0.3209
+      },
+      "random_forest": {
+        "AUROC": 0.7757,
+        "AUPRC": 0.2156,
+        "ECE": 0.2602
+      },
+      "xgboost": {
+        "AUROC": 0.7257,
+        "AUPRC": 0.1483,
+        "ECE": 0.1672
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7003,
+        "AUPRC": 0.1689,
+        "ECE": 0.0188
+      }
+    },
+    "best_by_AUROC": "random_forest"
+  },
+  "ARF_6h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5477,
+        "AUPRC": 0.1011,
+        "ECE": 0.1926
+      },
+      "logistic_regression": {
+        "AUROC": 0.8031,
+        "AUPRC": 0.2922,
+        "ECE": 0.2847
+      },
+      "random_forest": {
+        "AUROC": 0.8517,
+        "AUPRC": 0.3877,
+        "ECE": 0.2541
+      },
+      "xgboost": {
+        "AUROC": 0.8601,
+        "AUPRC": 0.4123,
+        "ECE": 0.1966
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7996,
+        "AUPRC": 0.2857,
+        "ECE": 0.0167
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "ARF_12h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5437,
+        "AUPRC": 0.1347,
+        "ECE": 0.1935
+      },
+      "logistic_regression": {
+        "AUROC": 0.7957,
+        "AUPRC": 0.3624,
+        "ECE": 0.2698
+      },
+      "random_forest": {
+        "AUROC": 0.8363,
+        "AUPRC": 0.454,
+        "ECE": 0.2447
+      },
+      "xgboost": {
+        "AUROC": 0.8407,
+        "AUPRC": 0.4657,
+        "ECE": 0.1845
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7916,
+        "AUPRC": 0.37,
+        "ECE": 0.0234
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "ARF_24h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5412,
+        "AUPRC": 0.1614,
+        "ECE": 0.1942
+      },
+      "logistic_regression": {
+        "AUROC": 0.7894,
+        "AUPRC": 0.4115,
+        "ECE": 0.2577
+      },
+      "random_forest": {
+        "AUROC": 0.8251,
+        "AUPRC": 0.5024,
+        "ECE": 0.2404
+      },
+      "xgboost": {
+        "AUROC": 0.828,
+        "AUPRC": 0.5011,
+        "ECE": 0.1808
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7768,
+        "AUPRC": 0.4079,
+        "ECE": 0.0242
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "Cardiac_6h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.6987,
+        "AUPRC": 0.1984,
+        "ECE": 0.1567
+      },
+      "logistic_regression": {
+        "AUROC": 0.8724,
+        "AUPRC": 0.4583,
+        "ECE": 0.2193
+      },
+      "random_forest": {
+        "AUROC": 0.8781,
+        "AUPRC": 0.4449,
+        "ECE": 0.2186
+      },
+      "xgboost": {
+        "AUROC": 0.8799,
+        "AUPRC": 0.4688,
+        "ECE": 0.1709
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.8318,
+        "AUPRC": 0.3891,
+        "ECE": 0.0133
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "Cardiac_12h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.6702,
+        "AUPRC": 0.2316,
+        "ECE": 0.1525
+      },
+      "logistic_regression": {
+        "AUROC": 0.853,
+        "AUPRC": 0.4891,
+        "ECE": 0.2177
+      },
+      "random_forest": {
+        "AUROC": 0.8555,
+        "AUPRC": 0.4763,
+        "ECE": 0.2152
+      },
+      "xgboost": {
+        "AUROC": 0.8564,
+        "AUPRC": 0.4951,
+        "ECE": 0.1683
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.8152,
+        "AUPRC": 0.4257,
+        "ECE": 0.0121
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "Cardiac_24h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.6426,
+        "AUPRC": 0.251,
+        "ECE": 0.155
+      },
+      "logistic_regression": {
+        "AUROC": 0.8392,
+        "AUPRC": 0.5145,
+        "ECE": 0.2058
+      },
+      "random_forest": {
+        "AUROC": 0.8369,
+        "AUPRC": 0.5117,
+        "ECE": 0.2055
+      },
+      "xgboost": {
+        "AUROC": 0.8371,
+        "AUPRC": 0.5269,
+        "ECE": 0.1536
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.795,
+        "AUPRC": 0.4491,
+        "ECE": 0.0174
+      }
+    },
+    "best_by_AUROC": "logistic_regression"
+  },
+  "AKI_6h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5416,
+        "AUPRC": 0.0467,
+        "ECE": 0.1943
+      },
+      "logistic_regression": {
+        "AUROC": 0.8376,
+        "AUPRC": 0.1927,
+        "ECE": 0.2787
+      },
+      "random_forest": {
+        "AUROC": 0.8866,
+        "AUPRC": 0.2982,
+        "ECE": 0.1995
+      },
+      "xgboost": {
+        "AUROC": 0.8796,
+        "AUPRC": 0.2851,
+        "ECE": 0.0946
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.8219,
+        "AUPRC": 0.1779,
+        "ECE": 0.0052
+      }
+    },
+    "best_by_AUROC": "random_forest"
+  },
+  "AKI_12h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5414,
+        "AUPRC": 0.0778,
+        "ECE": 0.1937
+      },
+      "logistic_regression": {
+        "AUROC": 0.8347,
+        "AUPRC": 0.2753,
+        "ECE": 0.2777
+      },
+      "random_forest": {
+        "AUROC": 0.8761,
+        "AUPRC": 0.4119,
+        "ECE": 0.205
+      },
+      "xgboost": {
+        "AUROC": 0.8652,
+        "AUPRC": 0.3779,
+        "ECE": 0.1458
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.8086,
+        "AUPRC": 0.2492,
+        "ECE": 0.012
+      }
+    },
+    "best_by_AUROC": "random_forest"
+  },
+  "AKI_24h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5431,
+        "AUPRC": 0.103,
+        "ECE": 0.1922
+      },
+      "logistic_regression": {
+        "AUROC": 0.8264,
+        "AUPRC": 0.3272,
+        "ECE": 0.277
+      },
+      "random_forest": {
+        "AUROC": 0.8507,
+        "AUPRC": 0.4312,
+        "ECE": 0.218
+      },
+      "xgboost": {
+        "AUROC": 0.8359,
+        "AUPRC": 0.3552,
+        "ECE": 0.1624
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7963,
+        "AUPRC": 0.2863,
+        "ECE": 0.0164
+      }
+    },
+    "best_by_AUROC": "random_forest"
+  },
+  "Coagulopathy_6h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5559,
+        "AUPRC": 0.0077,
+        "ECE": 0.1946
+      },
+      "logistic_regression": {
+        "AUROC": 0.8812,
+        "AUPRC": 0.0623,
+        "ECE": 0.1037
+      },
+      "random_forest": {
+        "AUROC": 0.9039,
+        "AUPRC": 0.0486,
+        "ECE": 0.1128
+      },
+      "xgboost": {
+        "AUROC": 0.9092,
+        "AUPRC": 0.0571,
+        "ECE": 0.0085
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7503,
+        "AUPRC": 0.0593,
+        "ECE": 0.0016
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "Coagulopathy_12h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5583,
+        "AUPRC": 0.0135,
+        "ECE": 0.1945
+      },
+      "logistic_regression": {
+        "AUROC": 0.8943,
+        "AUPRC": 0.1003,
+        "ECE": 0.1125
+      },
+      "random_forest": {
+        "AUROC": 0.9017,
+        "AUPRC": 0.081,
+        "ECE": 0.1173
+      },
+      "xgboost": {
+        "AUROC": 0.9033,
+        "AUPRC": 0.0791,
+        "ECE": 0.0098
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7429,
+        "AUPRC": 0.0812,
+        "ECE": 0.0023
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "Coagulopathy_24h": {
+    "results": {
+      "clinical_rule_qSOFA": {
+        "AUROC": 0.5463,
+        "AUPRC": 0.0213,
+        "ECE": 0.1953
+      },
+      "logistic_regression": {
+        "AUROC": 0.8889,
+        "AUPRC": 0.1505,
+        "ECE": 0.1168
+      },
+      "random_forest": {
+        "AUROC": 0.9006,
+        "AUPRC": 0.1443,
+        "ECE": 0.1171
+      },
+      "xgboost": {
+        "AUROC": 0.9074,
+        "AUPRC": 0.2141,
+        "ECE": 0.0102
+      },
+      "lstm_multitask_bilstm": {
+        "AUROC": 0.7449,
+        "AUPRC": 0.1234,
+        "ECE": 0.0055
+      }
+    },
+    "best_by_AUROC": "xgboost"
+  },
+  "_meta": {
+    "note": "Fair, information-matched comparison: every model sees the same 24h of context (LSTM as a raw sequence, tabular models as 215 engineered single-hour + window-summary features). XGBoost here uses FIXED hyperparameters for a clean baseline comparison \u2014 see 05_train_production_xgboost.py for the tuned production model actually served.",
+    "lstm_metrics_source": "lstm_metrics.json"
+  }
+}

@@ -1,0 +1,2327 @@
+{
+  "method": "weighted TreeSHAP: SHAP_ens = alpha * SHAP_xgb + (1-alpha) * SHAP_rf",
+  "limitation": "Additive SHAP combination is an approximation. True Shapley values for the blended function would require recomputing on the ensemble output, which is computationally expensive. In regions where XGBoost and RF disagree strongly, the weighted sum may slightly misattribute feature contributions.",
+  "n_background_samples": 200,
+  "conditions": {
+    "Sepsis": {
+      "alpha": 0.7,
+      "production_model": "xgboost",
+      "n_explained": 50,
+      "global_importance": [
+        {
+          "rank": 1,
+          "feature": "W_mean_Resp",
+          "mean_abs_shap_xgb": 0.115504,
+          "mean_abs_shap_rf": 0.009916,
+          "mean_abs_shap_ensemble": 0.083559
+        },
+        {
+          "rank": 2,
+          "feature": "W_min_Lactate",
+          "mean_abs_shap_xgb": 0.113919,
+          "mean_abs_shap_rf": 0.009431,
+          "mean_abs_shap_ensemble": 0.082573
+        },
+        {
+          "rank": 3,
+          "feature": "W_min_Resp",
+          "mean_abs_shap_xgb": 0.09098,
+          "mean_abs_shap_rf": 0.00663,
+          "mean_abs_shap_ensemble": 0.065465
+        },
+        {
+          "rank": 4,
+          "feature": "Unit1",
+          "mean_abs_shap_xgb": 0.077215,
+          "mean_abs_shap_rf": 0.002586,
+          "mean_abs_shap_ensemble": 0.054826
+        },
+        {
+          "rank": 5,
+          "feature": "Temp",
+          "mean_abs_shap_xgb": 0.063359,
+          "mean_abs_shap_rf": 0.003126,
+          "mean_abs_shap_ensemble": 0.045269
+        },
+        {
+          "rank": 6,
+          "feature": "W_mean_Lactate",
+          "mean_abs_shap_xgb": 0.061878,
+          "mean_abs_shap_rf": 0.006274,
+          "mean_abs_shap_ensemble": 0.045169
+        },
+        {
+          "rank": 7,
+          "feature": "HospAdmTime",
+          "mean_abs_shap_xgb": 0.061043,
+          "mean_abs_shap_rf": 0.002916,
+          "mean_abs_shap_ensemble": 0.043582
+        },
+        {
+          "rank": 8,
+          "feature": "W_min_WBC",
+          "mean_abs_shap_xgb": 0.055488,
+          "mean_abs_shap_rf": 0.003168,
+          "mean_abs_shap_ensemble": 0.039792
+        },
+        {
+          "rank": 9,
+          "feature": "W_max_Resp",
+          "mean_abs_shap_xgb": 0.05359,
+          "mean_abs_shap_rf": 0.005897,
+          "mean_abs_shap_ensemble": 0.038751
+        },
+        {
+          "rank": 10,
+          "feature": "W_max_FiO2",
+          "mean_abs_shap_xgb": 0.051532,
+          "mean_abs_shap_rf": 0.005085,
+          "mean_abs_shap_ensemble": 0.037542
+        },
+        {
+          "rank": 11,
+          "feature": "miss_BaseExcess",
+          "mean_abs_shap_xgb": 0.049586,
+          "mean_abs_shap_rf": 0.003506,
+          "mean_abs_shap_ensemble": 0.035762
+        },
+        {
+          "rank": 12,
+          "feature": "Age",
+          "mean_abs_shap_xgb": 0.048216,
+          "mean_abs_shap_rf": 0.002073,
+          "mean_abs_shap_ensemble": 0.034303
+        },
+        {
+          "rank": 13,
+          "feature": "W_mean_BaseExcess",
+          "mean_abs_shap_xgb": 0.037624,
+          "mean_abs_shap_rf": 0.004382,
+          "mean_abs_shap_ensemble": 0.027634
+        },
+        {
+          "rank": 14,
+          "feature": "W_min_O2Sat",
+          "mean_abs_shap_xgb": 0.036914,
+          "mean_abs_shap_rf": 0.002397,
+          "mean_abs_shap_ensemble": 0.026554
+        },
+        {
+          "rank": 15,
+          "feature": "W_mean_pH",
+          "mean_abs_shap_xgb": 0.035976,
+          "mean_abs_shap_rf": 0.004229,
+          "mean_abs_shap_ensemble": 0.026443
+        },
+        {
+          "rank": 16,
+          "feature": "W_max_Temp",
+          "mean_abs_shap_xgb": 0.032359,
+          "mean_abs_shap_rf": 0.003699,
+          "mean_abs_shap_ensemble": 0.023761
+        },
+        {
+          "rank": 17,
+          "feature": "W_std_SBP",
+          "mean_abs_shap_xgb": 0.028018,
+          "mean_abs_shap_rf": 0.001597,
+          "mean_abs_shap_ensemble": 0.019944
+        },
+        {
+          "rank": 18,
+          "feature": "W_max_Hgb",
+          "mean_abs_shap_xgb": 0.026771,
+          "mean_abs_shap_rf": 0.003888,
+          "mean_abs_shap_ensemble": 0.019738
+        },
+        {
+          "rank": 19,
+          "feature": "W_max_Creatinine",
+          "mean_abs_shap_xgb": 0.027416,
+          "mean_abs_shap_rf": 0.001354,
+          "mean_abs_shap_ensemble": 0.019522
+        },
+        {
+          "rank": 20,
+          "feature": "W_min_HR",
+          "mean_abs_shap_xgb": 0.027239,
+          "mean_abs_shap_rf": 0.001341,
+          "mean_abs_shap_ensemble": 0.019367
+        }
+      ],
+      "sample_explanations": [
+        {
+          "patient_id": "p002569",
+          "hour": 25,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "W_mean_Resp",
+              "value": 2.657,
+              "shap_xgb": 0.326545,
+              "shap_rf": 0.024761,
+              "shap_ensemble": 0.23601
+            },
+            {
+              "feature": "W_min_Lactate",
+              "value": -0.818,
+              "shap_xgb": 0.186512,
+              "shap_rf": 0.017086,
+              "shap_ensemble": 0.135684
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": 2.128,
+              "shap_xgb": 0.122067,
+              "shap_rf": 0.020565,
+              "shap_ensemble": 0.091616
+            },
+            {
+              "feature": "W_mean_WBC",
+              "value": 1.217,
+              "shap_xgb": -0.12866,
+              "shap_rf": -0.00174,
+              "shap_ensemble": -0.090584
+            },
+            {
+              "feature": "W_min_Resp",
+              "value": 1.844,
+              "shap_xgb": 0.103168,
+              "shap_rf": 0.015559,
+              "shap_ensemble": 0.076885
+            },
+            {
+              "feature": "Unit1",
+              "value": NaN,
+              "shap_xgb": 0.079481,
+              "shap_rf": 0.002659,
+              "shap_ensemble": 0.056435
+            },
+            {
+              "feature": "W_min_WBC",
+              "value": 0.138,
+              "shap_xgb": -0.062596,
+              "shap_rf": -0.002617,
+              "shap_ensemble": -0.044602
+            },
+            {
+              "feature": "W_mean_Hgb",
+              "value": -1.4,
+              "shap_xgb": 0.059484,
+              "shap_rf": 0.007822,
+              "shap_ensemble": 0.043985
+            }
+          ]
+        },
+        {
+          "patient_id": "p002569",
+          "hour": 21,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "W_mean_Resp",
+              "value": 2.418,
+              "shap_xgb": 0.426912,
+              "shap_rf": 0.025913,
+              "shap_ensemble": 0.306612
+            },
+            {
+              "feature": "W_min_Lactate",
+              "value": -0.818,
+              "shap_xgb": 0.166835,
+              "shap_rf": 0.018021,
+              "shap_ensemble": 0.122191
+            },
+            {
+              "feature": "W_mean_WBC",
+              "value": 1.216,
+              "shap_xgb": -0.133126,
+              "shap_rf": -0.00104,
+              "shap_ensemble": -0.0935
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": 1.354,
+              "shap_xgb": 0.11998,
+              "shap_rf": 0.018833,
+              "shap_ensemble": 0.089636
+            },
+            {
+              "feature": "W_min_Resp",
+              "value": 1.844,
+              "shap_xgb": 0.120437,
+              "shap_rf": 0.016844,
+              "shap_ensemble": 0.089359
+            },
+            {
+              "feature": "Unit1",
+              "value": NaN,
+              "shap_xgb": 0.063725,
+              "shap_rf": 0.00217,
+              "shap_ensemble": 0.045259
+            },
+            {
+              "feature": "W_diff24h_WBC",
+              "value": 2.132,
+              "shap_xgb": -0.062639,
+              "shap_rf": -0.004144,
+              "shap_ensemble": -0.04509
+            },
+            {
+              "feature": "W_min_WBC",
+              "value": 0.138,
+              "shap_xgb": -0.062253,
+              "shap_rf": -0.003005,
+              "shap_ensemble": -0.044479
+            }
+          ]
+        },
+        {
+          "patient_id": "p000206",
+          "hour": 16,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "W_min_O2Sat",
+              "value": -0.699,
+              "shap_xgb": 0.139736,
+              "shap_rf": 0.005166,
+              "shap_ensemble": 0.099365
+            },
+            {
+              "feature": "W_std_SBP",
+              "value": -1.918,
+              "shap_xgb": 0.084828,
+              "shap_rf": 0.006227,
+              "shap_ensemble": 0.061248
+            },
+            {
+              "feature": "miss_SBP",
+              "value": 4.576,
+              "shap_xgb": 0.077003,
+              "shap_rf": 0.003967,
+              "shap_ensemble": 0.055092
+            },
+            {
+              "feature": "Temp",
+              "value": -1.05,
+              "shap_xgb": -0.06722,
+              "shap_rf": -0.002543,
+              "shap_ensemble": -0.047817
+            },
+            {
+              "feature": "miss_BaseExcess",
+              "value": 0.925,
+              "shap_xgb": -0.063248,
+              "shap_rf": -0.004049,
+              "shap_ensemble": -0.045488
+            },
+            {
+              "feature": "W_min_WBC",
+              "value": -0.739,
+              "shap_xgb": -0.056749,
+              "shap_rf": -0.003998,
+              "shap_ensemble": -0.040924
+            },
+            {
+              "feature": "W_min_SBP",
+              "value": 0.974,
+              "shap_xgb": 0.05483,
+              "shap_rf": 0.001538,
+              "shap_ensemble": 0.038843
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": -0.348,
+              "shap_xgb": -0.050242,
+              "shap_rf": -0.008676,
+              "shap_ensemble": -0.037772
+            }
+          ]
+        },
+        {
+          "patient_id": "p001698",
+          "hour": 4,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "HospAdmTime",
+              "value": -0.655,
+              "shap_xgb": 0.377124,
+              "shap_rf": 0.017536,
+              "shap_ensemble": 0.269248
+            },
+            {
+              "feature": "Unit1",
+              "value": -0.922,
+              "shap_xgb": -0.211923,
+              "shap_rf": -0.006272,
+              "shap_ensemble": -0.150227
+            },
+            {
+              "feature": "W_std_SBP",
+              "value": -1.918,
+              "shap_xgb": 0.144025,
+              "shap_rf": 0.005945,
+              "shap_ensemble": 0.102601
+            },
+            {
+              "feature": "W_min_Lactate",
+              "value": -0.028,
+              "shap_xgb": -0.091412,
+              "shap_rf": -0.004135,
+              "shap_ensemble": -0.065229
+            },
+            {
+              "feature": "W_min_Resp",
+              "value": -0.163,
+              "shap_xgb": -0.089465,
+              "shap_rf": -0.006216,
+              "shap_ensemble": -0.064491
+            },
+            {
+              "feature": "Age",
+              "value": 1.227,
+              "shap_xgb": 0.060809,
+              "shap_rf": 0.003781,
+              "shap_ensemble": 0.043701
+            },
+            {
+              "feature": "W_mean_Resp",
+              "value": -0.338,
+              "shap_xgb": -0.051605,
+              "shap_rf": -0.008196,
+              "shap_ensemble": -0.038583
+            },
+            {
+              "feature": "W_min_WBC",
+              "value": 0.138,
+              "shap_xgb": -0.050778,
+              "shap_rf": -0.002649,
+              "shap_ensemble": -0.036339
+            }
+          ]
+        },
+        {
+          "patient_id": "p000962",
+          "hour": 21,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "W_min_Lactate",
+              "value": -0.028,
+              "shap_xgb": -0.097548,
+              "shap_rf": -0.005996,
+              "shap_ensemble": -0.070082
+            },
+            {
+              "feature": "W_min_Resp",
+              "value": -0.414,
+              "shap_xgb": -0.09077,
+              "shap_rf": -0.004224,
+              "shap_ensemble": -0.064806
+            },
+            {
+              "feature": "Unit1",
+              "value": NaN,
+              "shap_xgb": 0.062983,
+              "shap_rf": 0.002212,
+              "shap_ensemble": 0.044752
+            },
+            {
+              "feature": "W_mean_Lactate",
+              "value": 2.593,
+              "shap_xgb": -0.05933,
+              "shap_rf": -0.005026,
+              "shap_ensemble": -0.043038
+            },
+            {
+              "feature": "Chloride",
+              "value": 1.405,
+              "shap_xgb": 0.055616,
+              "shap_rf": 0.001054,
+              "shap_ensemble": 0.039247
+            },
+            {
+              "feature": "W_mean_Hgb",
+              "value": 2.226,
+              "shap_xgb": -0.050303,
+              "shap_rf": -0.003303,
+              "shap_ensemble": -0.036203
+            },
+            {
+              "feature": "miss_BaseExcess",
+              "value": -1.081,
+              "shap_xgb": 0.045774,
+              "shap_rf": 0.002837,
+              "shap_ensemble": 0.032893
+            },
+            {
+              "feature": "Lactate",
+              "value": 2.117,
+              "shap_xgb": -0.045137,
+              "shap_rf": -0.00428,
+              "shap_ensemble": -0.03288
+            }
+          ]
+        }
+      ]
+    },
+    "ARF": {
+      "alpha": 0.55,
+      "production_model": "xgboost",
+      "n_explained": 50,
+      "global_importance": [
+        {
+          "rank": 1,
+          "feature": "W_max_FiO2",
+          "mean_abs_shap_xgb": 0.354077,
+          "mean_abs_shap_rf": 0.037021,
+          "mean_abs_shap_ensemble": 0.211402
+        },
+        {
+          "rank": 2,
+          "feature": "W_std_SaO2",
+          "mean_abs_shap_xgb": 0.340541,
+          "mean_abs_shap_rf": 0.028363,
+          "mean_abs_shap_ensemble": 0.200061
+        },
+        {
+          "rank": 3,
+          "feature": "Unit1",
+          "mean_abs_shap_xgb": 0.244056,
+          "mean_abs_shap_rf": 0.032333,
+          "mean_abs_shap_ensemble": 0.148781
+        },
+        {
+          "rank": 4,
+          "feature": "W_mean_FiO2",
+          "mean_abs_shap_xgb": 0.116529,
+          "mean_abs_shap_rf": 0.026858,
+          "mean_abs_shap_ensemble": 0.076095
+        },
+        {
+          "rank": 5,
+          "feature": "W_max_Resp",
+          "mean_abs_shap_xgb": 0.119545,
+          "mean_abs_shap_rf": 0.010271,
+          "mean_abs_shap_ensemble": 0.070364
+        },
+        {
+          "rank": 6,
+          "feature": "W_min_O2Sat",
+          "mean_abs_shap_xgb": 0.106552,
+          "mean_abs_shap_rf": 0.007562,
+          "mean_abs_shap_ensemble": 0.061851
+        },
+        {
+          "rank": 7,
+          "feature": "Unit2",
+          "mean_abs_shap_xgb": 0.086207,
+          "mean_abs_shap_rf": 0.022148,
+          "mean_abs_shap_ensemble": 0.057282
+        },
+        {
+          "rank": 8,
+          "feature": "W_std_Resp",
+          "mean_abs_shap_xgb": 0.078464,
+          "mean_abs_shap_rf": 0.008212,
+          "mean_abs_shap_ensemble": 0.046851
+        },
+        {
+          "rank": 9,
+          "feature": "PF_ratio",
+          "mean_abs_shap_xgb": 0.071403,
+          "mean_abs_shap_rf": 0.011679,
+          "mean_abs_shap_ensemble": 0.044335
+        },
+        {
+          "rank": 10,
+          "feature": "W_std_PaCO2",
+          "mean_abs_shap_xgb": 0.072927,
+          "mean_abs_shap_rf": 0.008454,
+          "mean_abs_shap_ensemble": 0.043876
+        },
+        {
+          "rank": 11,
+          "feature": "W_mean_Resp",
+          "mean_abs_shap_xgb": 0.077243,
+          "mean_abs_shap_rf": 0.005887,
+          "mean_abs_shap_ensemble": 0.043686
+        },
+        {
+          "rank": 12,
+          "feature": "W_diff6h_SaO2",
+          "mean_abs_shap_xgb": 0.065494,
+          "mean_abs_shap_rf": 0.006922,
+          "mean_abs_shap_ensemble": 0.039134
+        },
+        {
+          "rank": 13,
+          "feature": "Age",
+          "mean_abs_shap_xgb": 0.064586,
+          "mean_abs_shap_rf": 0.00396,
+          "mean_abs_shap_ensemble": 0.037164
+        },
+        {
+          "rank": 14,
+          "feature": "W_diff24h_Chloride",
+          "mean_abs_shap_xgb": 0.064131,
+          "mean_abs_shap_rf": 0.002651,
+          "mean_abs_shap_ensemble": 0.036436
+        },
+        {
+          "rank": 15,
+          "feature": "W_mean_O2Sat",
+          "mean_abs_shap_xgb": 0.062335,
+          "mean_abs_shap_rf": 0.00572,
+          "mean_abs_shap_ensemble": 0.036109
+        },
+        {
+          "rank": 16,
+          "feature": "PTT",
+          "mean_abs_shap_xgb": 0.054203,
+          "mean_abs_shap_rf": 0.004225,
+          "mean_abs_shap_ensemble": 0.031674
+        },
+        {
+          "rank": 17,
+          "feature": "W_min_SaO2",
+          "mean_abs_shap_xgb": 0.041872,
+          "mean_abs_shap_rf": 0.013239,
+          "mean_abs_shap_ensemble": 0.027848
+        },
+        {
+          "rank": 18,
+          "feature": "FiO2",
+          "mean_abs_shap_xgb": 0.041534,
+          "mean_abs_shap_rf": 0.010882,
+          "mean_abs_shap_ensemble": 0.027741
+        },
+        {
+          "rank": 19,
+          "feature": "W_min_HR",
+          "mean_abs_shap_xgb": 0.045163,
+          "mean_abs_shap_rf": 0.002964,
+          "mean_abs_shap_ensemble": 0.026111
+        },
+        {
+          "rank": 20,
+          "feature": "miss_SaO2",
+          "mean_abs_shap_xgb": 0.034907,
+          "mean_abs_shap_rf": 0.010052,
+          "mean_abs_shap_ensemble": 0.023722
+        }
+      ],
+      "sample_explanations": [
+        {
+          "patient_id": "p003926",
+          "hour": 3,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Unit1",
+              "value": -0.922,
+              "shap_xgb": 0.508291,
+              "shap_rf": 0.066874,
+              "shap_ensemble": 0.309653
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": -1.895,
+              "shap_xgb": 0.407029,
+              "shap_rf": 0.029361,
+              "shap_ensemble": 0.237079
+            },
+            {
+              "feature": "W_max_FiO2",
+              "value": 1.902,
+              "shap_xgb": 0.378374,
+              "shap_rf": 0.046435,
+              "shap_ensemble": 0.229001
+            },
+            {
+              "feature": "W_std_Resp",
+              "value": -1.81,
+              "shap_xgb": 0.327768,
+              "shap_rf": 0.025461,
+              "shap_ensemble": 0.19173
+            },
+            {
+              "feature": "W_min_O2Sat",
+              "value": 1.166,
+              "shap_xgb": 0.268919,
+              "shap_rf": 0.013589,
+              "shap_ensemble": 0.154021
+            },
+            {
+              "feature": "W_mean_FiO2",
+              "value": 4.229,
+              "shap_xgb": 0.218646,
+              "shap_rf": 0.038874,
+              "shap_ensemble": 0.137749
+            },
+            {
+              "feature": "Unit2",
+              "value": 0.922,
+              "shap_xgb": 0.185483,
+              "shap_rf": 0.05027,
+              "shap_ensemble": 0.124637
+            },
+            {
+              "feature": "W_std_SaO2",
+              "value": -0.37,
+              "shap_xgb": -0.149904,
+              "shap_rf": -0.011834,
+              "shap_ensemble": -0.087773
+            }
+          ]
+        },
+        {
+          "patient_id": "p002508",
+          "hour": 13,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "W_std_SaO2",
+              "value": 0.475,
+              "shap_xgb": 0.39067,
+              "shap_rf": 0.036077,
+              "shap_ensemble": 0.231103
+            },
+            {
+              "feature": "W_max_FiO2",
+              "value": 1.902,
+              "shap_xgb": 0.371844,
+              "shap_rf": 0.043465,
+              "shap_ensemble": 0.224074
+            },
+            {
+              "feature": "W_mean_FiO2",
+              "value": 2.202,
+              "shap_xgb": 0.169675,
+              "shap_rf": 0.03608,
+              "shap_ensemble": 0.109557
+            },
+            {
+              "feature": "Unit1",
+              "value": -0.922,
+              "shap_xgb": 0.171136,
+              "shap_rf": 0.02551,
+              "shap_ensemble": 0.105604
+            },
+            {
+              "feature": "PF_ratio",
+              "value": -0.34,
+              "shap_xgb": 0.131152,
+              "shap_rf": 0.02184,
+              "shap_ensemble": 0.081961
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": -0.193,
+              "shap_xgb": -0.118344,
+              "shap_rf": -0.00951,
+              "shap_ensemble": -0.069369
+            },
+            {
+              "feature": "W_min_O2Sat",
+              "value": -0.077,
+              "shap_xgb": -0.083696,
+              "shap_rf": -0.007356,
+              "shap_ensemble": -0.049343
+            },
+            {
+              "feature": "Unit2",
+              "value": 0.922,
+              "shap_xgb": 0.070008,
+              "shap_rf": 0.019705,
+              "shap_ensemble": 0.047372
+            }
+          ]
+        },
+        {
+          "patient_id": "p001160",
+          "hour": 8,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "W_max_FiO2",
+              "value": 0.945,
+              "shap_xgb": 0.501721,
+              "shap_rf": 0.059583,
+              "shap_ensemble": 0.302759
+            },
+            {
+              "feature": "W_mean_FiO2",
+              "value": 1.275,
+              "shap_xgb": 0.299279,
+              "shap_rf": 0.050247,
+              "shap_ensemble": 0.187215
+            },
+            {
+              "feature": "Unit1",
+              "value": 1.085,
+              "shap_xgb": -0.250951,
+              "shap_rf": -0.028334,
+              "shap_ensemble": -0.150773
+            },
+            {
+              "feature": "FiO2",
+              "value": 2.219,
+              "shap_xgb": 0.229444,
+              "shap_rf": 0.044341,
+              "shap_ensemble": 0.146148
+            },
+            {
+              "feature": "W_std_SaO2",
+              "value": -0.37,
+              "shap_xgb": -0.244367,
+              "shap_rf": -0.019261,
+              "shap_ensemble": -0.143069
+            },
+            {
+              "feature": "W_min_HR",
+              "value": -0.93,
+              "shap_xgb": -0.132427,
+              "shap_rf": -0.017877,
+              "shap_ensemble": -0.08088
+            },
+            {
+              "feature": "W_diff24h_FiO2",
+              "value": 1.866,
+              "shap_xgb": 0.124715,
+              "shap_rf": 0.01442,
+              "shap_ensemble": 0.075082
+            },
+            {
+              "feature": "W_mean_Resp",
+              "value": 0.597,
+              "shap_xgb": -0.108214,
+              "shap_rf": -0.006185,
+              "shap_ensemble": -0.062301
+            }
+          ]
+        },
+        {
+          "patient_id": "p002413",
+          "hour": 19,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "W_std_SaO2",
+              "value": -0.176,
+              "shap_xgb": 0.510994,
+              "shap_rf": 0.032971,
+              "shap_ensemble": 0.295884
+            },
+            {
+              "feature": "W_max_FiO2",
+              "value": 1.184,
+              "shap_xgb": 0.367147,
+              "shap_rf": 0.045262,
+              "shap_ensemble": 0.222299
+            },
+            {
+              "feature": "Unit1",
+              "value": NaN,
+              "shap_xgb": -0.173872,
+              "shap_rf": -0.024807,
+              "shap_ensemble": -0.106793
+            },
+            {
+              "feature": "W_mean_FiO2",
+              "value": 0.6,
+              "shap_xgb": 0.1366,
+              "shap_rf": 0.035203,
+              "shap_ensemble": 0.090971
+            },
+            {
+              "feature": "W_diff24h_Chloride",
+              "value": -1.352,
+              "shap_xgb": -0.156799,
+              "shap_rf": -0.007692,
+              "shap_ensemble": -0.089701
+            },
+            {
+              "feature": "W_diff24h_Platelets",
+              "value": 0.925,
+              "shap_xgb": -0.12796,
+              "shap_rf": -0.006137,
+              "shap_ensemble": -0.07314
+            },
+            {
+              "feature": "PTT",
+              "value": -0.5,
+              "shap_xgb": -0.11934,
+              "shap_rf": -0.010409,
+              "shap_ensemble": -0.070321
+            },
+            {
+              "feature": "miss_SaO2",
+              "value": -1.5,
+              "shap_xgb": 0.066195,
+              "shap_rf": 0.015634,
+              "shap_ensemble": 0.043442
+            }
+          ]
+        },
+        {
+          "patient_id": "p002508",
+          "hour": 6,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Unit1",
+              "value": -0.922,
+              "shap_xgb": 0.404659,
+              "shap_rf": 0.047532,
+              "shap_ensemble": 0.243951
+            },
+            {
+              "feature": "W_max_FiO2",
+              "value": 1.902,
+              "shap_xgb": 0.336531,
+              "shap_rf": 0.054616,
+              "shap_ensemble": 0.209669
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": -1.895,
+              "shap_xgb": 0.353899,
+              "shap_rf": 0.027211,
+              "shap_ensemble": 0.206889
+            },
+            {
+              "feature": "W_std_Resp",
+              "value": -1.81,
+              "shap_xgb": 0.272572,
+              "shap_rf": 0.020376,
+              "shap_ensemble": 0.159084
+            },
+            {
+              "feature": "W_std_SaO2",
+              "value": -0.37,
+              "shap_xgb": -0.219466,
+              "shap_rf": -0.031497,
+              "shap_ensemble": -0.13488
+            },
+            {
+              "feature": "W_mean_FiO2",
+              "value": 4.229,
+              "shap_xgb": 0.203261,
+              "shap_rf": 0.041883,
+              "shap_ensemble": 0.130641
+            },
+            {
+              "feature": "Unit2",
+              "value": 0.922,
+              "shap_xgb": 0.157771,
+              "shap_rf": 0.033331,
+              "shap_ensemble": 0.101773
+            },
+            {
+              "feature": "FiO2",
+              "value": 3.698,
+              "shap_xgb": 0.133336,
+              "shap_rf": 0.031462,
+              "shap_ensemble": 0.087493
+            }
+          ]
+        }
+      ]
+    },
+    "Cardiac": {
+      "alpha": 0.7,
+      "production_model": "xgboost",
+      "n_explained": 50,
+      "global_importance": [
+        {
+          "rank": 1,
+          "feature": "ShockIndex",
+          "mean_abs_shap_xgb": 0.881542,
+          "mean_abs_shap_rf": 0.076857,
+          "mean_abs_shap_ensemble": 0.639756
+        },
+        {
+          "rank": 2,
+          "feature": "HR",
+          "mean_abs_shap_xgb": 0.287477,
+          "mean_abs_shap_rf": 0.032486,
+          "mean_abs_shap_ensemble": 0.210409
+        },
+        {
+          "rank": 3,
+          "feature": "W_mean_SBP",
+          "mean_abs_shap_xgb": 0.258401,
+          "mean_abs_shap_rf": 0.033819,
+          "mean_abs_shap_ensemble": 0.191007
+        },
+        {
+          "rank": 4,
+          "feature": "W_mean_MAP",
+          "mean_abs_shap_xgb": 0.174639,
+          "mean_abs_shap_rf": 0.023949,
+          "mean_abs_shap_ensemble": 0.128974
+        },
+        {
+          "rank": 5,
+          "feature": "W_mean_HR",
+          "mean_abs_shap_xgb": 0.165764,
+          "mean_abs_shap_rf": 0.030187,
+          "mean_abs_shap_ensemble": 0.125091
+        },
+        {
+          "rank": 6,
+          "feature": "MAP",
+          "mean_abs_shap_xgb": 0.152168,
+          "mean_abs_shap_rf": 0.020439,
+          "mean_abs_shap_ensemble": 0.112391
+        },
+        {
+          "rank": 7,
+          "feature": "W_min_SBP",
+          "mean_abs_shap_xgb": 0.104746,
+          "mean_abs_shap_rf": 0.022341,
+          "mean_abs_shap_ensemble": 0.079806
+        },
+        {
+          "rank": 8,
+          "feature": "W_min_MAP",
+          "mean_abs_shap_xgb": 0.105999,
+          "mean_abs_shap_rf": 0.016636,
+          "mean_abs_shap_ensemble": 0.079167
+        },
+        {
+          "rank": 9,
+          "feature": "Age",
+          "mean_abs_shap_xgb": 0.074795,
+          "mean_abs_shap_rf": 0.003674,
+          "mean_abs_shap_ensemble": 0.053441
+        },
+        {
+          "rank": 10,
+          "feature": "HospAdmTime",
+          "mean_abs_shap_xgb": 0.059946,
+          "mean_abs_shap_rf": 0.006184,
+          "mean_abs_shap_ensemble": 0.043817
+        },
+        {
+          "rank": 11,
+          "feature": "W_max_SBP",
+          "mean_abs_shap_xgb": 0.050776,
+          "mean_abs_shap_rf": 0.014455,
+          "mean_abs_shap_ensemble": 0.038992
+        },
+        {
+          "rank": 12,
+          "feature": "W_min_HR",
+          "mean_abs_shap_xgb": 0.036992,
+          "mean_abs_shap_rf": 0.023033,
+          "mean_abs_shap_ensemble": 0.032309
+        },
+        {
+          "rank": 13,
+          "feature": "qSOFA_proxy",
+          "mean_abs_shap_xgb": 0.037835,
+          "mean_abs_shap_rf": 0.015445,
+          "mean_abs_shap_ensemble": 0.031118
+        },
+        {
+          "rank": 14,
+          "feature": "W_max_Temp",
+          "mean_abs_shap_xgb": 0.043836,
+          "mean_abs_shap_rf": 0.00114,
+          "mean_abs_shap_ensemble": 0.03098
+        },
+        {
+          "rank": 15,
+          "feature": "W_min_DBP",
+          "mean_abs_shap_xgb": 0.035167,
+          "mean_abs_shap_rf": 0.005906,
+          "mean_abs_shap_ensemble": 0.026213
+        },
+        {
+          "rank": 16,
+          "feature": "W_mean_PaCO2",
+          "mean_abs_shap_xgb": 0.034622,
+          "mean_abs_shap_rf": 0.001193,
+          "mean_abs_shap_ensemble": 0.024413
+        },
+        {
+          "rank": 17,
+          "feature": "W_diff6h_Temp",
+          "mean_abs_shap_xgb": 0.032169,
+          "mean_abs_shap_rf": 0.001124,
+          "mean_abs_shap_ensemble": 0.022815
+        },
+        {
+          "rank": 18,
+          "feature": "W_max_MAP",
+          "mean_abs_shap_xgb": 0.027818,
+          "mean_abs_shap_rf": 0.010309,
+          "mean_abs_shap_ensemble": 0.022255
+        },
+        {
+          "rank": 19,
+          "feature": "W_mean_O2Sat",
+          "mean_abs_shap_xgb": 0.03108,
+          "mean_abs_shap_rf": 0.001344,
+          "mean_abs_shap_ensemble": 0.022106
+        },
+        {
+          "rank": 20,
+          "feature": "W_min_WBC",
+          "mean_abs_shap_xgb": 0.029418,
+          "mean_abs_shap_rf": 0.001389,
+          "mean_abs_shap_ensemble": 0.020997
+        }
+      ],
+      "sample_explanations": [
+        {
+          "patient_id": "p002637",
+          "hour": 15,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "ShockIndex",
+              "value": 1.014,
+              "shap_xgb": 0.629336,
+              "shap_rf": 0.078684,
+              "shap_ensemble": 0.46414
+            },
+            {
+              "feature": "W_mean_MAP",
+              "value": 0.237,
+              "shap_xgb": -0.299415,
+              "shap_rf": -0.047056,
+              "shap_ensemble": -0.223707
+            },
+            {
+              "feature": "HR",
+              "value": 0.498,
+              "shap_xgb": 0.231602,
+              "shap_rf": 0.027176,
+              "shap_ensemble": 0.170274
+            },
+            {
+              "feature": "W_mean_HR",
+              "value": 0.343,
+              "shap_xgb": 0.168274,
+              "shap_rf": 0.02295,
+              "shap_ensemble": 0.124676
+            },
+            {
+              "feature": "MAP",
+              "value": -0.658,
+              "shap_xgb": 0.161177,
+              "shap_rf": 0.026509,
+              "shap_ensemble": 0.120777
+            },
+            {
+              "feature": "W_mean_SBP",
+              "value": -0.412,
+              "shap_xgb": 0.136358,
+              "shap_rf": 0.014071,
+              "shap_ensemble": 0.099672
+            },
+            {
+              "feature": "W_min_MAP",
+              "value": 0.288,
+              "shap_xgb": -0.085652,
+              "shap_rf": -0.019708,
+              "shap_ensemble": -0.065868
+            },
+            {
+              "feature": "W_mean_DBP",
+              "value": 0.678,
+              "shap_xgb": -0.064784,
+              "shap_rf": -0.013986,
+              "shap_ensemble": -0.049544
+            }
+          ]
+        },
+        {
+          "patient_id": "p002522",
+          "hour": 24,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "ShockIndex",
+              "value": 1.676,
+              "shap_xgb": 1.173777,
+              "shap_rf": 0.083202,
+              "shap_ensemble": 0.846605
+            },
+            {
+              "feature": "HR",
+              "value": 1.184,
+              "shap_xgb": 0.39865,
+              "shap_rf": 0.04389,
+              "shap_ensemble": 0.292222
+            },
+            {
+              "feature": "MAP",
+              "value": -1.321,
+              "shap_xgb": 0.215422,
+              "shap_rf": 0.019228,
+              "shap_ensemble": 0.156564
+            },
+            {
+              "feature": "W_mean_MAP",
+              "value": -0.981,
+              "shap_xgb": 0.188206,
+              "shap_rf": 0.018917,
+              "shap_ensemble": 0.13742
+            },
+            {
+              "feature": "W_mean_SBP",
+              "value": -0.754,
+              "shap_xgb": 0.171833,
+              "shap_rf": 0.014612,
+              "shap_ensemble": 0.124666
+            },
+            {
+              "feature": "W_mean_HR",
+              "value": 0.827,
+              "shap_xgb": 0.155991,
+              "shap_rf": 0.031003,
+              "shap_ensemble": 0.118495
+            },
+            {
+              "feature": "W_min_SBP",
+              "value": -0.169,
+              "shap_xgb": -0.09872,
+              "shap_rf": -0.019093,
+              "shap_ensemble": -0.074832
+            },
+            {
+              "feature": "qSOFA_proxy",
+              "value": 1.864,
+              "shap_xgb": 0.060247,
+              "shap_rf": 0.024083,
+              "shap_ensemble": 0.049398
+            }
+          ]
+        },
+        {
+          "patient_id": "p003437",
+          "hour": 10,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "ShockIndex",
+              "value": -0.524,
+              "shap_xgb": -1.201973,
+              "shap_rf": -0.120398,
+              "shap_ensemble": -0.8775
+            },
+            {
+              "feature": "HR",
+              "value": -1.262,
+              "shap_xgb": -0.820455,
+              "shap_rf": -0.081853,
+              "shap_ensemble": -0.598874
+            },
+            {
+              "feature": "W_mean_SBP",
+              "value": -1.15,
+              "shap_xgb": 0.241097,
+              "shap_rf": 0.02661,
+              "shap_ensemble": 0.176751
+            },
+            {
+              "feature": "W_max_MAP",
+              "value": -1.43,
+              "shap_xgb": 0.173749,
+              "shap_rf": 0.016407,
+              "shap_ensemble": 0.126547
+            },
+            {
+              "feature": "W_mean_HR",
+              "value": -0.366,
+              "shap_xgb": -0.149237,
+              "shap_rf": -0.048617,
+              "shap_ensemble": -0.119051
+            },
+            {
+              "feature": "W_min_HR",
+              "value": -1.13,
+              "shap_xgb": -0.135972,
+              "shap_rf": -0.056596,
+              "shap_ensemble": -0.112159
+            },
+            {
+              "feature": "HospAdmTime",
+              "value": 0.381,
+              "shap_xgb": -0.111969,
+              "shap_rf": -0.012803,
+              "shap_ensemble": -0.082219
+            },
+            {
+              "feature": "W_mean_MAP",
+              "value": -1.805,
+              "shap_xgb": 0.10285,
+              "shap_rf": 0.017445,
+              "shap_ensemble": 0.077229
+            }
+          ]
+        },
+        {
+          "patient_id": "p002700",
+          "hour": 70,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "ShockIndex",
+              "value": 1.61,
+              "shap_xgb": 1.055947,
+              "shap_rf": 0.077901,
+              "shap_ensemble": 0.762533
+            },
+            {
+              "feature": "W_mean_HR",
+              "value": -0.357,
+              "shap_xgb": -0.223997,
+              "shap_rf": -0.055194,
+              "shap_ensemble": -0.173356
+            },
+            {
+              "feature": "W_min_SBP",
+              "value": -1.914,
+              "shap_xgb": 0.221642,
+              "shap_rf": 0.025618,
+              "shap_ensemble": 0.162835
+            },
+            {
+              "feature": "HR",
+              "value": 0.17,
+              "shap_xgb": -0.226307,
+              "shap_rf": 0.00157,
+              "shap_ensemble": -0.157944
+            },
+            {
+              "feature": "W_mean_SBP",
+              "value": -1.342,
+              "shap_xgb": 0.210739,
+              "shap_rf": 0.030276,
+              "shap_ensemble": 0.1566
+            },
+            {
+              "feature": "W_min_HR",
+              "value": -1.063,
+              "shap_xgb": -0.102322,
+              "shap_rf": -0.04419,
+              "shap_ensemble": -0.084882
+            },
+            {
+              "feature": "MAP",
+              "value": -0.841,
+              "shap_xgb": 0.113812,
+              "shap_rf": 0.016745,
+              "shap_ensemble": 0.084692
+            },
+            {
+              "feature": "qSOFA_proxy",
+              "value": 0.548,
+              "shap_xgb": -0.104128,
+              "shap_rf": -0.017155,
+              "shap_ensemble": -0.078036
+            }
+          ]
+        },
+        {
+          "patient_id": "p002648",
+          "hour": 7,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "ShockIndex",
+              "value": 1.456,
+              "shap_xgb": 1.114924,
+              "shap_rf": 0.101419,
+              "shap_ensemble": 0.810873
+            },
+            {
+              "feature": "HR",
+              "value": 1.9,
+              "shap_xgb": 0.389043,
+              "shap_rf": 0.050219,
+              "shap_ensemble": 0.287396
+            },
+            {
+              "feature": "W_mean_MAP",
+              "value": -0.837,
+              "shap_xgb": 0.215281,
+              "shap_rf": 0.026906,
+              "shap_ensemble": 0.158768
+            },
+            {
+              "feature": "W_mean_SBP",
+              "value": -0.926,
+              "shap_xgb": 0.171039,
+              "shap_rf": 0.032368,
+              "shap_ensemble": 0.129438
+            },
+            {
+              "feature": "W_mean_HR",
+              "value": 2.207,
+              "shap_xgb": 0.142881,
+              "shap_rf": 0.0383,
+              "shap_ensemble": 0.111506
+            },
+            {
+              "feature": "MAP",
+              "value": -0.224,
+              "shap_xgb": -0.139916,
+              "shap_rf": -0.019097,
+              "shap_ensemble": -0.10367
+            },
+            {
+              "feature": "HospAdmTime",
+              "value": -2.451,
+              "shap_xgb": 0.100953,
+              "shap_rf": 0.007522,
+              "shap_ensemble": 0.072924
+            },
+            {
+              "feature": "W_min_HR",
+              "value": 1.811,
+              "shap_xgb": 0.067357,
+              "shap_rf": 0.036916,
+              "shap_ensemble": 0.058225
+            }
+          ]
+        }
+      ]
+    },
+    "AKI": {
+      "alpha": 0.75,
+      "production_model": "xgboost",
+      "n_explained": 50,
+      "global_importance": [
+        {
+          "rank": 1,
+          "feature": "Creatinine",
+          "mean_abs_shap_xgb": 0.498096,
+          "mean_abs_shap_rf": 0.024989,
+          "mean_abs_shap_ensemble": 0.379773
+        },
+        {
+          "rank": 2,
+          "feature": "W_max_Potassium",
+          "mean_abs_shap_xgb": 0.207141,
+          "mean_abs_shap_rf": 0.009966,
+          "mean_abs_shap_ensemble": 0.157815
+        },
+        {
+          "rank": 3,
+          "feature": "W_diff24h_Creatinine",
+          "mean_abs_shap_xgb": 0.196249,
+          "mean_abs_shap_rf": 0.023237,
+          "mean_abs_shap_ensemble": 0.152523
+        },
+        {
+          "rank": 4,
+          "feature": "W_mean_Creatinine",
+          "mean_abs_shap_xgb": 0.178896,
+          "mean_abs_shap_rf": 0.02261,
+          "mean_abs_shap_ensemble": 0.139775
+        },
+        {
+          "rank": 5,
+          "feature": "W_diff6h_WBC",
+          "mean_abs_shap_xgb": 0.142456,
+          "mean_abs_shap_rf": 0.001899,
+          "mean_abs_shap_ensemble": 0.107317
+        },
+        {
+          "rank": 6,
+          "feature": "W_max_Glucose",
+          "mean_abs_shap_xgb": 0.13939,
+          "mean_abs_shap_rf": 0.004112,
+          "mean_abs_shap_ensemble": 0.105551
+        },
+        {
+          "rank": 7,
+          "feature": "PTT",
+          "mean_abs_shap_xgb": 0.133344,
+          "mean_abs_shap_rf": 0.006306,
+          "mean_abs_shap_ensemble": 0.101551
+        },
+        {
+          "rank": 8,
+          "feature": "miss_Creatinine",
+          "mean_abs_shap_xgb": 0.117752,
+          "mean_abs_shap_rf": 0.005897,
+          "mean_abs_shap_ensemble": 0.089788
+        },
+        {
+          "rank": 9,
+          "feature": "W_min_BaseExcess",
+          "mean_abs_shap_xgb": 0.115295,
+          "mean_abs_shap_rf": 0.008511,
+          "mean_abs_shap_ensemble": 0.08852
+        },
+        {
+          "rank": 10,
+          "feature": "W_max_Resp",
+          "mean_abs_shap_xgb": 0.100463,
+          "mean_abs_shap_rf": 0.004355,
+          "mean_abs_shap_ensemble": 0.076432
+        },
+        {
+          "rank": 11,
+          "feature": "W_mean_Platelets",
+          "mean_abs_shap_xgb": 0.083719,
+          "mean_abs_shap_rf": 0.008338,
+          "mean_abs_shap_ensemble": 0.064793
+        },
+        {
+          "rank": 12,
+          "feature": "W_min_Creatinine",
+          "mean_abs_shap_xgb": 0.075951,
+          "mean_abs_shap_rf": 0.010804,
+          "mean_abs_shap_ensemble": 0.059028
+        },
+        {
+          "rank": 13,
+          "feature": "W_mean_O2Sat",
+          "mean_abs_shap_xgb": 0.070981,
+          "mean_abs_shap_rf": 0.003681,
+          "mean_abs_shap_ensemble": 0.054038
+        },
+        {
+          "rank": 14,
+          "feature": "W_max_Creatinine",
+          "mean_abs_shap_xgb": 0.060904,
+          "mean_abs_shap_rf": 0.028667,
+          "mean_abs_shap_ensemble": 0.052442
+        },
+        {
+          "rank": 15,
+          "feature": "W_diff6h_BUN",
+          "mean_abs_shap_xgb": 0.065055,
+          "mean_abs_shap_rf": 0.001554,
+          "mean_abs_shap_ensemble": 0.049088
+        },
+        {
+          "rank": 16,
+          "feature": "W_std_HCO3",
+          "mean_abs_shap_xgb": 0.061512,
+          "mean_abs_shap_rf": 0.002291,
+          "mean_abs_shap_ensemble": 0.046674
+        },
+        {
+          "rank": 17,
+          "feature": "W_min_Platelets",
+          "mean_abs_shap_xgb": 0.053992,
+          "mean_abs_shap_rf": 0.005821,
+          "mean_abs_shap_ensemble": 0.041893
+        },
+        {
+          "rank": 18,
+          "feature": "W_std_Creatinine",
+          "mean_abs_shap_xgb": 0.05069,
+          "mean_abs_shap_rf": 0.009295,
+          "mean_abs_shap_ensemble": 0.040086
+        },
+        {
+          "rank": 19,
+          "feature": "W_max_Lactate",
+          "mean_abs_shap_xgb": 0.04979,
+          "mean_abs_shap_rf": 0.005409,
+          "mean_abs_shap_ensemble": 0.038695
+        },
+        {
+          "rank": 20,
+          "feature": "W_std_Resp",
+          "mean_abs_shap_xgb": 0.049993,
+          "mean_abs_shap_rf": 0.003352,
+          "mean_abs_shap_ensemble": 0.038269
+        }
+      ],
+      "sample_explanations": [
+        {
+          "patient_id": "p002000",
+          "hour": 16,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Creatinine",
+              "value": -0.243,
+              "shap_xgb": -0.321965,
+              "shap_rf": -0.023265,
+              "shap_ensemble": -0.24729
+            },
+            {
+              "feature": "W_diff24h_Creatinine",
+              "value": -0.158,
+              "shap_xgb": -0.279626,
+              "shap_rf": -0.018213,
+              "shap_ensemble": -0.214273
+            },
+            {
+              "feature": "PTT",
+              "value": 0.853,
+              "shap_xgb": 0.257789,
+              "shap_rf": 0.017155,
+              "shap_ensemble": 0.19763
+            },
+            {
+              "feature": "W_max_Potassium",
+              "value": 1.134,
+              "shap_xgb": 0.217522,
+              "shap_rf": 0.013538,
+              "shap_ensemble": 0.166526
+            },
+            {
+              "feature": "miss_Creatinine",
+              "value": 1.602,
+              "shap_xgb": -0.204212,
+              "shap_rf": -0.014549,
+              "shap_ensemble": -0.156796
+            },
+            {
+              "feature": "W_mean_Platelets",
+              "value": -0.899,
+              "shap_xgb": 0.151695,
+              "shap_rf": 0.008975,
+              "shap_ensemble": 0.116015
+            },
+            {
+              "feature": "W_min_BaseExcess",
+              "value": -3.995,
+              "shap_xgb": 0.139967,
+              "shap_rf": 0.016351,
+              "shap_ensemble": 0.109063
+            },
+            {
+              "feature": "W_std_Creatinine",
+              "value": 0.062,
+              "shap_xgb": 0.138149,
+              "shap_rf": 0.009558,
+              "shap_ensemble": 0.106001
+            }
+          ]
+        },
+        {
+          "patient_id": "p003770",
+          "hour": 14,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Creatinine",
+              "value": -0.494,
+              "shap_xgb": -0.377138,
+              "shap_rf": -0.018256,
+              "shap_ensemble": -0.287417
+            },
+            {
+              "feature": "W_max_Potassium",
+              "value": 0.821,
+              "shap_xgb": 0.274555,
+              "shap_rf": 0.020288,
+              "shap_ensemble": 0.210988
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": -1.353,
+              "shap_xgb": -0.166273,
+              "shap_rf": -0.01192,
+              "shap_ensemble": -0.127684
+            },
+            {
+              "feature": "PTT",
+              "value": -0.254,
+              "shap_xgb": -0.145103,
+              "shap_rf": -0.014919,
+              "shap_ensemble": -0.112557
+            },
+            {
+              "feature": "W_max_Glucose",
+              "value": 0.351,
+              "shap_xgb": 0.12903,
+              "shap_rf": 0.005205,
+              "shap_ensemble": 0.098074
+            },
+            {
+              "feature": "W_std_HCO3",
+              "value": -0.789,
+              "shap_xgb": 0.128636,
+              "shap_rf": 0.002392,
+              "shap_ensemble": 0.097075
+            },
+            {
+              "feature": "W_std_SaO2",
+              "value": 3.82,
+              "shap_xgb": 0.114296,
+              "shap_rf": 0.007747,
+              "shap_ensemble": 0.087659
+            },
+            {
+              "feature": "W_min_Temp",
+              "value": -1.528,
+              "shap_xgb": 0.114835,
+              "shap_rf": 0.001465,
+              "shap_ensemble": 0.086493
+            }
+          ]
+        },
+        {
+          "patient_id": "p001280",
+          "hour": 20,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Creatinine",
+              "value": 1.676,
+              "shap_xgb": 0.800257,
+              "shap_rf": 0.049364,
+              "shap_ensemble": 0.612534
+            },
+            {
+              "feature": "W_diff24h_Creatinine",
+              "value": 2.352,
+              "shap_xgb": 0.241733,
+              "shap_rf": 0.047109,
+              "shap_ensemble": 0.193077
+            },
+            {
+              "feature": "W_mean_Creatinine",
+              "value": 0.82,
+              "shap_xgb": 0.213524,
+              "shap_rf": 0.037237,
+              "shap_ensemble": 0.169452
+            },
+            {
+              "feature": "W_max_Resp",
+              "value": -0.657,
+              "shap_xgb": -0.209878,
+              "shap_rf": -0.011351,
+              "shap_ensemble": -0.160246
+            },
+            {
+              "feature": "W_max_Creatinine",
+              "value": 1.502,
+              "shap_xgb": 0.091161,
+              "shap_rf": 0.057692,
+              "shap_ensemble": 0.082794
+            },
+            {
+              "feature": "W_min_BaseExcess",
+              "value": -0.893,
+              "shap_xgb": 0.104591,
+              "shap_rf": 0.01552,
+              "shap_ensemble": 0.082324
+            },
+            {
+              "feature": "W_mean_Platelets",
+              "value": -0.156,
+              "shap_xgb": -0.101832,
+              "shap_rf": -0.011596,
+              "shap_ensemble": -0.079273
+            },
+            {
+              "feature": "W_min_Creatinine",
+              "value": -0.073,
+              "shap_xgb": -0.10155,
+              "shap_rf": -0.008086,
+              "shap_ensemble": -0.078184
+            }
+          ]
+        },
+        {
+          "patient_id": "p001431",
+          "hour": 6,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Creatinine",
+              "value": 7.599,
+              "shap_xgb": 0.829215,
+              "shap_rf": 0.04287,
+              "shap_ensemble": 0.632629
+            },
+            {
+              "feature": "W_mean_Creatinine",
+              "value": 8.903,
+              "shap_xgb": 0.34527,
+              "shap_rf": 0.042012,
+              "shap_ensemble": 0.269456
+            },
+            {
+              "feature": "W_max_Potassium",
+              "value": 0.821,
+              "shap_xgb": 0.198142,
+              "shap_rf": 0.012056,
+              "shap_ensemble": 0.15162
+            },
+            {
+              "feature": "W_max_Creatinine",
+              "value": 7.081,
+              "shap_xgb": 0.135326,
+              "shap_rf": 0.05092,
+              "shap_ensemble": 0.114225
+            },
+            {
+              "feature": "PTT",
+              "value": 0.373,
+              "shap_xgb": 0.147541,
+              "shap_rf": 0.002667,
+              "shap_ensemble": 0.111323
+            },
+            {
+              "feature": "W_min_BaseExcess",
+              "value": 0.348,
+              "shap_xgb": -0.128816,
+              "shap_rf": -0.005899,
+              "shap_ensemble": -0.098087
+            },
+            {
+              "feature": "Temp",
+              "value": -1.593,
+              "shap_xgb": -0.114627,
+              "shap_rf": -0.004163,
+              "shap_ensemble": -0.087011
+            },
+            {
+              "feature": "W_diff24h_Creatinine",
+              "value": -0.158,
+              "shap_xgb": -0.109887,
+              "shap_rf": -0.011289,
+              "shap_ensemble": -0.085238
+            }
+          ]
+        },
+        {
+          "patient_id": "p001298",
+          "hour": 32,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Creatinine",
+              "value": 2.677,
+              "shap_xgb": 0.578329,
+              "shap_rf": 0.02972,
+              "shap_ensemble": 0.441177
+            },
+            {
+              "feature": "W_max_Glucose",
+              "value": -0.524,
+              "shap_xgb": -0.30108,
+              "shap_rf": -0.013227,
+              "shap_ensemble": -0.229116
+            },
+            {
+              "feature": "Platelets",
+              "value": 1.826,
+              "shap_xgb": -0.276858,
+              "shap_rf": -0.027454,
+              "shap_ensemble": -0.214507
+            },
+            {
+              "feature": "W_mean_Creatinine",
+              "value": 2.885,
+              "shap_xgb": 0.243778,
+              "shap_rf": 0.02811,
+              "shap_ensemble": 0.189861
+            },
+            {
+              "feature": "W_diff24h_Creatinine",
+              "value": 3.662,
+              "shap_xgb": 0.209773,
+              "shap_rf": 0.031522,
+              "shap_ensemble": 0.165211
+            },
+            {
+              "feature": "PTT",
+              "value": 0.676,
+              "shap_xgb": 0.195074,
+              "shap_rf": 0.004411,
+              "shap_ensemble": 0.147408
+            },
+            {
+              "feature": "W_min_BaseExcess",
+              "value": 0.348,
+              "shap_xgb": -0.17501,
+              "shap_rf": -0.01235,
+              "shap_ensemble": -0.134345
+            },
+            {
+              "feature": "W_diff24h_Platelets",
+              "value": 2.487,
+              "shap_xgb": -0.16235,
+              "shap_rf": -0.019827,
+              "shap_ensemble": -0.126719
+            }
+          ]
+        }
+      ]
+    },
+    "Coagulopathy": {
+      "alpha": 0.85,
+      "production_model": "xgboost",
+      "n_explained": 50,
+      "global_importance": [
+        {
+          "rank": 1,
+          "feature": "Platelets",
+          "mean_abs_shap_xgb": 0.987053,
+          "mean_abs_shap_rf": 0.024501,
+          "mean_abs_shap_ensemble": 0.842644
+        },
+        {
+          "rank": 2,
+          "feature": "PTT",
+          "mean_abs_shap_xgb": 0.737024,
+          "mean_abs_shap_rf": 0.026444,
+          "mean_abs_shap_ensemble": 0.630437
+        },
+        {
+          "rank": 3,
+          "feature": "W_max_Platelets",
+          "mean_abs_shap_xgb": 0.246337,
+          "mean_abs_shap_rf": 0.003535,
+          "mean_abs_shap_ensemble": 0.2098
+        },
+        {
+          "rank": 4,
+          "feature": "W_mean_Platelets",
+          "mean_abs_shap_xgb": 0.242259,
+          "mean_abs_shap_rf": 0.019783,
+          "mean_abs_shap_ensemble": 0.208885
+        },
+        {
+          "rank": 5,
+          "feature": "Age",
+          "mean_abs_shap_xgb": 0.204377,
+          "mean_abs_shap_rf": 0.000952,
+          "mean_abs_shap_ensemble": 0.173843
+        },
+        {
+          "rank": 6,
+          "feature": "W_max_Temp",
+          "mean_abs_shap_xgb": 0.184809,
+          "mean_abs_shap_rf": 0.00187,
+          "mean_abs_shap_ensemble": 0.157361
+        },
+        {
+          "rank": 7,
+          "feature": "W_diff24h_Platelets",
+          "mean_abs_shap_xgb": 0.14183,
+          "mean_abs_shap_rf": 0.006738,
+          "mean_abs_shap_ensemble": 0.121323
+        },
+        {
+          "rank": 8,
+          "feature": "miss_Platelets",
+          "mean_abs_shap_xgb": 0.123773,
+          "mean_abs_shap_rf": 0.001681,
+          "mean_abs_shap_ensemble": 0.105459
+        },
+        {
+          "rank": 9,
+          "feature": "W_mean_FiO2",
+          "mean_abs_shap_xgb": 0.118839,
+          "mean_abs_shap_rf": 0.002001,
+          "mean_abs_shap_ensemble": 0.101288
+        },
+        {
+          "rank": 10,
+          "feature": "W_min_HR",
+          "mean_abs_shap_xgb": 0.111838,
+          "mean_abs_shap_rf": 0.001495,
+          "mean_abs_shap_ensemble": 0.095274
+        },
+        {
+          "rank": 11,
+          "feature": "W_min_SBP",
+          "mean_abs_shap_xgb": 0.09699,
+          "mean_abs_shap_rf": 0.000586,
+          "mean_abs_shap_ensemble": 0.08251
+        },
+        {
+          "rank": 12,
+          "feature": "Lactate",
+          "mean_abs_shap_xgb": 0.092857,
+          "mean_abs_shap_rf": 0.004427,
+          "mean_abs_shap_ensemble": 0.079584
+        },
+        {
+          "rank": 13,
+          "feature": "W_min_Resp",
+          "mean_abs_shap_xgb": 0.092762,
+          "mean_abs_shap_rf": 0.000907,
+          "mean_abs_shap_ensemble": 0.078948
+        },
+        {
+          "rank": 14,
+          "feature": "W_mean_BaseExcess",
+          "mean_abs_shap_xgb": 0.084924,
+          "mean_abs_shap_rf": 0.005083,
+          "mean_abs_shap_ensemble": 0.072929
+        },
+        {
+          "rank": 15,
+          "feature": "W_min_Platelets",
+          "mean_abs_shap_xgb": 0.082389,
+          "mean_abs_shap_rf": 0.014614,
+          "mean_abs_shap_ensemble": 0.072099
+        },
+        {
+          "rank": 16,
+          "feature": "W_diff24h_Glucose",
+          "mean_abs_shap_xgb": 0.08322,
+          "mean_abs_shap_rf": 0.00044,
+          "mean_abs_shap_ensemble": 0.070747
+        },
+        {
+          "rank": 17,
+          "feature": "W_min_HCO3",
+          "mean_abs_shap_xgb": 0.077111,
+          "mean_abs_shap_rf": 0.005338,
+          "mean_abs_shap_ensemble": 0.066345
+        },
+        {
+          "rank": 18,
+          "feature": "W_std_Temp",
+          "mean_abs_shap_xgb": 0.075722,
+          "mean_abs_shap_rf": 0.002211,
+          "mean_abs_shap_ensemble": 0.064696
+        },
+        {
+          "rank": 19,
+          "feature": "W_min_Creatinine",
+          "mean_abs_shap_xgb": 0.065024,
+          "mean_abs_shap_rf": 0.000492,
+          "mean_abs_shap_ensemble": 0.055327
+        },
+        {
+          "rank": 20,
+          "feature": "W_max_MAP",
+          "mean_abs_shap_xgb": 0.064573,
+          "mean_abs_shap_rf": 0.001301,
+          "mean_abs_shap_ensemble": 0.054988
+        }
+      ],
+      "sample_explanations": [
+        {
+          "patient_id": "p001289",
+          "hour": 8,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Platelets",
+              "value": -0.156,
+              "shap_xgb": -0.413699,
+              "shap_rf": -0.008567,
+              "shap_ensemble": -0.352929
+            },
+            {
+              "feature": "PTT",
+              "value": -0.235,
+              "shap_xgb": -0.408334,
+              "shap_rf": -0.008814,
+              "shap_ensemble": -0.348406
+            },
+            {
+              "feature": "W_mean_FiO2",
+              "value": -0.984,
+              "shap_xgb": -0.348672,
+              "shap_rf": -0.002262,
+              "shap_ensemble": -0.29671
+            },
+            {
+              "feature": "W_max_Temp",
+              "value": -0.039,
+              "shap_xgb": -0.227021,
+              "shap_rf": -0.001343,
+              "shap_ensemble": -0.193169
+            },
+            {
+              "feature": "W_std_Temp",
+              "value": -1.369,
+              "shap_xgb": 0.223,
+              "shap_rf": 0.006136,
+              "shap_ensemble": 0.190471
+            },
+            {
+              "feature": "W_mean_BaseExcess",
+              "value": 1.096,
+              "shap_xgb": -0.211398,
+              "shap_rf": -0.003183,
+              "shap_ensemble": -0.180165
+            },
+            {
+              "feature": "miss_Platelets",
+              "value": 1.984,
+              "shap_xgb": 0.184345,
+              "shap_rf": 0.00454,
+              "shap_ensemble": 0.157374
+            },
+            {
+              "feature": "Age",
+              "value": 0.096,
+              "shap_xgb": -0.175829,
+              "shap_rf": -0.000922,
+              "shap_ensemble": -0.149593
+            }
+          ]
+        },
+        {
+          "patient_id": "p002568",
+          "hour": 34,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Platelets",
+              "value": -1.672,
+              "shap_xgb": 1.195057,
+              "shap_rf": 0.052491,
+              "shap_ensemble": 1.023672
+            },
+            {
+              "feature": "PTT",
+              "value": -0.235,
+              "shap_xgb": -1.16161,
+              "shap_rf": -0.029096,
+              "shap_ensemble": -0.991733
+            },
+            {
+              "feature": "W_mean_FiO2",
+              "value": -0.818,
+              "shap_xgb": -0.478051,
+              "shap_rf": -0.002498,
+              "shap_ensemble": -0.406718
+            },
+            {
+              "feature": "Age",
+              "value": -0.69,
+              "shap_xgb": 0.286524,
+              "shap_rf": -0.000266,
+              "shap_ensemble": 0.243505
+            },
+            {
+              "feature": "W_mean_Platelets",
+              "value": -1.479,
+              "shap_xgb": 0.245446,
+              "shap_rf": 0.024057,
+              "shap_ensemble": 0.212238
+            },
+            {
+              "feature": "W_min_Creatinine",
+              "value": -0.199,
+              "shap_xgb": -0.167708,
+              "shap_rf": -0.000826,
+              "shap_ensemble": -0.142676
+            },
+            {
+              "feature": "W_max_Temp",
+              "value": -0.61,
+              "shap_xgb": 0.128274,
+              "shap_rf": 0.001797,
+              "shap_ensemble": 0.109303
+            },
+            {
+              "feature": "W_min_BaseExcess",
+              "value": 0.348,
+              "shap_xgb": -0.108162,
+              "shap_rf": -0.003851,
+              "shap_ensemble": -0.092515
+            }
+          ]
+        },
+        {
+          "patient_id": "p002406",
+          "hour": 9,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Platelets",
+              "value": -0.156,
+              "shap_xgb": -0.547328,
+              "shap_rf": -0.008839,
+              "shap_ensemble": -0.466555
+            },
+            {
+              "feature": "PTT",
+              "value": -0.235,
+              "shap_xgb": -0.43213,
+              "shap_rf": -0.007931,
+              "shap_ensemble": -0.3685
+            },
+            {
+              "feature": "Age",
+              "value": 0.161,
+              "shap_xgb": -0.238137,
+              "shap_rf": -0.000798,
+              "shap_ensemble": -0.202536
+            },
+            {
+              "feature": "miss_Platelets",
+              "value": 1.984,
+              "shap_xgb": 0.214212,
+              "shap_rf": 0.003069,
+              "shap_ensemble": 0.182541
+            },
+            {
+              "feature": "W_max_Temp",
+              "value": 0.018,
+              "shap_xgb": -0.187102,
+              "shap_rf": -0.001198,
+              "shap_ensemble": -0.159216
+            },
+            {
+              "feature": "W_mean_Platelets",
+              "value": -0.156,
+              "shap_xgb": -0.185743,
+              "shap_rf": -0.007179,
+              "shap_ensemble": -0.158958
+            },
+            {
+              "feature": "W_mean_Resp",
+              "value": 0.89,
+              "shap_xgb": -0.178698,
+              "shap_rf": -0.001376,
+              "shap_ensemble": -0.1521
+            },
+            {
+              "feature": "W_min_SBP",
+              "value": -0.229,
+              "shap_xgb": -0.166242,
+              "shap_rf": -0.000861,
+              "shap_ensemble": -0.141435
+            }
+          ]
+        },
+        {
+          "patient_id": "p002000",
+          "hour": 6,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "Platelets",
+              "value": -0.358,
+              "shap_xgb": -0.814843,
+              "shap_rf": -0.0193,
+              "shap_ensemble": -0.695512
+            },
+            {
+              "feature": "PTT",
+              "value": 4.124,
+              "shap_xgb": 0.758594,
+              "shap_rf": 0.047602,
+              "shap_ensemble": 0.651945
+            },
+            {
+              "feature": "Creatinine",
+              "value": -0.577,
+              "shap_xgb": -0.397607,
+              "shap_rf": -0.001784,
+              "shap_ensemble": -0.338233
+            },
+            {
+              "feature": "W_min_Creatinine",
+              "value": -0.579,
+              "shap_xgb": -0.31726,
+              "shap_rf": -0.001468,
+              "shap_ensemble": -0.269891
+            },
+            {
+              "feature": "W_mean_Platelets",
+              "value": -0.339,
+              "shap_xgb": -0.248795,
+              "shap_rf": -0.02034,
+              "shap_ensemble": -0.214527
+            },
+            {
+              "feature": "W_min_Platelets",
+              "value": -0.132,
+              "shap_xgb": -0.164431,
+              "shap_rf": -0.019572,
+              "shap_ensemble": -0.142702
+            },
+            {
+              "feature": "W_diff24h_Glucose",
+              "value": 0.707,
+              "shap_xgb": -0.167468,
+              "shap_rf": -0.00047,
+              "shap_ensemble": -0.142418
+            },
+            {
+              "feature": "W_max_Platelets",
+              "value": -0.36,
+              "shap_xgb": 0.154108,
+              "shap_rf": 0.000947,
+              "shap_ensemble": 0.131134
+            }
+          ]
+        },
+        {
+          "patient_id": "p001974",
+          "hour": 40,
+          "label": 1,
+          "top_features": [
+            {
+              "feature": "PTT",
+              "value": 0.999,
+              "shap_xgb": 1.089699,
+              "shap_rf": 0.038013,
+              "shap_ensemble": 0.931946
+            },
+            {
+              "feature": "Platelets",
+              "value": -1.025,
+              "shap_xgb": 0.938358,
+              "shap_rf": 0.006081,
+              "shap_ensemble": 0.798516
+            },
+            {
+              "feature": "W_diff24h_Glucose",
+              "value": 0.283,
+              "shap_xgb": -0.179633,
+              "shap_rf": -0.000883,
+              "shap_ensemble": -0.15282
+            },
+            {
+              "feature": "Age",
+              "value": -0.113,
+              "shap_xgb": -0.173933,
+              "shap_rf": -0.000991,
+              "shap_ensemble": -0.147992
+            },
+            {
+              "feature": "W_max_Temp",
+              "value": -2.351,
+              "shap_xgb": 0.162472,
+              "shap_rf": 0.002618,
+              "shap_ensemble": 0.138494
+            },
+            {
+              "feature": "W_min_HR",
+              "value": -0.863,
+              "shap_xgb": -0.150013,
+              "shap_rf": -0.003728,
+              "shap_ensemble": -0.12807
+            },
+            {
+              "feature": "W_max_Platelets",
+              "value": -0.36,
+              "shap_xgb": 0.14619,
+              "shap_rf": -0.00086,
+              "shap_ensemble": 0.124133
+            },
+            {
+              "feature": "Lactate",
+              "value": -0.154,
+              "shap_xgb": -0.112266,
+              "shap_rf": -0.003818,
+              "shap_ensemble": -0.095999
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "version": "publication_v1",
+  "generated_at": "2026-09-18T14:36:49.020322",
+  "source": "PhysioNet Sepsis Challenge training_setA (via processed_patient_hours.parquet)",
+  "n_patients": 3958,
+  "n_rows": 128828,
+  "n_features_raw": 29,
+  "n_window_features": 174,
+  "n_missingness_indicators": 29,
+  "preprocessing": {
+    "forward_fill_limit_hours": "unlimited (inherited from original pipeline \u2014 raw data needed to fix)",
+    "imputation_method": "population median (inherited from original pipeline)",
+    "imputation_source": "training set only (no val/test leakage) \u2014 NOTE: original pipeline used full-dataset medians; impact quantified below",
+    "n_train_patients_for_medians": 2770,
+    "imputation_leakage_note": "Original pipeline computed medians from full dataset. Difference between full-dataset and train-only medians is minimal (max delta shown below). Full fix requires raw PSV files to re-run imputation.",
+    "max_median_difference": 0.17
+  },
+  "label_construction": {
+    "method": "ICULOS-based forward-looking max",
+    "censoring": "incomplete future windows set to NaN",
+    "improvement_over_original": "Original labels used row-offset rolling windows (min_periods=1), which ignored gaps in ICULOS and didn't censor incomplete windows. New labels use actual ICULOS timestamps and censor rows where the full horizon isn't observable.",
+    "conditions": [
+      "Sepsis",
+      "ARF",
+      "Cardiac",
+      "AKI",
+      "Coagulopathy"
+    ],
+    "horizons": [
+      6,
+      12,
+      24
+    ],
+    "censoring_stats": {
+      "Sepsis_6h": {
+        "labeled": 108080,
+        "censored": 20748,
+        "pct_censored": 16.1
+      },
+      "Sepsis_12h": {
+        "labeled": 88378,
+        "censored": 40450,
+        "pct_censored": 31.4
+      },
+      "Sepsis_24h": {
+        "labeled": 53129,
+        "censored": 75699,
+        "pct_censored": 58.8
+      },
+      "ARF_6h": {
+        "labeled": 108080,
+        "censored": 20748,
+        "pct_censored": 16.1
+      },
+      "ARF_12h": {
+        "labeled": 88378,
+        "censored": 40450,
+        "pct_censored": 31.4
+      },
+      "ARF_24h": {
+        "labeled": 53129,
+        "censored": 75699,
+        "pct_censored": 58.8
+      },
+      "Cardiac_6h": {
+        "labeled": 108080,
+        "censored": 20748,
+        "pct_censored": 16.1
+      },
+      "Cardiac_12h": {
+        "labeled": 88378,
+        "censored": 40450,
+        "pct_censored": 31.4
+      },
+      "Cardiac_24h": {
+        "labeled": 53129,
+        "censored": 75699,
+        "pct_censored": 58.8
+      },
+      "AKI_6h": {
+        "labeled": 108080,
+        "censored": 20748,
+        "pct_censored": 16.1
+      },
+      "AKI_12h": {
+        "labeled": 88378,
+        "censored": 40450,
+        "pct_censored": 31.4
+      },
+      "AKI_24h": {
+        "labeled": 53129,
+        "censored": 75699,
+        "pct_censored": 58.8
+      },
+      "Coagulopathy_6h": {
+        "labeled": 108080,
+        "censored": 20748,
+        "pct_censored": 16.1
+      },
+      "Coagulopathy_12h": {
+        "labeled": 88378,
+        "censored": 40450,
+        "pct_censored": 31.4
+      },
+      "Coagulopathy_24h": {
+        "labeled": 53129,
+        "censored": 75699,
+        "pct_censored": 58.8
+      }
+    }
+  },
+  "missingness_indicators": {
+    "method": "approximate (median-equality heuristic on already-imputed data)",
+    "limitation": "True missingness indicators require raw PSV files. These approximate indicators flag values equal to population medians, which overestimates missingness for features whose true values happen to equal the median.",
+    "approximate_rates": {
+      "HR": 0.0229,
+      "O2Sat": 0.138,
+      "Temp": 0.0999,
+      "SBP": 0.0468,
+      "MAP": 0.0024,
+      "DBP": 0.332,
+      "Resp": 0.0809,
+      "FiO2": 0.5927,
+      "BaseExcess": 0.5382,
+      "HCO3": 0.271,
+      "pH": 0.3955,
+      "PaCO2": 0.4159,
+      "SaO2": 0.6942,
+      "AST": 0.7798,
+      "BUN": 0.2072,
+      "Alkalinephos": 0.7888,
+      "Calcium": 0.4143,
+      "Chloride": 0.2415,
+      "Creatinine": 0.2775,
+      "Glucose": 0.1583,
+      "Lactate": 0.6458,
+      "Magnesium": 0.3361,
+      "Phosphate": 0.3919,
+      "Potassium": 0.2269,
+      "Bilirubin_total": 0.7979,
+      "Hct": 0.1414,
+      "Hgb": 0.1917,
+      "WBC": 0.2027,
+      "Platelets": 0.2012
+    }
+  },
+  "imputation_leakage_quantification": {
+    "HR": 0.0,
+    "O2Sat": 0.0,
+    "Temp": 0.0,
+    "SBP": 0.0,
+    "MAP": 0.17,
+    "DBP": 0.0,
+    "Resp": 0.0,
+    "FiO2": 0.0,
+    "BaseExcess": 0.0,
+    "HCO3": 0.0,
+    "pH": 0.0,
+    "PaCO2": 0.0,
+    "SaO2": 0.0,
+    "AST": 0.0,
+    "BUN": 0.0,
+    "Alkalinephos": 0.0,
+    "Calcium": 0.0,
+    "Chloride": 0.0,
+    "Creatinine": 0.0,
+    "Glucose": 0.0,
+    "Lactate": 0.0,
+    "Magnesium": 0.0,
+    "Phosphate": 0.0,
+    "Potassium": 0.0,
+    "Bilirubin_total": 0.0,
+    "Hct": 0.0,
+    "Hgb": 0.0,
+    "WBC": 0.0,
+    "Platelets": 0.0
+  },
+  "train_medians": {
+    "HR": 84.0,
+    "O2Sat": 98.0,
+    "Temp": 37.0,
+    "SBP": 118.0,
+    "MAP": 76.5,
+    "DBP": 58.5,
+    "Resp": 18.0,
+    "FiO2": 0.5,
+    "BaseExcess": 0.0,
+    "HCO3": 24.0,
+    "pH": 7.39,
+    "PaCO2": 40.0,
+    "SaO2": 97.0,
+    "AST": 43.0,
+    "BUN": 17.0,
+    "Alkalinephos": 76.0,
+    "Calcium": 8.3,
+    "Chloride": 106.0,
+    "Creatinine": 0.9,
+    "Glucose": 123.0,
+    "Lactate": 1.5,
+    "Magnesium": 2.0,
+    "Phosphate": 3.4,
+    "Potassium": 4.1,
+    "Bilirubin_total": 0.7,
+    "Hct": 30.7,
+    "Hgb": 10.5,
+    "WBC": 11.1,
+    "Platelets": 192.0
+  },
+  "split_sizes": {
+    "train": 2770,
+    "val": 594,
+    "test": 594
+  },
+  "proxy_label_disclaimer": "ARF, Cardiac, AKI, and Coagulopathy labels are rule-based clinical proxies derived from established clinical thresholds, NOT adjudicated ground truth. Only SepsisLabel is expert-annotated."
+}
