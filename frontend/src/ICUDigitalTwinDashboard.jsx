@@ -1,7 +1,5 @@
 import React, { useState, useMemo, useCallback } from "react";
 import {
-  LineChart,
-  Line,
   AreaChart,
   Area,
   BarChart,
@@ -14,16 +12,12 @@ import {
   ReferenceLine,
   ReferenceArea,
   Cell,
-  ScatterChart,
-  Scatter,
 } from "recharts";
 import {
   Activity,
   AlertTriangle,
   User,
   TrendingUp,
-  TrendingDown,
-  Minus,
   FlaskConical,
   HeartPulse,
   Sliders,
@@ -53533,19 +53527,6 @@ function riskBand(r) {
     return { label: "High", color: COLORS.amber, dim: COLORS.amberDim };
   return { label: "Normal", color: COLORS.green, dim: COLORS.greenDim };
 }
-
-const ADJUSTABLE_RAW = [
-  "HR",
-  "SBP",
-  "MAP",
-  "DBP",
-  "Resp",
-  "O2Sat",
-  "Temp",
-  "Lactate",
-  "WBC",
-  "Creatinine",
-];
 
 /* Live what-if simulator: recomputes with the DISTILLED LINEAR SURROGATE
    (not the real 600-tree XGBoost — too heavy to ship client-side). Only the
