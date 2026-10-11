@@ -56286,7 +56286,7 @@ export default function ICUDigitalTwinDashboard() {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [isPlaying, replayLoading, replayHour, availableHours]);
+  }, [isPlaying, replayLoading, replayHour, availableHours, runReplayHour]);
 
   const addLog = useCallback(
     (event, detail) =>
@@ -56304,37 +56304,42 @@ export default function ICUDigitalTwinDashboard() {
     setSelectedId(pid);
     addLog("view_patient", pid);
   };
-  const runReplayHour = async (hour) => {
-    setReplayLoading(true);
-    setReplayError("");
+  const runReplayHour = useCallback(
+    async (hour) => {
+      setReplayLoading(true);
+      setReplayError("");
 
-    try {
-      const response = await fetch(`${API_URL}/mimic/predict-hour/${hour}`);
-      const data = await response.json();
+      try {
+        const response = await fetch(`${API_URL}/mimic/predict-hour/${hour}`);
+        const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.detail || "Replay prediction failed");
+        if (!response.ok) {
+          throw new Error(data.detail || "Replay prediction failed");
+        }
+
+        setReplayHour(hour);
+        setReplayResult(data);
+        const obsResponse = await fetch(
+          `${API_URL}/mimic/observations/${hour}`,
+        );
+        const obsData = await obsResponse.json();
+
+        if (!obsResponse.ok) {
+          throw new Error(obsData.detail || "Could not load observations");
+        }
+
+        setObservations(obsData.observations);
+        setObservationsError("");
+        addLog("mimic_replay", `Hour ${hour} · ${data.model_version}`);
+      } catch (error) {
+        setReplayError(error.message || "Could not load replay predictions");
+        setObservationsError(error.message || "Could not load observations");
+      } finally {
+        setReplayLoading(false);
       }
-
-      setReplayHour(hour);
-      setReplayResult(data);
-      const obsResponse = await fetch(`${API_URL}/mimic/observations/${hour}`);
-      const obsData = await obsResponse.json();
-
-      if (!obsResponse.ok) {
-        throw new Error(obsData.detail || "Could not load observations");
-      }
-
-      setObservations(obsData.observations);
-      setObservationsError("");
-      addLog("mimic_replay", `Hour ${hour} · ${data.model_version}`);
-    } catch (error) {
-      setReplayError(error.message || "Could not load replay predictions");
-      setObservationsError(error.message || "Could not load observations");
-    } finally {
-      setReplayLoading(false);
-    }
-  };
+    },
+    [addLog],
+  );
   const explainPrediction = async () => {
     setXaiLoading(true);
     setXaiError("");
