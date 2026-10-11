@@ -56266,28 +56266,6 @@ export default function ICUDigitalTwinDashboard() {
     loadAvailableHours();
   }, []);
 
-  // INSERT THE PLAYBACK EFFECT HERE, DIRECTLY BELOW THE FIRST EFFECT
-
-  useEffect(() => {
-    if (!isPlaying || replayLoading || availableHours.length === 0) {
-      return;
-    }
-
-    const currentIndex = availableHours.indexOf(replayHour);
-    const nextIndex = currentIndex + 1;
-
-    if (currentIndex === -1 || nextIndex >= availableHours.length) {
-      setIsPlaying(false);
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      runReplayHour(availableHours[nextIndex]);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [isPlaying, replayLoading, replayHour, availableHours, runReplayHour]);
-
   const addLog = useCallback(
     (event, detail) =>
       setLog((l) => [
@@ -56340,6 +56318,27 @@ export default function ICUDigitalTwinDashboard() {
     },
     [addLog],
   );
+
+  useEffect(() => {
+    if (!isPlaying || replayLoading || availableHours.length === 0) {
+      return;
+    }
+
+    const currentIndex = availableHours.indexOf(replayHour);
+    const nextIndex = currentIndex + 1;
+
+    if (currentIndex === -1 || nextIndex >= availableHours.length) {
+      setIsPlaying(false);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      runReplayHour(availableHours[nextIndex]);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [isPlaying, replayLoading, replayHour, availableHours, runReplayHour]);
+
   const explainPrediction = async () => {
     setXaiLoading(true);
     setXaiError("");
