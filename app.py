@@ -17,6 +17,8 @@ Run locally:
     curl -X POST localhost:8000/predict -H "Content-Type: application/json" \
          -d '{"condition": "Sepsis", "horizon": 6, "features": {...}}'
 """
+import importlib.util
+import pandas as pd
 import json
 import os
 import pickle
@@ -139,6 +141,40 @@ class PredictRequest(BaseModel):
         for key, val in v.items():
             if not isinstance(val, (int, float)) or np.isnan(val) or np.isinf(val):
                 raise ValueError(f"Feature '{key}' must be a finite number")
+        return v
+
+class MimicScenarioRequest(BaseModel):
+    hour: int
+    changes: Dict[str, float]
+
+    
+    @validator("changes")
+    def validate_changes(cls, v):
+        allowed_ranges = {
+            "HR": (20, 250),
+            "SBP": (40, 300),
+            "Resp": (1, 80),
+            "TempC": (25, 45),
+            "FiO2": (0.21, 1.0),
+        }
+
+        if not v:
+            raise ValueError("Provide at least one observation to change")
+
+        invalid = set(v) - set(allowed_ranges)
+        if invalid:
+            raise ValueError(f"Unsupported fields: {sorted(invalid)}")
+
+        for key, value in v.items():
+            if not np.isfinite(value):
+                raise ValueError(f"{key} must be finite")
+
+            low, high = allowed_ranges[key]
+            if not low <= value <= high:
+                raise ValueError(
+                    f"{key} must be between {low} and {high}"
+                )
+
         return v
 
 
@@ -311,4 +347,425 @@ def get_model_version():
             "proxies derived from established clinical thresholds, NOT adjudicated "
             "ground truth. Only SepsisLabel is expert-annotated."
         ),
+    }
+# ---- MIMIC-IV exploratory replay endpoint ----
+
+@app.post("/mimic/replay")
+def mimic_replay():
+    import pandas as pd
+
+    csv_path = Path(
+        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
+    )
+
+    if not csv_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"MIMIC feature CSV not found: {csv_path}"
+        )
+
+    try:
+        df = pd.read_csv(csv_path)
+        results = []
+
+        models = _state["production_models"]
+
+        for _, row in df.iterrows():
+            record = {"hour": int(row["hour"])}
+
+            for task, entry in models.items():
+                feature_cols = entry["feature_cols"]
+                missing = [
+                    col for col in feature_cols
+                    if col not in df.columns or pd.isna(row[col])
+                ]
+
+                if missing:
+                    raise HTTPException(
+                        status_code=422,
+                        detail=f"{task}: missing or invalid features: {missing[:5]}"
+                    )
+
+                x = row[feature_cols].to_numpy(dtype=float).reshape(1, -1)
+
+                if not np.isfinite(x).all():
+                    raise HTTPException(
+                        status_code=422,
+                        detail=f"{task}: non-finite feature values"
+                    )
+
+                mean = entry["mean"]
+                std = entry["std"]
+
+                if np.any(std == 0):
+                    raise HTTPException(
+                        status_code=500,
+                        detail=f"{task}: zero standard deviation in model"
+                    )
+
+                xz = (x - mean) / std
+                score = float(entry["model"].predict_proba(xz)[0, 1])
+                record[f"{task}_score"] = round(score, 4)
+
+            record["interpretation"] = (
+                "Exploratory only; not clinically validated"
+            )
+            results.append(record)
+
+        return {
+            "status": "success",
+            "model_version": _state["active_version"],
+            "rows_processed": len(results),
+            "tasks": len(models),
+            "results": results,
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"MIMIC replay failed: {e}"
+        )
+
+# ---- MIMIC-IV single-hour prediction endpoint ----
+
+@app.get("/mimic/predict-hour/{hour}")
+def mimic_predict_hour(hour: int):
+    import pandas as pd
+
+    csv_path = Path(
+        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
+    )
+
+    if not csv_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"MIMIC feature CSV not found: {csv_path}"
+        )
+
+    df = pd.read_csv(csv_path)
+    selected = df[df["hour"] == hour]
+
+    if selected.empty:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No MIMIC data available for hour {hour}"
+        )
+
+    row = selected.iloc[0]
+    models = _state["production_models"]
+    results = {}
+
+    for task, entry in models.items():
+        feature_cols = entry["feature_cols"]
+        x = row[feature_cols].to_numpy(dtype=float).reshape(1, -1)
+
+        if not np.isfinite(x).all():
+            raise HTTPException(
+                status_code=422,
+                detail=f"Invalid feature values for {task}"
+            )
+
+        mean = entry["mean"]
+        std = entry["std"]
+
+        if np.any(std == 0):
+            raise HTTPException(
+                status_code=500,
+                detail=f"Zero standard deviation for {task}"
+            )
+
+        xz = (x - mean) / std
+        results[f"{task}_score"] = round(
+            float(entry["model"].predict_proba(xz)[0, 1]), 4
+        )
+
+    return {
+        "status": "success",
+        "hour": hour,
+        "model_version": _state["active_version"],
+        "tasks": results,
+        "interpretation": "Exploratory only; not clinically validated"
+    }
+
+@app.get("/mimic/explain-hour/{hour}/{task}")
+def mimic_explain_hour(hour: int, task: str):
+    import pandas as pd
+    import shap
+
+    csv_path = Path(
+        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
+    )
+
+    if not csv_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"MIMIC feature CSV not found: {csv_path}",
+        )
+
+    df = pd.read_csv(csv_path)
+    selected = df[df["hour"] == hour]
+
+    if selected.empty:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No MIMIC data available for hour {hour}",
+        )
+
+    models = _state["production_models"]
+
+    if task not in models:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Unknown prediction task: {task}",
+        )
+
+    entry = models[task]
+    feature_cols = entry["feature_cols"]
+    row = selected.iloc[0]
+    x = row[feature_cols].to_numpy(dtype=float).reshape(1, -1)
+
+    if not np.isfinite(x).all():
+        raise HTTPException(
+            status_code=422,
+            detail=f"Invalid feature values for {task}",
+        )
+
+    mean = entry["mean"]
+    std = entry["std"]
+
+    if np.any(std == 0):
+        raise HTTPException(
+            status_code=500,
+            detail=f"Zero standard deviation for {task}",
+        )
+
+    xz = (x - mean) / std
+    model = entry["model"]
+
+    try:
+        explainer = shap.TreeExplainer(model)
+        shap_values = explainer.shap_values(xz)
+
+        # Support common binary-classification SHAP output formats.
+        if isinstance(shap_values, list):
+            values = np.asarray(shap_values[-1])[0]
+        else:
+            values = np.asarray(shap_values)
+
+            if values.ndim == 3:
+                values = values[0, :, -1]
+            elif values.ndim == 2:
+                values = values[0]
+
+        contributions = [
+            {
+                "feature": str(name),
+                "value": float(row[name]),
+                "contribution": float(contribution),
+            }
+            for name, contribution in zip(feature_cols, values)
+        ]
+
+        contributions.sort(
+            key=lambda item: abs(item["contribution"]),
+            reverse=True,
+        )
+
+        return {
+            "status": "success",
+            "hour": hour,
+            "task": task,
+            "prediction": float(model.predict_proba(xz)[0, 1]),
+            "features": contributions[:10],
+            "interpretation": (
+                "Exploratory model explanation"
+            ),
+        }
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                "TreeExplainer could not explain this model. "
+                f"Check model compatibility: {exc}"
+            ),
+        )
+
+@app.post("/mimic/scenario")
+def mimic_scenario(request: MimicScenarioRequest):
+    csv_path = Path(r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_hourly.csv")
+    features_path = Path(r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv")
+    etl_path = Path(__file__).resolve().parent / "scripts" / "01_etl_pipeline.py"
+    medians_path = Path(__file__).resolve().parent / "data" / "feature_medians.csv"
+
+    for path in [csv_path, features_path, etl_path, medians_path]:
+        if not path.exists():
+            raise HTTPException(status_code=404, detail=f"Required file not found: {path}")
+
+    raw = pd.read_csv(csv_path)
+    baseline_features = pd.read_csv(features_path)
+
+    original_row = raw.loc[raw["hour"] == request.hour]
+    if original_row.empty:
+        raise HTTPException(status_code=404, detail=f"No observations available for hour {request.hour}")
+
+    baseline_row = baseline_features.loc[baseline_features["hour"] == request.hour]
+    if baseline_row.empty:
+        raise HTTPException(status_code=404, detail=f"No baseline features available for hour {request.hour}")
+
+    # Keep baseline scores from the existing precomputed feature row.
+    models = _state["production_models"]
+    if not models:
+        raise HTTPException(status_code=503, detail="Production models are not loaded")
+
+    def score_row(row):
+        scores = {}
+        for task, entry in models.items():
+            cols = entry["feature_cols"]
+            x = row[cols].to_numpy(dtype=float).reshape(1, -1)
+            if not np.isfinite(x).all():
+                raise HTTPException(status_code=422, detail=f"Non-finite features for {task}")
+            mean, std = entry["mean"], entry["std"]
+            if np.any(std == 0):
+                raise HTTPException(status_code=500, detail=f"Invalid scaling values for {task}")
+            xz = (x - mean) / std
+            scores[f"{task}_score"] = round(float(entry["model"].predict_proba(xz)[0, 1]), 4)
+        return scores
+
+    baseline_scores = score_row(baseline_row.iloc[0])
+
+    # Apply hypothetical changes only to a copy of the raw observations.
+    scenario_raw = raw.copy()
+    for field, value in request.changes.items():
+        scenario_raw.loc[scenario_raw["hour"] == request.hour, field] = value
+
+    # Rebuild features using the project's existing ETL functions.
+    spec = importlib.util.spec_from_file_location("scenario_etl", etl_path)
+    etl = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(etl)
+
+    scenario_df = scenario_raw.rename(columns={"TempC": "Temp"}).copy()
+    scenario_df["patient_id"] = "mimic_demo_32359580"
+    scenario_df["hour"] = scenario_df["hour"].astype(int)
+    scenario_df["ICULOS"] = scenario_df["hour"]
+
+    for col in etl.ALL_RAW_COLS:
+        if col not in scenario_df.columns:
+            scenario_df[col] = np.nan
+
+    scenario_df["SepsisLabel"] = np.nan
+    scenario_df = etl.engineer_features(scenario_df)
+
+    median_df = pd.read_csv(medians_path, index_col=0)
+    training_medians = median_df.iloc[:, 0]
+
+    scenario_df["SaO2"] = scenario_df["SaO2"].fillna(training_medians.get("SaO2"))
+    scenario_df["PF_ratio"] = scenario_df["SaO2"] / scenario_df["FiO2"].replace(0, np.nan)
+    scenario_df["PF_ratio"] = scenario_df["PF_ratio"].fillna(training_medians.get("PF_ratio"))
+
+    excluded = {
+        "patient_id", "hour", "Unit1", "Unit2", "SepsisLabel",
+        "ARF_proxy", "Cardiac_proxy", "AKI_proxy", "Coagulopathy_proxy"
+    }
+    feature_cols = [c for c in scenario_df.columns if c not in excluded]
+    scenario_df = scenario_df.sort_values(["patient_id", "hour"]).copy()
+    scenario_df[feature_cols] = scenario_df.groupby("patient_id")[feature_cols].ffill()
+
+    for col in feature_cols:
+        median = training_medians.get(col)
+        if median is not None and pd.notna(median):
+            scenario_df[col] = scenario_df[col].fillna(median)
+
+    scenario_df = etl.build_window_summary_features(scenario_df)
+
+    scenario_row = scenario_df.loc[scenario_df["hour"] == request.hour]
+    if scenario_row.empty:
+        raise HTTPException(status_code=404, detail=f"Scenario features unavailable for hour {request.hour}")
+
+    scenario_scores = score_row(scenario_row.iloc[0])
+
+    return {
+        "status": "success",
+        "hour": request.hour,
+        "changes": request.changes,
+        "baseline_scores": baseline_scores,
+        "scenario_scores": scenario_scores,
+        "interpretation": "Exploratory what-if simulation only; not clinically validated."
+    }
+
+
+@app.get("/mimic/observations/{hour}")
+def mimic_observations(hour: int):
+    import pandas as pd
+
+    csv_path = Path(r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_hourly.csv")
+
+    if not csv_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"MIMIC observation CSV not found: {csv_path}"
+        )
+
+    df = pd.read_csv(csv_path)
+    row = df.loc[df["hour"] == hour]
+
+    if row.empty:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No observations available for hour {hour}"
+        )
+
+    fields = [
+        "HR", "SBP", "DBP", "MAP", "Resp", "TempC",
+        "O2Sat", "FiO2", "pH", "PaCO2", "Lactate",
+        "Creatinine", "BUN", "WBC", "Platelets", "Glucose"
+    ]
+
+    record = row.iloc[0]
+    observations = {}
+
+    for field in fields:
+        value = record.get(field)
+        observations[field] = (
+            None if pd.isna(value) else float(value)
+        )
+
+    return {
+        "status": "success",
+        "hour": hour,
+        "observations": observations
+    }
+
+@app.get("/mimic/hours")
+def mimic_available_hours():
+    import pandas as pd
+
+    csv_path = Path(
+        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
+    )
+
+    if not csv_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"MIMIC feature CSV not found: {csv_path}",
+        )
+
+    df = pd.read_csv(csv_path)
+
+    if "hour" not in df.columns:
+        raise HTTPException(
+            status_code=500,
+            detail="The MIMIC feature CSV has no hour column",
+        )
+
+    hours = sorted(
+        df["hour"].dropna().astype(int).unique().tolist()
+    )
+
+    return {
+        "status": "success",
+        "count": len(hours),
+        "hours": hours,
     }

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import {
   AreaChart,
   Area,
@@ -42,8 +42,7 @@ import {
   GitCompare,
 } from "lucide-react";
 
-const API_URL =
-  "https://icu-digital-twin-api-4827-aeepa6age0bnd4h8.indiasouthcentral-01.azurewebsites.net";
+const API_URL = process.env.REACT_APP_API_BASE_URL || "http://127.0.0.1:8000";
 
 const DATA = {
   modelMetrics: {
@@ -56224,6 +56223,70 @@ export default function ICUDigitalTwinDashboard() {
   const [selectedId, setSelectedId] = useState(DATA.patients[0].patientId);
   const [search, setSearch] = useState("");
   const [log, setLog] = useState([]);
+  const [replayHour, setReplayHour] = useState(0);
+  const [replayResult, setReplayResult] = useState(null);
+  const [replayLoading, setReplayLoading] = useState(false);
+  const [replayError, setReplayError] = useState("");
+  const [observations, setObservations] = useState(null);
+  const [observationsError, setObservationsError] = useState("");
+  const [xaiTask, setXaiTask] = useState("Sepsis_6h");
+  const [xaiResult, setXaiResult] = useState(null);
+  const [xaiLoading, setXaiLoading] = useState(false);
+  const [xaiError, setXaiError] = useState("");
+  const [availableHours, setAvailableHours] = useState([]);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const [scenarioChanges, setScenarioChanges] = useState({
+    HR: "",
+    SBP: "",
+    Resp: "",
+    TempC: "",
+    FiO2: "",
+  });
+  const [scenarioResult, setScenarioResult] = useState(null);
+  const [scenarioLoading, setScenarioLoading] = useState(false);
+  const [scenarioError, setScenarioError] = useState("");
+
+  useEffect(() => {
+    const loadAvailableHours = async () => {
+      try {
+        const response = await fetch(`${API_URL}/mimic/hours`);
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || "Could not load available hours");
+        }
+
+        setAvailableHours(data.hours || []);
+      } catch (error) {
+        setReplayError(error.message || "Could not load available hours");
+      }
+    };
+
+    loadAvailableHours();
+  }, []);
+
+  // INSERT THE PLAYBACK EFFECT HERE, DIRECTLY BELOW THE FIRST EFFECT
+
+  useEffect(() => {
+    if (!isPlaying || replayLoading || availableHours.length === 0) {
+      return;
+    }
+
+    const currentIndex = availableHours.indexOf(replayHour);
+    const nextIndex = currentIndex + 1;
+
+    if (currentIndex === -1 || nextIndex >= availableHours.length) {
+      setIsPlaying(false);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      runReplayHour(availableHours[nextIndex]);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [isPlaying, replayLoading, replayHour, availableHours]);
 
   const addLog = useCallback(
     (event, detail) =>
@@ -56241,6 +56304,106 @@ export default function ICUDigitalTwinDashboard() {
     setSelectedId(pid);
     addLog("view_patient", pid);
   };
+  const runReplayHour = async (hour) => {
+    setReplayLoading(true);
+    setReplayError("");
+
+    try {
+      const response = await fetch(`${API_URL}/mimic/predict-hour/${hour}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || "Replay prediction failed");
+      }
+
+      setReplayHour(hour);
+      setReplayResult(data);
+      const obsResponse = await fetch(`${API_URL}/mimic/observations/${hour}`);
+      const obsData = await obsResponse.json();
+
+      if (!obsResponse.ok) {
+        throw new Error(obsData.detail || "Could not load observations");
+      }
+
+      setObservations(obsData.observations);
+      setObservationsError("");
+      addLog("mimic_replay", `Hour ${hour} · ${data.model_version}`);
+    } catch (error) {
+      setReplayError(error.message || "Could not load replay predictions");
+      setObservationsError(error.message || "Could not load observations");
+    } finally {
+      setReplayLoading(false);
+    }
+  };
+  const explainPrediction = async () => {
+    setXaiLoading(true);
+    setXaiError("");
+    setXaiResult(null);
+
+    try {
+      const response = await fetch(
+        `${API_URL}/mimic/explain-hour/${replayHour}/${xaiTask}`,
+      );
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || "Could not explain prediction");
+      }
+
+      setXaiResult(data);
+    } catch (error) {
+      setXaiError(error.message || "Could not load explanation");
+    } finally {
+      setXaiLoading(false);
+    }
+  };
+
+  const runScenario = async () => {
+    const changes = Object.fromEntries(
+      Object.entries(scenarioChanges)
+        .filter(([, value]) => value !== "")
+        .map(([key, value]) => [key, Number(value)]),
+    );
+
+    if (Object.keys(changes).length === 0) {
+      setScenarioError("Enter at least one value to simulate.");
+      return;
+    }
+
+    setScenarioLoading(true);
+    setScenarioError("");
+    setScenarioResult(null);
+
+    try {
+      const response = await fetch(`${API_URL}/mimic/scenario`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ hour: replayHour, changes }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const detail = Array.isArray(data.detail)
+          ? data.detail.map((item) => item.msg).join("; ")
+          : data.detail;
+        throw new Error(detail || "Scenario simulation failed");
+      }
+
+      setScenarioResult(data);
+      addLog(
+        "mimic_scenario",
+        `Hour ${replayHour} · ${Object.entries(changes)
+          .map(([k, v]) => `${k}=${v}`)
+          .join(", ")}`,
+      );
+    } catch (error) {
+      setScenarioError(error.message || "Scenario simulation failed");
+    } finally {
+      setScenarioLoading(false);
+    }
+  };
+
   const handleRunAudit = (condition, overrides, risk) => {
     const desc =
       Object.entries(overrides)
@@ -56267,6 +56430,8 @@ export default function ICUDigitalTwinDashboard() {
       show: canSeeResearch,
     },
     { id: "audit", label: "Audit Log", icon: ScrollText, show: canSeeAudit },
+
+    { id: "mimic", label: "MIMIC-IV Twin", icon: Activity, show: true },
   ];
 
   return (
@@ -56406,6 +56571,750 @@ export default function ICUDigitalTwinDashboard() {
           </button>
         </div>
       </div>
+
+      {view === "mimic" && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            padding: "10px 20px",
+            background: COLORS.panel,
+            borderBottom: `1px solid ${COLORS.border}`,
+            flexShrink: 0,
+          }}
+        >
+          <div style={{ fontSize: 12, fontWeight: 700 }}>MIMIC-IV Replay</div>
+
+          <label style={{ fontSize: 12 }}>Hour</label>
+
+          <input
+            type="number"
+            min="0"
+            max="488"
+            value={replayHour}
+            onChange={(e) => {
+              const value = Number(e.target.value);
+              if (Number.isInteger(value) && value >= 0 && value <= 488) {
+                setReplayHour(value);
+              }
+            }}
+            style={{
+              width: 75,
+              padding: "6px 8px",
+              borderRadius: 6,
+              border: `1px solid ${COLORS.border}`,
+              background: COLORS.bg,
+              color: COLORS.text,
+            }}
+          />
+
+          <button
+            onClick={() => runReplayHour(replayHour)}
+            disabled={replayLoading}
+            style={{
+              padding: "7px 12px",
+              borderRadius: 6,
+              border: "none",
+              background: COLORS.blue,
+              color: "#fff",
+              cursor: replayLoading ? "wait" : "pointer",
+              opacity: replayLoading ? 0.6 : 1,
+            }}
+          >
+            {replayLoading ? "Predicting..." : "Run Hour"}
+          </button>
+
+          <button
+            onClick={() => {
+              const index = availableHours.indexOf(replayHour);
+              if (index > 0) runReplayHour(availableHours[index - 1]);
+            }}
+            disabled={replayLoading || availableHours.indexOf(replayHour) <= 0}
+            style={{
+              padding: "7px 12px",
+              borderRadius: 6,
+              border: `1px solid ${COLORS.border}`,
+              background: COLORS.panel,
+              color: COLORS.text,
+              cursor: "pointer",
+            }}
+          >
+            Previous
+          </button>
+
+          <button
+            onClick={() => setIsPlaying((playing) => !playing)}
+            disabled={availableHours.length === 0 || replayLoading}
+            style={{
+              padding: "7px 12px",
+              borderRadius: 6,
+              border: "none",
+              background: COLORS.blue,
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            {isPlaying ? "Pause" : "Play"}
+          </button>
+
+          <button
+            onClick={() => {
+              const index = availableHours.indexOf(replayHour);
+              if (index >= 0 && index < availableHours.length - 1) {
+                runReplayHour(availableHours[index + 1]);
+              }
+            }}
+            disabled={
+              replayLoading ||
+              availableHours.indexOf(replayHour) === -1 ||
+              availableHours.indexOf(replayHour) >= availableHours.length - 1
+            }
+            style={{
+              padding: "7px 12px",
+              borderRadius: 6,
+              border: `1px solid ${COLORS.border}`,
+              background: COLORS.panel,
+              color: COLORS.text,
+              cursor: "pointer",
+            }}
+          >
+            Next
+          </button>
+
+          {replayError && (
+            <span style={{ fontSize: 11, color: COLORS.amber }}>
+              {replayError}
+            </span>
+          )}
+        </div>
+      )}
+
+      {view === "mimic" && (
+        <div
+          style={{
+            flex: "0 0 auto",
+            minHeight: "auto",
+            overflowY: "visible",
+            padding: 20,
+            background: COLORS.bg,
+            color: COLORS.text,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 18,
+              fontWeight: 700,
+              marginBottom: 16,
+            }}
+          >
+            Patient Observations — Hour {replayHour}
+          </div>
+
+          {!observations ? (
+            <div
+              style={{
+                padding: 20,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: 12,
+                background: COLORS.panel,
+                color: COLORS.textFaint,
+              }}
+            >
+              {observationsError ||
+                "Select an hour and click Run Hour to load observations."}
+            </div>
+          ) : (
+            <div
+              style={{
+                padding: 20,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: 12,
+                background: COLORS.panel,
+              }}
+            >
+              <div style={{ fontSize: 14, fontWeight: 600 }}>
+                Observations — Hour {replayHour}
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
+                  gap: 12,
+                  marginTop: 16,
+                }}
+              >
+                {[
+                  ["Heart Rate", "HR", "bpm"],
+                  ["Systolic BP", "SBP", "mmHg"],
+                  ["Diastolic BP", "DBP", "mmHg"],
+                  ["Mean Arterial Pressure", "MAP", "mmHg"],
+                  ["Respiratory Rate", "Resp", "/min"],
+                  ["Temperature", "TempC", "°C"],
+                  ["Oxygen Saturation", "O2Sat", "%"],
+                  ["FiO₂", "FiO2", ""],
+                  ["pH", "pH", ""],
+                  ["PaCO₂", "PaCO2", "mmHg"],
+                  ["Lactate", "Lactate", "mmol/L"],
+                  ["Creatinine", "Creatinine", "mg/dL"],
+                  ["BUN", "BUN", "mg/dL"],
+                  ["WBC", "WBC", ""],
+                  ["Platelets", "Platelets", ""],
+                  ["Glucose", "Glucose", "mg/dL"],
+                ].map(([label, key, unit]) => (
+                  <div
+                    key={key}
+                    style={{
+                      padding: 12,
+                      border: `1px solid ${COLORS.border}`,
+                      borderRadius: 8,
+                      background: COLORS.bg,
+                    }}
+                  >
+                    <div style={{ fontSize: 11, color: COLORS.textFaint }}>
+                      {label}
+                    </div>
+                    <div
+                      style={{ fontSize: 18, fontWeight: 700, marginTop: 5 }}
+                    >
+                      {observations[key] == null
+                        ? "N/A"
+                        : `${Number(observations[key]).toFixed(1)} ${unit}`}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                style={{
+                  fontSize: 11,
+                  color: COLORS.textFaint,
+                  marginTop: 16,
+                }}
+              ></div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {view === "mimic" && replayResult && (
+        <div
+          style={{
+            padding: "12px 20px",
+            background: COLORS.panel,
+            borderBottom: `1px solid ${COLORS.border}`,
+            display: "grid",
+            gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
+            gap: 12,
+            flexShrink: 0,
+          }}
+        >
+          {[
+            ["Sepsis", "Sepsis"],
+            ["ARF", "ARF"],
+            ["Cardiac", "Cardiac"],
+            ["AKI", "AKI"],
+            ["Coagulopathy", "Coagulopathy"],
+          ].map(([label, prefix]) => (
+            <div
+              key={prefix}
+              style={{
+                padding: 10,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: 8,
+                background: COLORS.bg,
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  marginBottom: 8,
+                }}
+              >
+                {label}
+              </div>
+
+              {[6, 12, 24].map((horizon) => {
+                const score = replayResult.tasks[`${prefix}_${horizon}h_score`];
+
+                return (
+                  <div
+                    key={horizon}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      gap: 8,
+                      fontSize: 11,
+                      marginTop: 5,
+                    }}
+                  >
+                    <span style={{ color: COLORS.textFaint }}>{horizon}h</span>
+                    <span style={{ fontFamily: COLORS.mono }}>
+                      {typeof score === "number"
+                        ? `${(score * 100).toFixed(1)}%`
+                        : "—"}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      )}
+      {view === "mimic" && replayResult && (
+        <div
+          style={{
+            margin: 20,
+            padding: 20,
+            background: COLORS.panel,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: 12,
+          }}
+        >
+          <div style={{ fontSize: 18, fontWeight: 700 }}>
+            Explainable AI — Why This Prediction?
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              gap: 12,
+              alignItems: "center",
+              marginTop: 14,
+              flexWrap: "wrap",
+            }}
+          >
+            <label style={{ fontSize: 12 }}>
+              Prediction to explain
+              <select
+                value={xaiTask}
+                onChange={(e) => {
+                  setXaiTask(e.target.value);
+                  setXaiResult(null);
+                  setXaiError("");
+                }}
+                style={{
+                  display: "block",
+                  marginTop: 6,
+                  padding: 9,
+                  borderRadius: 6,
+                  border: `1px solid ${COLORS.border}`,
+                  background: COLORS.bg,
+                  color: COLORS.text,
+                }}
+              >
+                {[
+                  "Sepsis_6h",
+                  "Sepsis_12h",
+                  "Sepsis_24h",
+                  "ARF_6h",
+                  "ARF_12h",
+                  "ARF_24h",
+                  "Cardiac_6h",
+                  "Cardiac_12h",
+                  "Cardiac_24h",
+                  "AKI_6h",
+                  "AKI_12h",
+                  "AKI_24h",
+                  "Coagulopathy_6h",
+                  "Coagulopathy_12h",
+                  "Coagulopathy_24h",
+                ].map((task) => (
+                  <option key={task} value={task}>
+                    {task.replace("_", " · ")}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <button
+              onClick={explainPrediction}
+              disabled={xaiLoading}
+              style={{
+                padding: "9px 14px",
+                marginTop: 18,
+                border: "none",
+                borderRadius: 6,
+                background: COLORS.blue,
+                color: "#fff",
+                cursor: xaiLoading ? "wait" : "pointer",
+              }}
+            >
+              {xaiLoading ? "Explaining..." : "Explain Prediction"}
+            </button>
+          </div>
+
+          {xaiError && (
+            <div style={{ color: COLORS.amber, fontSize: 12, marginTop: 12 }}>
+              {xaiError}
+            </div>
+          )}
+
+          {xaiResult && (
+            <div style={{ marginTop: 20 }}>
+              <div style={{ fontSize: 14, fontWeight: 700 }}>
+                {xaiResult.task.replace("_", " · ")} — Hour {xaiResult.hour}
+              </div>
+
+              <div style={{ fontSize: 12, marginTop: 8 }}>
+                Model prediction:{" "}
+                <strong>{(xaiResult.prediction * 100).toFixed(1)}%</strong>
+              </div>
+
+              <div
+                style={{
+                  fontSize: 12,
+                  color: COLORS.textFaint,
+                  marginTop: 10,
+                  marginBottom: 14,
+                }}
+              >
+                SHAP contributions show which features pushed the model output
+                higher or lower. They are not percentage-point changes in risk.
+              </div>
+
+              <div style={{ display: "grid", gap: 10 }}>
+                {xaiResult.features.map((item) => (
+                  <div
+                    key={item.feature}
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns:
+                        "minmax(120px, 1fr) minmax(80px, 2fr) 90px",
+                      gap: 10,
+                      alignItems: "center",
+                      fontSize: 12,
+                    }}
+                  >
+                    <span>{item.feature}</span>
+
+                    <div
+                      style={{
+                        height: 12,
+                        borderRadius: 4,
+                        background: COLORS.bg,
+                        overflow: "hidden",
+                      }}
+                    >
+                      <div
+                        title={`SHAP contribution: ${item.contribution.toFixed(4)}`}
+                        style={{
+                          width: `${Math.min(100, Math.abs(item.contribution) * 100)}%`,
+                          height: "100%",
+                          background:
+                            item.contribution >= 0 ? COLORS.amber : COLORS.blue,
+                          borderRadius: 4,
+                        }}
+                      />
+                    </div>
+
+                    <span
+                      style={{ fontFamily: COLORS.mono, textAlign: "right" }}
+                    >
+                      {item.contribution > 0 ? "+" : ""}
+                      {item.contribution.toFixed(4)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                style={{
+                  fontSize: 11,
+                  color: COLORS.textFaint,
+                  marginTop: 16,
+                }}
+              >
+                {xaiResult.interpretation}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {view === "mimic" && (
+        <div style={{ padding: 20, background: COLORS.bg, color: COLORS.text }}>
+          <div
+            style={{
+              padding: 20,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: 12,
+              background: COLORS.panel,
+            }}
+          >
+            <div style={{ fontSize: 18, fontWeight: 700 }}>
+              Scenario Simulation
+            </div>
+            <div
+              style={{ fontSize: 12, color: COLORS.textFaint, marginTop: 6 }}
+            >
+              Hour {replayHour} · Exploratory what-if simulation
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
+                gap: 12,
+                marginTop: 16,
+              }}
+            >
+              {[
+                ["HR", "Heart rate", "20", "250", "77"],
+                ["SBP", "Systolic BP", "40", "300", "100"],
+                ["Resp", "Respiratory rate", "1", "80", "18"],
+                ["TempC", "Temperature (°C)", "25", "45", "37"],
+                ["FiO2", "FiO₂ fraction", "0.21", "1", "0.4"],
+              ].map(([key, label, min, max, placeholder]) => (
+                <label key={key} style={{ fontSize: 12 }}>
+                  {label}
+                  <input
+                    type="number"
+                    min={min}
+                    max={max}
+                    step="any"
+                    placeholder={placeholder}
+                    value={scenarioChanges[key]}
+                    onChange={(e) =>
+                      setScenarioChanges((prev) => ({
+                        ...prev,
+                        [key]: e.target.value,
+                      }))
+                    }
+                    style={{
+                      display: "block",
+                      boxSizing: "border-box",
+                      width: "100%",
+                      marginTop: 6,
+                      padding: 9,
+                      borderRadius: 6,
+                      border: `1px solid ${COLORS.border}`,
+                      background: COLORS.bg,
+                      color: COLORS.text,
+                    }}
+                  />
+                </label>
+              ))}
+            </div>
+
+            <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
+              <button
+                onClick={runScenario}
+                disabled={scenarioLoading}
+                style={{
+                  padding: "9px 14px",
+                  border: "none",
+                  borderRadius: 6,
+                  background: COLORS.blue,
+                  color: "#fff",
+                  cursor: scenarioLoading ? "wait" : "pointer",
+                }}
+              >
+                {scenarioLoading ? "Simulating..." : "Run Scenario"}
+              </button>
+
+              <button
+                onClick={() => {
+                  setScenarioChanges({
+                    HR: "",
+                    SBP: "",
+                    Resp: "",
+                    TempC: "",
+                    FiO2: "",
+                  });
+                  setScenarioResult(null);
+                  setScenarioError("");
+                }}
+                style={{
+                  padding: "9px 14px",
+                  border: `1px solid ${COLORS.border}`,
+                  borderRadius: 6,
+                  background: COLORS.panel,
+                  color: COLORS.text,
+                  cursor: "pointer",
+                }}
+              >
+                Reset
+              </button>
+            </div>
+
+            {scenarioError && (
+              <div style={{ color: COLORS.amber, fontSize: 12, marginTop: 12 }}>
+                {scenarioError}
+              </div>
+            )}
+
+            {scenarioResult && (
+              <div style={{ marginTop: 20 }}>
+                <div
+                  style={{ fontSize: 14, fontWeight: 700, marginBottom: 10 }}
+                >
+                  Baseline vs Scenario — Hour {scenarioResult.hour}
+                </div>
+
+                {/* Baseline vs Scenario visual comparison */}
+                <div style={{ marginBottom: 24 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: 18,
+                      alignItems: "center",
+                      fontSize: 12,
+                      marginBottom: 16,
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <span
+                      style={{ display: "flex", alignItems: "center", gap: 7 }}
+                    >
+                      <span
+                        style={{
+                          width: 12,
+                          height: 12,
+                          borderRadius: 3,
+                          background: COLORS.blue,
+                        }}
+                      />
+                      Baseline
+                    </span>
+                    <span
+                      style={{ display: "flex", alignItems: "center", gap: 7 }}
+                    >
+                      <span
+                        style={{
+                          width: 12,
+                          height: 12,
+                          borderRadius: 3,
+                          background: COLORS.amber,
+                        }}
+                      />
+                      Scenario
+                    </span>
+                  </div>
+
+                  <div style={{ display: "grid", gap: 14 }}>
+                    {Object.keys(scenarioResult.baseline_scores).map((key) => {
+                      const baseline = scenarioResult.baseline_scores[key];
+                      const scenario = scenarioResult.scenario_scores[key];
+                      const label = key
+                        .replace("_score", "")
+                        .replaceAll("_", " ");
+
+                      return (
+                        <div key={key}>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              gap: 10,
+                              fontSize: 12,
+                              color: COLORS.text,
+                              marginBottom: 6,
+                              fontWeight: 600,
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            <span>{label}</span>
+                            <span
+                              style={{
+                                color:
+                                  scenario > baseline
+                                    ? COLORS.amber
+                                    : scenario < baseline
+                                      ? COLORS.blue
+                                      : COLORS.textFaint,
+                                fontFamily: COLORS.mono,
+                                fontSize: 11,
+                              }}
+                            >
+                              Change: {scenario > baseline ? "+" : ""}
+                              {((scenario - baseline) * 100).toFixed(2)} pp
+                            </span>
+                          </div>
+
+                          {[
+                            {
+                              name: "Baseline",
+                              value: baseline,
+                              color: COLORS.blue,
+                            },
+                            {
+                              name: "Scenario",
+                              value: scenario,
+                              color: COLORS.amber,
+                            },
+                          ].map((item) => (
+                            <div
+                              key={item.name}
+                              style={{
+                                display: "grid",
+                                gridTemplateColumns: "70px minmax(0, 1fr) 55px",
+                                alignItems: "center",
+                                gap: 8,
+                                marginTop: 4,
+                              }}
+                            >
+                              <span
+                                style={{
+                                  fontSize: 10,
+                                  color: COLORS.textFaint,
+                                }}
+                              >
+                                {item.name}
+                              </span>
+
+                              <div
+                                style={{
+                                  height: 12,
+                                  borderRadius: 4,
+                                  background: COLORS.bg,
+                                  overflow: "hidden",
+                                }}
+                              >
+                                <div
+                                  title={`${item.name}: ${(item.value * 100).toFixed(2)}%`}
+                                  style={{
+                                    width: `${Math.max(0, Math.min(100, item.value * 100))}%`,
+                                    height: "100%",
+                                    borderRadius: 4,
+                                    background: item.color,
+                                    transition: "width 0.3s ease",
+                                  }}
+                                />
+                              </div>
+
+                              <span
+                                style={{
+                                  fontSize: 11,
+                                  fontFamily: COLORS.mono,
+                                  textAlign: "right",
+                                }}
+                              >
+                                {(item.value * 100).toFixed(2)}%
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    fontSize: 11,
+                    color: COLORS.textFaint,
+                    marginTop: 12,
+                  }}
+                ></div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {view === "console" && (
         <div style={{ display: "flex", flex: 1, minHeight: 0 }}>

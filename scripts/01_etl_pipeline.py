@@ -162,7 +162,18 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
             rise_abs = g["Creatinine"] - baseline
             rise_rel = g["Creatinine"] / baseline.replace(0, np.nan)
             return ((rise_abs >= 0.3) | (rise_rel >= 1.5)).astype(int)
-        df["AKI_proxy"] = df.groupby("patient_id", group_keys=False).apply(aki_flags)
+        df["AKI_proxy"] = (
+            df.groupby("patient_id")["Creatinine"]
+            .transform(
+                lambda s: (
+                    (s - s.rolling(48, min_periods=1).min() >= 0.3)
+                    | (
+                        s / s.rolling(48, min_periods=1).min().replace(0, np.nan)
+                        >= 1.5
+                    )
+                ).astype(int)
+            )
+        )
     else:
         df["AKI_proxy"] = 0
 
