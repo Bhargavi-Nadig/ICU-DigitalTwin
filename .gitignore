@@ -38,3 +38,5 @@ data/ingestion_audit_log.csv
 artifacts/dashboard_data.json
 
 model/splits.json
+
+/mimic_data/

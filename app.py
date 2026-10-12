@@ -354,9 +354,10 @@ def get_model_version():
 def mimic_replay():
     import pandas as pd
 
-    csv_path = Path(
-        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
-    )
+    csv_path = (
+    Path(os.getenv("MIMIC_DATA_DIR", str(Path(__file__).resolve().parent / "mimic_data")))
+    / "mimic_demo_stay_32359580_features.csv"
+)
 
     if not csv_path.exists():
         raise HTTPException(
@@ -434,9 +435,10 @@ def mimic_replay():
 def mimic_predict_hour(hour: int):
     import pandas as pd
 
-    csv_path = Path(
-        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
-    )
+    csv_path = (
+    Path(os.getenv("MIMIC_DATA_DIR", str(Path(__file__).resolve().parent / "mimic_data")))
+    / "mimic_demo_stay_32359580_features.csv"
+)
 
     if not csv_path.exists():
         raise HTTPException(
@@ -494,9 +496,10 @@ def mimic_explain_hour(hour: int, task: str):
     import pandas as pd
     import shap
 
-    csv_path = Path(
-        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
-    )
+    csv_path = (
+    Path(os.getenv("MIMIC_DATA_DIR", str(Path(__file__).resolve().parent / "mimic_data")))
+    / "mimic_demo_stay_32359580_features.csv"
+)
 
     if not csv_path.exists():
         raise HTTPException(
@@ -595,8 +598,14 @@ def mimic_explain_hour(hour: int, task: str):
 
 @app.post("/mimic/scenario")
 def mimic_scenario(request: MimicScenarioRequest):
-    csv_path = Path(r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_hourly.csv")
-    features_path = Path(r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv")
+    csv_path = (
+        Path(os.getenv("MIMIC_DATA_DIR", str(Path(__file__).resolve().parent / "mimic_data")))
+        / "mimic_demo_stay_32359580_hourly.csv"
+    )
+    features_path = (
+        Path(os.getenv("MIMIC_DATA_DIR", str(Path(__file__).resolve().parent / "mimic_data")))
+        / "mimic_demo_stay_32359580_features.csv"
+    )
     etl_path = Path(__file__).resolve().parent / "scripts" / "01_etl_pipeline.py"
     medians_path = Path(__file__).resolve().parent / "data" / "feature_medians.csv"
 
@@ -700,7 +709,10 @@ def mimic_scenario(request: MimicScenarioRequest):
 def mimic_observations(hour: int):
     import pandas as pd
 
-    csv_path = Path(r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_hourly.csv")
+    csv_path = (
+    Path(os.getenv("MIMIC_DATA_DIR", str(Path(__file__).resolve().parent / "mimic_data")))
+    / "mimic_demo_stay_32359580_hourly.csv"
+)
 
     if not csv_path.exists():
         raise HTTPException(
@@ -742,9 +754,10 @@ def mimic_observations(hour: int):
 def mimic_available_hours():
     import pandas as pd
 
-    csv_path = Path(
-        r"C:\MIMIC-IV\icu\mimic_demo_stay_32359580_features.csv"
-    )
+    csv_path = (
+    Path(os.getenv("MIMIC_DATA_DIR", str(Path(__file__).resolve().parent / "mimic_data")))
+    / "mimic_demo_stay_32359580_features.csv"
+)
 
     if not csv_path.exists():
         raise HTTPException(
